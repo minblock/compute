@@ -5,7 +5,7 @@
 # What to do
 sign=false
 verify=false
-build=false
+build=true
 setupenv=false
 
 # Systems to build
@@ -17,9 +17,9 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/minblock/ovo
-proc=2
-mem=2000
+url=https://github.com/minblock/ovocoin
+proc=12
+mem=5000
 lxc=true
 docker=false
 osslTarUrl=http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz
