@@ -193,8 +193,8 @@ done
 if [[ $lxc = true ]]
 then
     export USE_LXC=1
-    export LXC_BRIDGE=lxcbr0
-    sudo ifconfig lxcbr0 up 10.0.3.2
+    #export LXC_BRIDGE=lxcbr0
+    #sudo ifconfig lxcbr0 up 10.0.3.2
 elif [[ $docker = true ]]
 then
     export USE_DOCKER=1
@@ -285,7 +285,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../ovo/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../ovocoin/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
