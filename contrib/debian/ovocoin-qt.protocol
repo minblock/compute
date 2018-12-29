@@ -1,0 +1,11 @@
+[Protocol]
+exec=ovocoin-qt '%u'
+protocol=ovocoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
