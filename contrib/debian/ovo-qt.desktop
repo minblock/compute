@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Ovo Core
+Comment=Ovo P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Ovo peer-to-peer Netzwerk
+Comment[fr]=Ovo, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Ovo, eşten eşe kriptografik sanal para birimi
+Exec=dash-qt %u
+Terminal=false
+Type=Application
+Icon=dash128
+MimeType=x-scheme-handler/dash;
+Categories=Office;Finance;

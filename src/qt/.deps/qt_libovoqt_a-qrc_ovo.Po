@@ -1,0 +1,3 @@
+qt/qt_libovoqt_a-qrc_ovo.o: qt/qrc_ovo.cpp /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
