@@ -1,8 +1,6 @@
 Ovo Core staging tree 0.12.3
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/minblock/dash.svg?branch=master)](https://travis-ci.org/minblock/dash) `develop:` [![Build Status](https://travis-ci.org/minblock/dash.svg?branch=develop)](https://travis-ci.org/minblock/dash/branches)
-
 https://www.ovocoin.ca
 
 
@@ -16,7 +14,7 @@ are carried out collectively by the network. Ovo Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Ovo Core software, see https://www.ovocoin.ca/get-dash/.
+the Ovo Core software, see https://www.ovocoin.ca/.
 
 
 License
