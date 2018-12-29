@@ -24,7 +24,7 @@ make
 make install # optional
 ```
 
-This will build dash-qt as well if the dependencies are met.
+This will build ovo-qt as well if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -124,7 +124,7 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a dash-qt executable will be
+Once these are installed, they will be found by configure and a ovo-qt executable will be
 built by default.
 
 Dependency Build Instructions: Fedora
@@ -147,7 +147,7 @@ libqrencode (optional) can be installed with:
 
 Notes
 -----
-The release is built with GCC and then "strip dashd" to strip the debug
+The release is built with GCC and then "strip ovod" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
@@ -170,7 +170,7 @@ It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
 ```bash
 OVO_ROOT=$(pwd)
 
-# Pick some path to install BDB to, here we create a directory within the dash directory
+# Pick some path to install BDB to, here we create a directory within the ovo directory
 BDB_PREFIX="${OVO_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
@@ -229,7 +229,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./dashd
+    	scanelf -e ./ovod
 
     The output should contain:
 
@@ -244,7 +244,7 @@ Hardening enables the following features:
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./dashd`
+    `scanelf -e ./ovod`
 
     the output should contain:
 	STK/REL/PTL
@@ -276,8 +276,8 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
 
     pacman -S git base-devel boost libevent python
-    git clone https://github.com/minblock/dash.git
-    cd dash/
+    git clone https://github.com/minblock/ovo.git
+    cd ovo/
     ./autogen.sh
     ./configure --disable-wallet --without-gui --without-miniupnpc
     make check

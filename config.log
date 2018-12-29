@@ -171,10 +171,10 @@ configure:5003: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
@@ -197,10 +197,10 @@ configure:5041: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
@@ -218,10 +218,10 @@ configure:5056: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
@@ -239,10 +239,10 @@ configure:5072: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
@@ -404,10 +404,10 @@ configure:9427: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
@@ -424,10 +424,10 @@ configure:9486: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
@@ -535,10 +535,10 @@ configure:14009: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -567,10 +567,10 @@ configure:14068: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -689,10 +689,10 @@ configure:18785: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -724,10 +724,10 @@ configure:18822: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -759,10 +759,10 @@ configure:18859: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -805,10 +805,10 @@ configure:20771: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -840,10 +840,10 @@ configure:20834: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -916,10 +916,10 @@ configure:21951: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1000,10 +1000,10 @@ configure:22473: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1043,10 +1043,10 @@ configure:22509: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1086,10 +1086,10 @@ configure:22545: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1156,10 +1156,10 @@ configure:22798: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1227,10 +1227,10 @@ configure:22798: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1401,10 +1401,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1479,10 +1479,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1557,10 +1557,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1635,10 +1635,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1713,10 +1713,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1791,10 +1791,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1869,10 +1869,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -1947,10 +1947,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2025,10 +2025,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2103,10 +2103,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2181,10 +2181,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2259,10 +2259,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2337,10 +2337,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2415,10 +2415,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2493,10 +2493,10 @@ configure:23226: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2653,10 +2653,10 @@ configure:24958: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2737,10 +2737,10 @@ configure:25803: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -2933,10 +2933,10 @@ configure:28500: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -3081,10 +3081,10 @@ configure:29538: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Ovo Core"
-| #define PACKAGE_TARNAME "dashcore"
+| #define PACKAGE_TARNAME "ovocore"
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Ovo Core 0.12.3"
-| #define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+| #define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 | #define PACKAGE_URL "https://ovocoin.ca/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
@@ -3203,9 +3203,9 @@ configure:29538: result: no
 configure:29774: checking for protoc
 configure:29792: found /usr/bin/protoc
 configure:29804: result: /usr/bin/protoc
-configure:29838: checking whether to build dashd
+configure:29838: checking whether to build ovod
 configure:29848: result: yes
-configure:29851: checking whether to build utils (dash-cli dash-tx)
+configure:29851: checking whether to build utils (ovo-cli ovo-tx)
 configure:29861: result: yes
 configure:29864: checking whether to build libraries
 configure:29881: result: yes
@@ -3221,9 +3221,9 @@ configure:30000: checking whether to build GUI with support for D-Bus
 configure:30007: result: yes
 configure:30010: checking whether to build GUI with support for QR codes
 configure:30020: result: yes
-configure:30037: checking whether to build test_dash-qt
+configure:30037: checking whether to build test_ovo-qt
 configure:30040: result: yes
-configure:30058: checking whether to build test_dash
+configure:30058: checking whether to build test_ovo
 configure:30061: result: yes
 configure:30070: checking whether to reduce exports
 configure:30076: result: no
@@ -3246,7 +3246,7 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on minblock-Virtual-Machine
 
-config.status:1399: creating libdashconsensus.pc
+config.status:1399: creating libovoconsensus.pc
 config.status:1399: creating Makefile
 config.status:1399: creating src/Makefile
 config.status:1399: creating doc/man/Makefile
@@ -3255,12 +3255,12 @@ config.status:1399: creating share/qt/Info.plist
 config.status:1399: creating src/test/buildenv.py
 config.status:1399: creating qa/pull-tester/tests_config.py
 config.status:1399: creating contrib/devtools/split-debug.sh
-config.status:1399: creating src/config/dash-config.h
+config.status:1399: creating src/config/ovo-config.h
 config.status:1659: executing depfiles commands
 config.status:1659: executing libtool commands
-configure:33042: === configuring in src/univalue (/root/dashclone/dash-master/src/univalue)
+configure:33042: === configuring in src/univalue (/root/ovoclone/ovo-master/src/univalue)
 configure:33105: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' --cache-file=/dev/null --srcdir=.
-configure:33042: === configuring in src/secp256k1 (/root/dashclone/dash-master/src/secp256k1)
+configure:33042: === configuring in src/secp256k1 (/root/ovoclone/ovo-master/src/secp256k1)
 configure:33105: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' --cache-file=/dev/null --srcdir=.
 configure:33124: result: Fixing libtool for -rpath problems.
 
@@ -3575,7 +3575,7 @@ pkg_cv_ZMQ_LIBS=-lzmq
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /root/dashclone/dash-master/build-aux/missing aclocal-1.15'
+ACLOCAL='${SHELL} /root/ovoclone/ovo-master/build-aux/missing aclocal-1.15'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -3585,17 +3585,17 @@ AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='0'
 AM_V='$(V)'
 AR='/usr/bin/ar'
-AUTOCONF='${SHELL} /root/dashclone/dash-master/build-aux/missing autoconf'
-AUTOHEADER='${SHELL} /root/dashclone/dash-master/build-aux/missing autoheader'
-AUTOMAKE='${SHELL} /root/dashclone/dash-master/build-aux/missing automake-1.15'
+AUTOCONF='${SHELL} /root/ovoclone/ovo-master/build-aux/missing autoconf'
+AUTOHEADER='${SHELL} /root/ovoclone/ovo-master/build-aux/missing autoheader'
+AUTOMAKE='${SHELL} /root/ovoclone/ovo-master/build-aux/missing automake-1.15'
 AWK='mawk'
 BDB_CFLAGS=''
 BDB_CPPFLAGS=''
 BDB_LIBS='-ldb_cxx-4.8'
-BITCOIN_CLI_NAME='dash-cli'
-BITCOIN_DAEMON_NAME='dashd'
-BITCOIN_GUI_NAME='dash-qt'
-BITCOIN_TX_NAME='dash-tx'
+BITCOIN_CLI_NAME='ovo-cli'
+BITCOIN_DAEMON_NAME='ovod'
+BITCOIN_GUI_NAME='ovo-qt'
+BITCOIN_TX_NAME='ovo-tx'
 BOOST_CHRONO_LIB='-lboost_chrono'
 BOOST_CPPFLAGS='-pthread -I/usr/include'
 BOOST_FILESYSTEM_LIB='-lboost_filesystem'
@@ -3712,7 +3712,7 @@ LUPDATE='/usr/lib/qt5/bin/lupdate'
 MAINT=''
 MAINTAINER_MODE_FALSE='#'
 MAINTAINER_MODE_TRUE=''
-MAKEINFO='${SHELL} /root/dashclone/dash-master/build-aux/missing makeinfo'
+MAKEINFO='${SHELL} /root/ovoclone/ovo-master/build-aux/missing makeinfo'
 MAKENSIS=''
 MANIFEST_TOOL=':'
 MINIUPNPC_CPPFLAGS=''
@@ -3730,11 +3730,11 @@ OBJDUMP='objdump'
 OBJEXT='o'
 OTOOL64=''
 OTOOL=''
-PACKAGE='dashcore'
-PACKAGE_BUGREPORT='https://github.com/minblock/dash/issues'
+PACKAGE='ovocore'
+PACKAGE_BUGREPORT='https://github.com/minblock/ovo/issues'
 PACKAGE_NAME='Ovo Core'
 PACKAGE_STRING='Ovo Core 0.12.3'
-PACKAGE_TARNAME='dashcore'
+PACKAGE_TARNAME='ovocore'
 PACKAGE_URL='https://ovocoin.ca/'
 PACKAGE_VERSION='0.12.3'
 PATH_SEPARATOR=':'
@@ -3848,7 +3848,7 @@ host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /root/dashclone/dash-master/build-aux/install-sh'
+install_sh='${SHELL} /root/ovoclone/ovo-master/build-aux/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
@@ -3873,10 +3873,10 @@ target_alias=''
 
 /* confdefs.h */
 #define PACKAGE_NAME "Ovo Core"
-#define PACKAGE_TARNAME "dashcore"
+#define PACKAGE_TARNAME "ovocore"
 #define PACKAGE_VERSION "0.12.3"
 #define PACKAGE_STRING "Ovo Core 0.12.3"
-#define PACKAGE_BUGREPORT "https://github.com/minblock/dash/issues"
+#define PACKAGE_BUGREPORT "https://github.com/minblock/ovo/issues"
 #define PACKAGE_URL "https://ovocoin.ca/"
 #define HAVE_CXX11 1
 #define STDC_HEADERS 1

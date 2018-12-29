@@ -11,12 +11,12 @@ The following are some helpful notes on how to run Ovo on your native platform.
 
 Unpack the files into a directory and run:
 
-- `bin/dash-qt` (GUI) or
-- `bin/dashd` (headless)
+- `bin/ovo-qt` (GUI) or
+- `bin/ovod` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run dash-qt.exe.
+Unpack the files into a directory, and then run ovo-qt.exe.
 
 ### OS X
 
@@ -26,7 +26,7 @@ Drag Ovo-Qt to your applications folder, and then run Ovo-Qt.
 
 * See the [Ovo documentation](https://minblock.atlassian.net/wiki/display/DOC)
 for help and more information.
-* Ask for help on [Ovo Nation Discord](http://dashchat.org)
+* Ask for help on [Ovo Nation Discord](http://ovochat.org)
 * Ask for help on the [Ovo Forum](https://ovocoin.ca/forum)
 
 Building
@@ -58,7 +58,7 @@ The Ovo Core repo's [root README](/README.md) contains relevant information on t
 
 ### Resources
 * Discuss on the [Ovo Forum](https://ovocoin.ca/forum), in the Development & Technical Discussion board.
-* Discuss on [Ovo Nation Discord](http://dashchat.org)
+* Discuss on [Ovo Nation Discord](http://ovochat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

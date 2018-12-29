@@ -10,19 +10,19 @@ SetCompressor /SOLID lzma
 !define URL https://ovocoin.ca/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/dashclone/dash-master/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/dashclone/dash-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/root/ovoclone/ovo-master/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/ovoclone/ovo-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/dashclone/dash-master/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/ovoclone/ovo-master/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Ovo Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\dash-qt
+!define MUI_FINISHPAGE_RUN $INSTDIR\ovo-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/dashclone/dash-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/ovoclone/ovo-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/dashclone/dash-master/dashcore-${VERSION}-win-setup.exe
+OutFile /root/ovoclone/ovo-master/ovocore-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\OvoCore
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/dashclone/dash-master/release/dash-qt
-    File /oname=COPYING.txt /root/dashclone/dash-master/COPYING
-    File /oname=readme.txt /root/dashclone/dash-master/doc/README_windows.txt
+    File /root/ovoclone/ovo-master/release/ovo-qt
+    File /oname=COPYING.txt /root/ovoclone/ovo-master/COPYING
+    File /oname=readme.txt /root/ovoclone/ovo-master/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/dashclone/dash-master/release/dashd
-    File /root/dashclone/dash-master/release/dash-cli
+    File /root/ovoclone/ovo-master/release/ovod
+    File /root/ovoclone/ovo-master/release/ovo-cli
     SetOutPath $INSTDIR\doc
-    File /r /root/dashclone/dash-master/doc\*.*
+    File /r /root/ovoclone/ovo-master/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -91,8 +91,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\dash-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Ovo Core (testnet, -bit).lnk" "$INSTDIR\dash-qt" "-testnet" "$INSTDIR\dash-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\ovo-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Ovo Core (testnet, -bit).lnk" "$INSTDIR\ovo-qt" "-testnet" "$INSTDIR\ovo-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -103,14 +103,14 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "dashcore" "URL Protocol" ""
-    WriteRegStr HKCR "dashcore" "" "URL:Ovo"
-    WriteRegStr HKCR "dashcore\DefaultIcon" "" $INSTDIR\dash-qt
-    WriteRegStr HKCR "dashcore\shell\open\command" "" '"$INSTDIR\dash-qt" "%1"'
+    WriteRegStr HKCR "ovocore" "URL Protocol" ""
+    WriteRegStr HKCR "ovocore" "" "URL:Ovo"
+    WriteRegStr HKCR "ovocore\DefaultIcon" "" $INSTDIR\ovo-qt
+    WriteRegStr HKCR "ovocore\shell\open\command" "" '"$INSTDIR\ovo-qt" "%1"'
 
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'dashcore' now, we had 'dash' hardcoded)
+    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'ovocore' now, we had 'ovo' hardcoded)
     # TODO remove this line sometime later
-    DeleteRegKey HKCR "dash"
+    DeleteRegKey HKCR "ovo"
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -128,7 +128,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\dash-qt
+    Delete /REBOOTOK $INSTDIR\ovo-qt
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -149,10 +149,10 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "dashcore"
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'dashcore' now, we had 'dash' hardcoded)
+    DeleteRegKey HKCR "ovocore"
+    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'ovocore' now, we had 'ovo' hardcoded)
     # TODO remove this line sometime later
-    DeleteRegKey HKCR "dash"
+    DeleteRegKey HKCR "ovo"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

@@ -27,7 +27,7 @@ Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/minblock/dash/tags) are created to indicate new official,
+[Tags](https://github.com/minblock/ovo/tags) are created to indicate new official,
 stable release versions of Ovo Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -64,7 +64,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Ovo Core's Transifex page](https://www.transifex.com/projects/p/dash/).
+[Ovo Core's Transifex page](https://www.transifex.com/projects/p/ovo/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
@@ -72,4 +72,4 @@ Translations are periodically pulled from Transifex and merged into the git repo
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
 
-Translators should also follow the [forum](https://www.ovocoin.ca/forum/topic/dash-worldwide-collaboration.88/).
+Translators should also follow the [forum](https://www.ovocoin.ca/forum/topic/ovo-worldwide-collaboration.88/).

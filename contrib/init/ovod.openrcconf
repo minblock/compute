@@ -1,25 +1,25 @@
-# /etc/conf.d/dashd: config file for /etc/init.d/dashd
+# /etc/conf.d/ovod: config file for /etc/init.d/ovod
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/dashcore/dash.conf"
+#BITCOIND_CONFIGFILE="/etc/ovocore/ovo.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/dashd"
+#BITCOIND_PIDDIR="/var/run/ovod"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/dashd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/ovod.pid"
 
-# Where to write dashd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/dashd"
+# Where to write ovod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/ovod"
 
-# User and group to own dashd process
-#BITCOIND_USER="dashcore"
-#BITCOIND_GROUP="dashcore"
+# User and group to own ovod process
+#BITCOIND_USER="ovocore"
+#BITCOIND_GROUP="ovocore"
 
-# Path to dashd executable
-#BITCOIND_BIN="/usr/bin/dashd"
+# Path to ovod executable
+#BITCOIND_BIN="/usr/bin/ovod"
 
-# Nice value to run dashd under
+# Nice value to run ovod under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

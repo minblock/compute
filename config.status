@@ -393,8 +393,8 @@ on `(hostname || uname -n) 2>/dev/null | sed 1q`
 "
 
 # Files that config.status was made for.
-config_files=" libdashconsensus.pc:libdashconsensus.pc.in Makefile src/Makefile doc/man/Makefile share/setup.nsi share/qt/Info.plist src/test/buildenv.py qa/pull-tester/tests_config.py contrib/devtools/split-debug.sh"
-config_headers=" src/config/dash-config.h"
+config_files=" libovoconsensus.pc:libovoconsensus.pc.in Makefile src/Makefile doc/man/Makefile share/setup.nsi share/qt/Info.plist src/test/buildenv.py qa/pull-tester/tests_config.py contrib/devtools/split-debug.sh"
+config_headers=" src/config/ovo-config.h"
 config_links=" qa/pull-tester/rpc-tests.py:qa/pull-tester/rpc-tests.py"
 config_commands=" depfiles libtool"
 
@@ -429,7 +429,7 @@ $config_links
 Configuration commands:
 $config_commands
 
-Report bugs to <https://github.com/minblock/dash/issues>.
+Report bugs to <https://github.com/minblock/ovo/issues>.
 Ovo Core home page: <https://ovocoin.ca/>."
 
 ac_cs_config="--disable-shared --with-pic --with-bignum=no --enable-module-recovery"
@@ -442,7 +442,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/root/dashclone/dash-master'
+ac_pwd='/root/ovoclone/ovo-master'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -792,7 +792,7 @@ if test -n "${ZSH_VERSION+set}"; then
 fi
 
 
-    PACKAGE='dashcore'
+    PACKAGE='ovocore'
     VERSION='0.12.3'
     RM='rm -f'
     ofile='libtool'
@@ -807,10 +807,10 @@ fi
 for ac_config_target in $ac_config_targets
 do
   case $ac_config_target in
-    "src/config/dash-config.h") CONFIG_HEADERS="$CONFIG_HEADERS src/config/dash-config.h" ;;
+    "src/config/ovo-config.h") CONFIG_HEADERS="$CONFIG_HEADERS src/config/ovo-config.h" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
-    "libdashconsensus.pc") CONFIG_FILES="$CONFIG_FILES libdashconsensus.pc:libdashconsensus.pc.in" ;;
+    "libovoconsensus.pc") CONFIG_FILES="$CONFIG_FILES libovoconsensus.pc:libovoconsensus.pc.in" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "doc/man/Makefile") CONFIG_FILES="$CONFIG_FILES doc/man/Makefile" ;;
@@ -906,10 +906,10 @@ S["HARDENED_CPPFLAGS"]=" -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2"
 S["HARDENED_CXXFLAGS"]=" -Wstack-protector -fstack-protector-all"
 S["ERROR_CXXFLAGS"]=""
 S["RELDFLAGS"]=""
-S["BITCOIN_TX_NAME"]="dash-tx"
-S["BITCOIN_CLI_NAME"]="dash-cli"
-S["BITCOIN_GUI_NAME"]="dash-qt"
-S["BITCOIN_DAEMON_NAME"]="dashd"
+S["BITCOIN_TX_NAME"]="ovo-tx"
+S["BITCOIN_CLI_NAME"]="ovo-cli"
+S["BITCOIN_GUI_NAME"]="ovo-qt"
+S["BITCOIN_DAEMON_NAME"]="ovod"
 S["COPYRIGHT_HOLDERS_FINAL"]="The Ovo Core developers"
 S["COPYRIGHT_HOLDERS_SUBSTITUTION"]="Ovo Core"
 S["COPYRIGHT_HOLDERS"]="The %s developers"
@@ -1125,14 +1125,14 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="/usr/bin/strip"
-S["install_sh"]="${SHELL} /root/dashclone/dash-master/build-aux/install-sh"
-S["MAKEINFO"]="${SHELL} /root/dashclone/dash-master/build-aux/missing makeinfo"
-S["AUTOHEADER"]="${SHELL} /root/dashclone/dash-master/build-aux/missing autoheader"
-S["AUTOMAKE"]="${SHELL} /root/dashclone/dash-master/build-aux/missing automake-1.15"
-S["AUTOCONF"]="${SHELL} /root/dashclone/dash-master/build-aux/missing autoconf"
-S["ACLOCAL"]="${SHELL} /root/dashclone/dash-master/build-aux/missing aclocal-1.15"
+S["install_sh"]="${SHELL} /root/ovoclone/ovo-master/build-aux/install-sh"
+S["MAKEINFO"]="${SHELL} /root/ovoclone/ovo-master/build-aux/missing makeinfo"
+S["AUTOHEADER"]="${SHELL} /root/ovoclone/ovo-master/build-aux/missing autoheader"
+S["AUTOMAKE"]="${SHELL} /root/ovoclone/ovo-master/build-aux/missing automake-1.15"
+S["AUTOCONF"]="${SHELL} /root/ovoclone/ovo-master/build-aux/missing autoconf"
+S["ACLOCAL"]="${SHELL} /root/ovoclone/ovo-master/build-aux/missing aclocal-1.15"
 S["VERSION"]="0.12.3"
-S["PACKAGE"]="dashcore"
+S["PACKAGE"]="ovocore"
 S["CYGPATH_W"]="echo"
 S["am__isrc"]=""
 S["INSTALL_DATA"]="${INSTALL} -m 644"
@@ -1178,10 +1178,10 @@ S["program_transform_name"]="s,x,x,"
 S["prefix"]="/usr/local"
 S["exec_prefix"]="${prefix}"
 S["PACKAGE_URL"]="https://ovocoin.ca/"
-S["PACKAGE_BUGREPORT"]="https://github.com/minblock/dash/issues"
+S["PACKAGE_BUGREPORT"]="https://github.com/minblock/ovo/issues"
 S["PACKAGE_STRING"]="Ovo Core 0.12.3"
 S["PACKAGE_VERSION"]="0.12.3"
-S["PACKAGE_TARNAME"]="dashcore"
+S["PACKAGE_TARNAME"]="ovocore"
 S["PACKAGE_NAME"]="Ovo Core"
 S["PATH_SEPARATOR"]=":"
 S["SHELL"]="/bin/bash"
@@ -1227,10 +1227,10 @@ if test -n "$CONFIG_HEADERS"; then
 cat >"$ac_tmp/defines.awk" <<\_ACAWK ||
 BEGIN {
 D["PACKAGE_NAME"]=" \"Ovo Core\""
-D["PACKAGE_TARNAME"]=" \"dashcore\""
+D["PACKAGE_TARNAME"]=" \"ovocore\""
 D["PACKAGE_VERSION"]=" \"0.12.3\""
 D["PACKAGE_STRING"]=" \"Ovo Core 0.12.3\""
-D["PACKAGE_BUGREPORT"]=" \"https://github.com/minblock/dash/issues\""
+D["PACKAGE_BUGREPORT"]=" \"https://github.com/minblock/ovo/issues\""
 D["PACKAGE_URL"]=" \"https://ovocoin.ca/\""
 D["HAVE_CXX11"]=" 1"
 D["STDC_HEADERS"]=" 1"

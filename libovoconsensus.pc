@@ -6,6 +6,6 @@ includedir=${prefix}/include
 Name: Ovo Core consensus library
 Description: Library for the Bitcoin consensus protocol.
 Version: 0.12.3
-Libs: -L${libdir} -ldashconsensus
+Libs: -L${libdir} -lovoconsensus
 Cflags: -I${includedir}
 Requires.private: libcrypto
