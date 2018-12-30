@@ -1,7 +1,7 @@
 Ovo Core staging tree 0.12.3
 ===============================
 
-https://www.ovocoin.ca
+https://www.ovocoin.com
 
 
 What is Ovo?
