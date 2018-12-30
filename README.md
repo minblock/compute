@@ -14,7 +14,7 @@ are carried out collectively by the network. Ovo Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Ovo Core software, see https://www.ovocoin.ca/.
+the Ovo Core software, see https://www.ovocoin.org/.
 
 
 License
