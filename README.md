@@ -16,11 +16,15 @@ rate of return on their investment. Similar to a bond note where you recieve a r
 investment per annum at specified amounts. However, unlike bond notes, you do not recieve your
 investment back, only reap a high rate of return on your investment.
 OVO Core is a fork of Dash / DarkCoin pre-spork. The reason we choose to use X11 Algorythms over others is
-because it switches to 11 different sequences to deter ASIC activity which
-helps to decentrilzie not only the mining aspect of it, but also stakes.
-Since 10,0000 OVO's are not easily atainable and prooof of work must be generated,
-miners need to be rewarded. Therefore for mining OVO's early adoptors will be rewarded
-for not only generating blocks, but also generating cocurrency interchange.  With the 
+because it is 20% faster than Scrypt algorythms and offers other benefits. 
+10,0000 OVO's are not easily attainable. Only from proof of work and verification of the blockchain,
+will miners be rewarded. Therefore mining OVO's, OVO miners/early adoptors will be rewarded
+,not only generating blocks, but also a percentage return that sees no deflation.
+Generating cocurrency interchange, however requirese a lot of power useage and is not easily
+performed. Generating a hash is a complex mathametic computation that requirese much hours of work
+as specially once the blockchain reaches a certan size. These coins could not be generated any other way.
+For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS ipv4 Ip's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through
+a program called wireshark in order to decipher.
 legalization of  marijiuana, Dispenseries all over the world need scientific
 pot for study. OVO Core prooposes to modify Dash coin into a marketplace not onlhy for
 marijuana, but also for a a complete Suply chain including resolving issues
