@@ -10,7 +10,7 @@ What is OVOCoin?
 Ovo is an experimental digital currency that enables anonymous, instant
 payments to anyone, anywhere in the world. Ovo uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. X11 Algorythmm Hybrid PoW / PoS Blockchain.
+are carried out collectively by the network. X11 Algorythm Hybrid PoW / PoS Blockchain.
 Master/Dispensenodes can be purchased for 10,000  OVO's. Premined amount = 0 . Launch Date: 12/30/2018 11:46PM. Dispense Nodes will be rewarded a higher
 rate of return on their investment. Similar to a bond note where you recieve a return on your
 investment per annum at specified amounts. However, unlike bond notes, you do not recieve your
