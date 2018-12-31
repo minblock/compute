@@ -26,7 +26,7 @@ as specially once the blockchain reaches a certan size. These coins could not be
 For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS IPv4 IP's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through
 a program called wireshark in order to decipher.
 legalization of  marijiuana, Dispensaries all over the world need scientific
-pot for study. OVO Core prooposes to modify Dash coin into a marketplace not only for
+pot for study. OVO Core proposes to modify Dash coin into a marketplace not only for
 marijiuana, but also for a a complete Supply chain including resolving issues
 in order placements from security and paying employees,subdivisions/partners, advertisers, growers, and research and development anonymously
 Ovo Core is the name of the open source software which enables the use of this currency.
