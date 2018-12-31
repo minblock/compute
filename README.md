@@ -16,7 +16,7 @@ rate of return on their investment. Similar to a bond note where you recieve a r
 investment per annum at specified amounts. However, unlike bond notes, you do not recieve your
 investment back, only reap a high rate of return on your investment.
 OVO Core is a fork of Dash / DarkCoin pre-spork. The reason we choose to use X11 Algorythms over others is
-because it is 20% faster than Scrypt algorythms and offers other benefits. 
+because it is 20% faster than Scrypt algorythms and offers other benefits such as auto switching between 11 different algorythms. . 
 10,0000 OVO's are not easily attainable. Only from proof of work and verification of the blockchain,
 will miners be rewarded. Therefore mining OVO's, OVO miners/early adoptors will be rewarded
 ,not only generating blocks, but also a percentage return that sees no deflation.
