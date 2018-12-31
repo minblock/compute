@@ -1,17 +1,30 @@
-Ovo Core staging tree 0.12.3
+OVO Core staging tree 0.12.3
 ===============================
 
 https://www.ovocoin.com
 
 
-What is Ovo?
+What is OVOCoin?
 ----------------
 
 Ovo is an experimental digital currency that enables anonymous, instant
 payments to anyone, anywhere in the world. Ovo uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Ovo Core is the name of the open
-source software which enables the use of this currency.
+are carried out collectively by the network. X11 Algorythmm Hybrid PoW / PoS Blockchain.
+Masternodes can be purchased for 10,0000  OVO's currently available for sale for $.06.
+Premined amount = 0 . Launch Date: 12/30/2018 11:46PM.
+Latest fork of Dash / DarkCoin. The reason we choose to use X11 Algorythms over others is
+because it switches to 11 different sequences to deter ASIC activity which
+helps to decentrilzie not only the mining aspect of it, but also stakes.
+Since 10,0000 OVO's are not easily atainable and prooof of work must be generated,
+miners need to be rewarded. Therefore for mining OVO's early adoptors will be rewarded
+for not only generating blocks, but also generating cocurrency interchange.  With the 
+legalization of  marijiuana, Dispenseries all over the world need scientific
+pot for study. OVO Core prooposes to modify Dash coin into a marketplace not onlhy for
+marijuana, but also for a a complete Suply chain including resolving issues
+in order placements and security, aswell as paying employees as well as 
+subdivisions/partners, advertisers, anonymously
+Ovo Core is the name of the open source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
 the Ovo Core software, see https://www.ovocoin.org/.
