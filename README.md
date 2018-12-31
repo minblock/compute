@@ -23,13 +23,12 @@ will miners be rewarded. Therefore mining OVO's, OVO miners/early adoptors will 
 Generating cocurrency interchange, however requirese a lot of power useage and is not easily
 performed. Generating a hash is a complex mathametic computation that requirese much hours of work
 as specially once the blockchain reaches a certan size. These coins could not be generated any other way.
-For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS ipv4 Ip's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through
+For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS IPv4 IP's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through
 a program called wireshark in order to decipher.
-legalization of  marijiuana, Dispenseries all over the world need scientific
-pot for study. OVO Core prooposes to modify Dash coin into a marketplace not onlhy for
-marijuana, but also for a a complete Suply chain including resolving issues
-in order placements and security, aswell as paying employees as well as 
-subdivisions/partners, advertisers, anonymously
+legalization of  marijiuana, Dispensaries all over the world need scientific
+pot for study. OVO Core prooposes to modify Dash coin into a marketplace not only for
+marijiuana, but also for a a complete Supply chain including resolving issues
+in order placements from security and paying employees,subdivisions/partners, advertisers, growers, and research and development anonymously
 Ovo Core is the name of the open source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
