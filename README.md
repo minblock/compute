@@ -20,8 +20,8 @@ because it is 20% faster than Scrypt algorythms and offers other benefits such a
 10,0000 OVO's are not easily attainable. Only from proof of work and verification of the blockchain,
 will miners be rewarded. Therefore mining OVO's, OVO miners/early adoptors will be rewarded
 ,not only generating blocks, but also a percentage return that sees no deflation.
-Generating cocurrency interchange, however requirese a lot of power useage and is not easily
-performed. Generating a hash is a complex mathametic computation that requirese much hours of work
+Generating cocurrency interchange, however requires a lot of power useage and is not easily
+performed. Generating a hash is a complex mathametic computation that requires much hours of work
 as specially once the blockchain reaches a certan size. These coins could not be generated any other way.
 For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS IPv4 IP's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through
 a program called wireshark in order to decipher.
@@ -31,7 +31,7 @@ marijiuana, but also for a a complete Supply chain including resolving issues
 in order placements from security and paying employees,subdivisions/partners, advertisers, growers, and research and development anonymously
 Ovo Core is the name of the open source software which enables the use of this currency.
 
-For more information, as well as an immediately useable, binary version of
+For more information, as well as an immediately useability, compiled binary version of
 the Ovo Core software, see https://www.ovocoin.org/.
 
 
