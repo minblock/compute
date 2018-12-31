@@ -14,8 +14,8 @@ are carried out collectively by the network. X11 Algorythmm Hybrid PoW / PoS Blo
 Master/Dispensenodes can be purchased for 10,000  OVO's. Premined amount = 0 . Launch Date: 12/30/2018 11:46PM. Dispense Nodes will be rewarded a higher
 rate of return on their investment. Similar to a bond note where you recieve a return on your
 investment per annum at specified amounts. However, unlike bond notes, you do not recieve your
-investment back at a later year, you only receive a high rate of return on your investment.
-OVO Core is a Latest fork of Dash / DarkCoin. The reason we choose to use X11 Algorythms over others is
+investment back, only reap a high rate of return on your investment.
+OVO Core is a fork of Dash / DarkCoin pre-spork. The reason we choose to use X11 Algorythms over others is
 because it switches to 11 different sequences to deter ASIC activity which
 helps to decentrilzie not only the mining aspect of it, but also stakes.
 Since 10,0000 OVO's are not easily atainable and prooof of work must be generated,
