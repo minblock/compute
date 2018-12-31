@@ -21,8 +21,8 @@ because it is 20% faster than Scrypt algorythms and offers other benefits such a
 will miners be rewarded. Therefore mining OVO's, OVO miners/early adoptors will be rewarded
 ,not only generating blocks, but also a percentage return that sees no deflation.
 Generating cocurrency interchange, however requires a lot of power useage and is not easily
-performed. Generating a hash is a complex mathametic computation that requires much hours of work
-as specially once the blockchain reaches a certan size. These coins could not be generated any other way.
+performed. Generating a hash requires a complex energy consuming mathametical computation that requires much work.
+Furthermore, once the blockchain reaches a certan size greater than 8000, the difficulty increases exponentialy. With automatic difficulty retargeting, 51% become nearly impossible. These coins could not be generated any other way.
 For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS IPv4 IP's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through
 a program called wireshark in order to decipher.
 legalization of  marijiuana, Dispensaries all over the world need scientific
