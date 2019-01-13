@@ -1,0 +1,22 @@
+[Unit]
+Description=Compute's distributed currency daemon
+After=network.target
+
+[Service]
+User=computecore
+Group=computecore
+
+Type=forking
+PIDFile=/var/lib/computed/computed.pid
+ExecStart=/usr/bin/computed -daemon -pid=/var/lib/computed/computed.pid \
+-conf=/etc/computecore/compute.conf -datadir=/var/lib/computed -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

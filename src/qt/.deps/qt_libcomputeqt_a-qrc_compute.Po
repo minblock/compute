@@ -1,0 +1,3 @@
+qt/qt_libcomputeqt_a-qrc_compute.o: qt/qrc_compute.cpp /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

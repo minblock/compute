@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//#define ENABLE_OVO_DEBUG
+//#define ENABLE_COMPUTE_DEBUG
 
 #include "core_io.h"
 #include "governance-classes.h"
@@ -419,7 +419,7 @@ void CSuperblockManager::CreateSuperblock(CMutableTransaction& txNewRet, int nBl
             ExtractDestination(payment.script, address1);
             CBitcoinAddress address2(address1);
 
-            // TODO: PRINT NICE N.N OVO OUTPUT
+            // TODO: PRINT NICE N.N COMPUTE OUTPUT
 
             DBG( std::cout << "CSuperblockManager::CreateSuperblock Before LogPrintf call, nAmount = " << payment.nAmount << std::endl; );
             LogPrintf("NEW Superblock : output %d (addr %s, amount %d)\n", i, address2.ToString(), payment.nAmount);
@@ -594,7 +594,7 @@ void CSuperblock::ParsePaymentSchedule(const std::string& strPaymentAddresses, c
         CBitcoinAddress address(vecParsed1[i]);
         if (!address.IsValid()) {
             std::ostringstream ostr;
-            ostr << "CSuperblock::ParsePaymentSchedule -- Invalid Ovo Address : " <<  vecParsed1[i];
+            ostr << "CSuperblock::ParsePaymentSchedule -- Invalid Compute Address : " <<  vecParsed1[i];
             LogPrintf("%s\n", ostr.str());
             throw std::runtime_error(ostr.str());
         }
@@ -776,11 +776,11 @@ bool CSuperblock::IsExpired()
     if(governance.GetCachedBlockHeight() > nExpirationBlock) {
         LogPrint("gobject", "CSuperblock::IsExpired -- Outdated trigger found\n");
         fExpired = true;
-        CGovernanceObject* pgovobj = GetGovernanceObject();
-        if(pgovobj) {
-            LogPrint("gobject", "CSuperblock::IsExpired -- Expiring outdated object: %s\n", pgovobj->GetHash().ToString());
-            pgovobj->fExpired = true;
-            pgovobj->nDeletionTime = GetAdjustedTime();
+        CGovernanceObject* pgcomputebj = GetGovernanceObject();
+        if(pgcomputebj) {
+            LogPrint("gobject", "CSuperblock::IsExpired -- Expiring outdated object: %s\n", pgcomputebj->GetHash().ToString());
+            pgcomputebj->fExpired = true;
+            pgcomputebj->nDeletionTime = GetAdjustedTime();
         }
     }
 

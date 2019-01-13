@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both ovod and ovo-qt, to make it harder for attackers to
+ * for both computed and compute-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Ovo Core");
+const std::string CLIENT_NAME("Compute Core");
 
 /**
  * Client version number

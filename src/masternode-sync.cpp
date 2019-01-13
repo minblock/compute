@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -336,7 +336,7 @@ void CMasternodeSync::ProcessTick(CConnman& connman)
                 return; //this will cause each peer to get one request each six seconds for the various assets we need
             }
 
-            // GOVOBJ : SYNC GOVERNANCE ITEMS FROM OUR PEERS
+            // GCOMPUTEBJ : SYNC GOVERNANCE ITEMS FROM OUR PEERS
 
             if(nRequestedMasternodeAssets == MASTERNODE_SYNC_GOVERNANCE) {
                 LogPrint("gobject", "CMasternodeSync::ProcessTick -- nTick %d nRequestedMasternodeAssets %d nTimeLastBumped %lld GetTime() %lld diff %lld\n", nTick, nRequestedMasternodeAssets, nTimeLastBumped, GetTime(), GetTime() - nTimeLastBumped);

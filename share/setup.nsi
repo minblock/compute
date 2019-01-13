@@ -1,4 +1,4 @@
-Name "Ovo Core (-bit)"
+Name "Compute Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,23 +6,23 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 0.12.3
-!define COMPANY "Ovo Core project"
-!define URL https://ovocoin.ca/
+!define COMPANY "Compute Core project"
+!define URL https://computecoin.ca/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/ovoclone/ovo-master/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/ovoclone/ovo-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/root/computeclone/compute-master/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/computeclone/compute-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/ovoclone/ovo-master/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/computeclone/compute-master/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Ovo Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\ovo-qt
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Compute Core"
+!define MUI_FINISHPAGE_RUN $INSTDIR\compute-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/ovoclone/ovo-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/computeclone/compute-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,18 +48,18 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/ovoclone/ovo-master/ovocore-${VERSION}-win-setup.exe
+OutFile /root/computeclone/compute-master/computecore-${VERSION}-win-setup.exe
 !if "" == "64"
-InstallDir $PROGRAMFILES64\OvoCore
+InstallDir $PROGRAMFILES64\ComputeCore
 !else
-InstallDir $PROGRAMFILES\OvoCore
+InstallDir $PROGRAMFILES\ComputeCore
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.4
-VIAddVersionKey ProductName "Ovo Core"
+VIAddVersionKey ProductName "Compute Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/ovoclone/ovo-master/release/ovo-qt
-    File /oname=COPYING.txt /root/ovoclone/ovo-master/COPYING
-    File /oname=readme.txt /root/ovoclone/ovo-master/doc/README_windows.txt
+    File /root/computeclone/compute-master/release/compute-qt
+    File /oname=COPYING.txt /root/computeclone/compute-master/COPYING
+    File /oname=readme.txt /root/computeclone/compute-master/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/ovoclone/ovo-master/release/ovod
-    File /root/ovoclone/ovo-master/release/ovo-cli
+    File /root/computeclone/compute-master/release/computed
+    File /root/computeclone/compute-master/release/compute-cli
     SetOutPath $INSTDIR\doc
-    File /r /root/ovoclone/ovo-master/doc\*.*
+    File /r /root/computeclone/compute-master/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -91,8 +91,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\ovo-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Ovo Core (testnet, -bit).lnk" "$INSTDIR\ovo-qt" "-testnet" "$INSTDIR\ovo-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\compute-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Compute Core (testnet, -bit).lnk" "$INSTDIR\compute-qt" "-testnet" "$INSTDIR\compute-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -103,14 +103,14 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "ovocore" "URL Protocol" ""
-    WriteRegStr HKCR "ovocore" "" "URL:Ovo"
-    WriteRegStr HKCR "ovocore\DefaultIcon" "" $INSTDIR\ovo-qt
-    WriteRegStr HKCR "ovocore\shell\open\command" "" '"$INSTDIR\ovo-qt" "%1"'
+    WriteRegStr HKCR "computecore" "URL Protocol" ""
+    WriteRegStr HKCR "computecore" "" "URL:Compute"
+    WriteRegStr HKCR "computecore\DefaultIcon" "" $INSTDIR\compute-qt
+    WriteRegStr HKCR "computecore\shell\open\command" "" '"$INSTDIR\compute-qt" "%1"'
 
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'ovocore' now, we had 'ovo' hardcoded)
+    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'computecore' now, we had 'compute' hardcoded)
     # TODO remove this line sometime later
-    DeleteRegKey HKCR "ovo"
+    DeleteRegKey HKCR "compute"
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -128,7 +128,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\ovo-qt
+    Delete /REBOOTOK $INSTDIR\compute-qt
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -140,8 +140,8 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Ovo Core (testnet, -bit).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Ovo.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Compute Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Compute.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -149,10 +149,10 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "ovocore"
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'ovocore' now, we had 'ovo' hardcoded)
+    DeleteRegKey HKCR "computecore"
+    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'computecore' now, we had 'compute' hardcoded)
     # TODO remove this line sometime later
-    DeleteRegKey HKCR "ovo"
+    DeleteRegKey HKCR "compute"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

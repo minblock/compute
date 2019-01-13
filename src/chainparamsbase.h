@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between ovo-cli and ovod)
- * of a given instance of the Ovo system.
+ * CBaseChainParams defines the base parameters (shared between compute-cli and computed)
+ * of a given instance of the Compute system.
  */
 class CBaseChainParams
 {

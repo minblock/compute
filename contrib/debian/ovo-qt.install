@@ -1,6 +1,0 @@
-usr/local/bin/ovo-qt usr/bin
-share/pixmaps/ovo32.xpm usr/share/pixmaps
-share/pixmaps/ovo16.xpm usr/share/pixmaps
-share/pixmaps/ovo128.png usr/share/pixmaps
-debian/ovo-qt.desktop usr/share/applications
-debian/ovo-qt.protocol usr/share/kde4/services/

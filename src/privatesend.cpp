@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "privatesend.h"
@@ -392,10 +392,10 @@ int CPrivateSend::GetDenominations(const std::vector<CTxOut>& vecTxOut, bool fSi
 bool CPrivateSend::GetDenominationsBits(int nDenom, std::vector<int> &vecBitsRet)
 {
     // ( bit on if present, 4 denominations example )
-    // bit 0 - 100OVO+1
-    // bit 1 - 10OVO+1
-    // bit 2 - 1OVO+1
-    // bit 3 - .1OVO+1
+    // bit 0 - 100COMPUTE+1
+    // bit 1 - 10COMPUTE+1
+    // bit 2 - 1COMPUTE+1
+    // bit 3 - .1COMPUTE+1
 
     int nMaxDenoms = vecStandardDenominations.size();
 
@@ -514,14 +514,14 @@ void CPrivateSend::SyncTransaction(const CTransaction& tx, const CBlockIndex *pi
 //TODO: Rename/move to core
 void ThreadCheckPrivateSend(CConnman& connman)
 {
-    if(fLiteMode) return; // disable all Ovo specific functionality
+    if(fLiteMode) return; // disable all Compute specific functionality
 
     static bool fOneThread;
     if(fOneThread) return;
     fOneThread = true;
 
     // Make this thread recognisable as the PrivateSend thread
-    RenameThread("ovo-ps");
+    RenameThread("compute-ps");
 
     unsigned int nTick = 0;
 

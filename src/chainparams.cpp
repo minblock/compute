@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -145,8 +145,8 @@ public:
 
         consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Ovo: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Ovo: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Compute: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Compute: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 0;
@@ -201,23 +201,23 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x8ee8ef52b60829efa6ad473ab74367365112acd8e6aa5724fc328d0c3ec7cd01"));
 
 
-        vSeeds.push_back(CDNSSeedData("ovo.org", "dnsseed.ovo.org"));
-        vSeeds.push_back(CDNSSeedData("ovodot.io", "dnsseed.ovodot.io"));
+        vSeeds.push_back(CDNSSeedData("compute.org", "dnsseed.compute.org"));
+        vSeeds.push_back(CDNSSeedData("computedot.io", "dnsseed.computedot.io"));
         vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
-        vSeeds.push_back(CDNSSeedData("ovopay.io", "dnsseed.ovopay.io"));
+        vSeeds.push_back(CDNSSeedData("computepay.io", "dnsseed.computepay.io"));
 
-        // Ovo addresses start with 'O' or 'P'
+        // Compute addresses start with 'O' or 'P'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,116);
-        // Ovo script addresses start with '6'
+        // Compute script addresses start with '6'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
-        // Ovo private keys start with '7' or 'X'
+        // Compute private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-        // Ovo BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Compute BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0xff)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Ovo BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Compute BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0xff)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // Ovo BIP44 coin type is '5'
+        // Compute BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -298,8 +298,8 @@ public:
         consensus.BIP66Height = 2075; // 0000002acdd29a14583540cb72e1c5cc83783560e38fa7081495d474fe1671f7
         consensus.DIP0001Height = 5500;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Ovo: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Ovo: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Compute: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Compute: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4002; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -351,21 +351,21 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("ovodot.io",  "testnet-seed.ovodot.io"));
+        vSeeds.push_back(CDNSSeedData("computedot.io",  "testnet-seed.computedot.io"));
         vSeeds.push_back(CDNSSeedData("masternode.io", "test.dnsseed.masternode.io"));
 
-        // Testnet Ovo addresses start with 'y'
+        // Testnet Compute addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Ovo script addresses start with '8' or '9'
+        // Testnet Compute script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Ovo BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Compute BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Ovo BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Compute BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet Ovo BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Compute BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         fMiningRequiresPeers = true;
@@ -425,8 +425,8 @@ public:
         consensus.BIP66Height = 1; // BIP66 activated immediately on devnet
         consensus.DIP0001Height = 2; // DIP0001 activated immediately on devnet
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Ovo: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Ovo: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Compute: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Compute: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -480,20 +480,20 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("ovoevo.org",  "devnet-seed.ovoevo.org"));
+        //vSeeds.push_back(CDNSSeedData("computeevo.org",  "devnet-seed.computeevo.org"));
 
-        // Testnet Ovo addresses start with 'y'
+        // Testnet Compute addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Ovo script addresses start with '8' or '9'
+        // Testnet Compute script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Ovo BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Compute BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Ovo BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Compute BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet Ovo BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Compute BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         fMiningRequiresPeers = true;
@@ -552,8 +552,8 @@ public:
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.DIP0001Height = 2000;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Ovo: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Ovo: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Compute: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Compute: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowKGWHeight = 15200; // same as mainnet
@@ -617,18 +617,18 @@ public:
             0
         };
 
-        // Regtest Ovo addresses start with 'y'
+        // Regtest Compute addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Ovo script addresses start with '8' or '9'
+        // Regtest Compute script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Ovo BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Compute BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Ovo BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Compute BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Regtest Ovo BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Compute BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
    }
 

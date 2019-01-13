@@ -143,7 +143,7 @@ public:
 };
 
 /**
- * Ovo RPC command dispatcher.
+ * Compute RPC command dispatcher.
  */
 class CRPCTable
 {

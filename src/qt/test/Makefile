@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C ../../ test_ovo_qt
+	$(MAKE) -C ../../ test_compute_qt
 clean:
-	$(MAKE) -C ../../ test_ovo_qt_clean
+	$(MAKE) -C ../../ test_compute_qt_clean
 check:
-	$(MAKE) -C ../../ test_ovo_qt_check
+	$(MAKE) -C ../../ test_compute_qt_check

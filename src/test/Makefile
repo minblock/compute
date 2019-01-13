@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. ovo_test
+	$(MAKE) -C .. compute_test
 clean:
-	$(MAKE) -C .. ovo_test_clean
+	$(MAKE) -C .. compute_test_clean
 check:
-	$(MAKE) -C .. ovo_test_check
+	$(MAKE) -C .. compute_test_check

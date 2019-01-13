@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -514,7 +514,7 @@ UniValue masternodelist(const JSONRPCRequest& request)
                 "  lastpaidblock  - Print the last block height a node was paid on the network\n"
                 "  lastpaidtime   - Print the last time a node was paid on the network\n"
                 "  lastseen       - Print timestamp of when a masternode was last seen on the network\n"
-                "  payee          - Print Ovo address associated with a masternode (can be additionally filtered,\n"
+                "  payee          - Print Compute address associated with a masternode (can be additionally filtered,\n"
                 "                   partial match)\n"
                 "  protocol       - Print protocol of a masternode (can be additionally filtered, exact match)\n"
                 "  pubkey         - Print the masternode (not collateral) public key\n"
@@ -930,13 +930,13 @@ UniValue sentinelping(const JSONRPCRequest& request)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ ----------
-    { "ovo",               "masternode",             &masternode,             true,  {} },
-    { "ovo",               "masternodelist",         &masternodelist,         true,  {} },
-    { "ovo",               "masternodebroadcast",    &masternodebroadcast,    true,  {} },
-    { "ovo",               "getpoolinfo",            &getpoolinfo,            true,  {} },
-    { "ovo",               "sentinelping",           &sentinelping,           true,  {} },
+    { "compute",               "masternode",             &masternode,             true,  {} },
+    { "compute",               "masternodelist",         &masternodelist,         true,  {} },
+    { "compute",               "masternodebroadcast",    &masternodebroadcast,    true,  {} },
+    { "compute",               "getpoolinfo",            &getpoolinfo,            true,  {} },
+    { "compute",               "sentinelping",           &sentinelping,           true,  {} },
 #ifdef ENABLE_WALLET
-    { "ovo",               "privatesend",            &privatesend,            false, {} },
+    { "compute",               "privatesend",            &privatesend,            false, {} },
 #endif // ENABLE_WALLET
 };
 

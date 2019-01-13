@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -134,7 +134,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Ovo address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a Compute address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
@@ -152,8 +152,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no ovo: URI
-    if(!uri.isValid() || uri.scheme() != QString("ovo"))
+    // return if URI is not valid or is no compute: URI
+    if(!uri.isValid() || uri.scheme() != QString("compute"))
         return false;
 
     SendCoinsRecipient rv;
@@ -202,7 +202,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BitcoinUnits::parse(BitcoinUnits::OVO, i->second, &rv.amount))
+                if(!BitcoinUnits::parse(BitcoinUnits::COMPUTE, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -222,13 +222,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert ovo:// to ovo:
+    // Convert compute:// to compute:
     //
-    //    Cannot handle this later, because ovo:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because compute:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("ovo://", Qt::CaseInsensitive))
+    if(uri.startsWith("compute://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 7, "ovo:");
+        uri.replace(0, 7, "compute:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -236,12 +236,12 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("ovo:%1").arg(info.address);
+    QString ret = QString("compute:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::OVO, info.amount, false, BitcoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::COMPUTE, info.amount, false, BitcoinUnits::separatorNever));
         paramCount++;
     }
 
@@ -442,7 +442,7 @@ void openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile(GetArg("-conf", BITCOIN_CONF_FILENAME));
 
-    /* Open ovo.conf with the associated application */
+    /* Open compute.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
@@ -652,15 +652,15 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Ovo Core.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Compute Core.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Ovo Core (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Ovo Core (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Compute Core (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Compute Core (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for "Ovo Core*.lnk"
+    // check for "Compute Core*.lnk"
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -752,8 +752,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "ovocore.desktop";
-    return GetAutostartDir() / strprintf("ovocore-%s.lnk", chain);
+        return GetAutostartDir() / "computecore.desktop";
+    return GetAutostartDir() / strprintf("computecore-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -792,13 +792,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a ovocore.desktop file to the autostart directory:
+        // Write a computecore.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Ovo Core\n";
+            optionFile << "Name=Compute Core\n";
         else
-            optionFile << strprintf("Name=Ovo Core (%s)\n", chain);
+            optionFile << strprintf("Name=Compute Core (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -819,7 +819,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the Ovo Core app
+    // loop through the list of startup items and try to find the Compute Core app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -864,7 +864,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add Ovo Core app to startup item list
+        // add Compute Core app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {

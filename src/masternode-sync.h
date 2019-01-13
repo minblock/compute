@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef MASTERNODE_SYNC_H
@@ -17,8 +17,8 @@ static const int MASTERNODE_SYNC_WAITING         = 1; // waiting after initial t
 static const int MASTERNODE_SYNC_LIST            = 2;
 static const int MASTERNODE_SYNC_MNW             = 3;
 static const int MASTERNODE_SYNC_GOVERNANCE      = 4;
-static const int MASTERNODE_SYNC_GOVOBJ          = 10;
-static const int MASTERNODE_SYNC_GOVOBJ_VOTE     = 11;
+static const int MASTERNODE_SYNC_GCOMPUTEBJ          = 10;
+static const int MASTERNODE_SYNC_GCOMPUTEBJ_VOTE     = 11;
 static const int MASTERNODE_SYNC_FINISHED        = 999;
 
 static const int MASTERNODE_SYNC_TICK_SECONDS    = 6;

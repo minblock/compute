@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,9 +19,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(OVO);
-    unitlist.append(mOVO);
-    unitlist.append(uOVO);
+    unitlist.append(COMPUTE);
+    unitlist.append(mCOMPUTE);
+    unitlist.append(uCOMPUTE);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -30,9 +30,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case OVO:
-    case mOVO:
-    case uOVO:
+    case COMPUTE:
+    case mCOMPUTE:
+    case uCOMPUTE:
     case duffs:
         return true;
     default:
@@ -46,9 +46,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case OVO: return QString("OVO");
-            case mOVO: return QString("mOVO");
-            case uOVO: return QString::fromUtf8("μOVO");
+            case COMPUTE: return QString("COMPUTE");
+            case mCOMPUTE: return QString("mCOMPUTE");
+            case uCOMPUTE: return QString::fromUtf8("μCOMPUTE");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -57,9 +57,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case OVO: return QString("tOVO");
-            case mOVO: return QString("mtOVO");
-            case uOVO: return QString::fromUtf8("μtOVO");
+            case COMPUTE: return QString("tCOMPUTE");
+            case mCOMPUTE: return QString("mtCOMPUTE");
+            case uCOMPUTE: return QString::fromUtf8("μtCOMPUTE");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case OVO: return QString("Ovo");
-            case mOVO: return QString("Milli-Ovo (1 / 1" THIN_SP_UTF8 "000)");
-            case uOVO: return QString("Micro-Ovo (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Ovo (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case COMPUTE: return QString("Compute");
+            case mCOMPUTE: return QString("Milli-Compute (1 / 1" THIN_SP_UTF8 "000)");
+            case uCOMPUTE: return QString("Micro-Compute (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-Compute (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case OVO: return QString("TestOvos");
-            case mOVO: return QString("Milli-TestOvo (1 / 1" THIN_SP_UTF8 "000)");
-            case uOVO: return QString("Micro-TestOvo (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestOvo (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case COMPUTE: return QString("TestComputes");
+            case mCOMPUTE: return QString("Milli-TestCompute (1 / 1" THIN_SP_UTF8 "000)");
+            case uCOMPUTE: return QString("Micro-TestCompute (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestCompute (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -96,9 +96,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case OVO:  return 100000000;
-    case mOVO: return 100000;
-    case uOVO: return 100;
+    case COMPUTE:  return 100000000;
+    case mCOMPUTE: return 100000;
+    case uCOMPUTE: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -108,9 +108,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case OVO: return 8;
-    case mOVO: return 5;
-    case uOVO: return 2;
+    case COMPUTE: return 8;
+    case mCOMPUTE: return 5;
+    case uCOMPUTE: return 2;
     case duffs: return 0;
     default: return 0;
     }

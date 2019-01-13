@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/ovo-config.h"
+#include "config/compute-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -92,13 +92,13 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("OVO-light"), QVariant("light"));
-    ui->theme->addItem(QString("OVO-light-hires"), QVariant("light-hires"));
-    ui->theme->addItem(QString("OVO-light-retro"), QVariant("light-retro"));
-    ui->theme->addItem(QString("OVO-light-hires-retro"), QVariant("light-hires-retro"));
-    ui->theme->addItem(QString("OVO-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("OVO-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("OVO-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("COMPUTE-light"), QVariant("light"));
+    ui->theme->addItem(QString("COMPUTE-light-hires"), QVariant("light-hires"));
+    ui->theme->addItem(QString("COMPUTE-light-retro"), QVariant("light-retro"));
+    ui->theme->addItem(QString("COMPUTE-light-hires-retro"), QVariant("light-hires-retro"));
+    ui->theme->addItem(QString("COMPUTE-blue"), QVariant("drkblue"));
+    ui->theme->addItem(QString("COMPUTE-Crownium"), QVariant("crownium"));
+    ui->theme->addItem(QString("COMPUTE-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");

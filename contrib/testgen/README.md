@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Ovo tests.
+Utilities to generate test vectors for the data-driven Compute tests.
 
 Usage: 
 

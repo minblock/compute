@@ -3,8 +3,8 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-SRCDIR="/root/ovoclone/ovo-master"
-BUILDDIR="/root/ovoclone/ovo-master"
+SRCDIR="/root/computeclone/compute-master"
+BUILDDIR="/root/computeclone/compute-master"
 EXEEXT=""
 
 # These will turn into comments if they were disabled when configuring.

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 
 #include "governance-validators.h"
 #include "utilstrencodings.h"
@@ -6,7 +6,7 @@
 #include "data/proposals_valid.json.h"
 #include "data/proposals_invalid.json.h"
 
-#include "test/test_ovo.h"
+#include "test/test_compute.h"
 
 #include <iostream>
 #include <fstream>

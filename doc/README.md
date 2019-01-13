@@ -1,37 +1,37 @@
-Ovo Core 0.12.1
+Compute Core 0.12.1
 =====================
 
-This is the official reference wallet for Ovo digital currency and comprises the backbone of the Ovo peer-to-peer network. You can [download Ovo Core](https://www.ovocoin.ca/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Compute digital currency and comprises the backbone of the Compute peer-to-peer network. You can [download Compute Core](https://www.computecoin.ca/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Ovo on your native platform.
+The following are some helpful notes on how to run Compute on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/ovo-qt` (GUI) or
-- `bin/ovod` (headless)
+- `bin/compute-qt` (GUI) or
+- `bin/computed` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run ovo-qt.exe.
+Unpack the files into a directory, and then run compute-qt.exe.
 
 ### OS X
 
-Drag Ovo-Qt to your applications folder, and then run Ovo-Qt.
+Drag Compute-Qt to your applications folder, and then run Compute-Qt.
 
 ### Need Help?
 
-* See the [Ovo documentation](https://minblock.atlassian.net/wiki/display/DOC)
+* See the [Compute documentation](https://minblock.atlassian.net/wiki/display/DOC)
 for help and more information.
-* Ask for help on [Ovo Nation Discord](http://ovochat.org)
-* Ask for help on the [Ovo Forum](https://ovocoin.ca/forum)
+* Ask for help on [Compute Nation Discord](http://computechat.org)
+* Ask for help on the [Compute Forum](https://computecoin.ca/forum)
 
 Building
 ---------------------
-The following are developer notes on how to build Ovo Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Compute Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build Ovo Core on your native platfo
 
 Development
 ---------------------
-The Ovo Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Compute Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -57,8 +57,8 @@ The Ovo Core repo's [root README](/README.md) contains relevant information on t
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Ovo Forum](https://ovocoin.ca/forum), in the Development & Technical Discussion board.
-* Discuss on [Ovo Nation Discord](http://ovochat.org)
+* Discuss on the [Compute Forum](https://computecoin.ca/forum), in the Development & Technical Discussion board.
+* Discuss on [Compute Nation Discord](http://computechat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

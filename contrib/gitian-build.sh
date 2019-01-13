@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/minblock/ovocoin
+url=https://github.com/minblock/computecoin
 proc=12
 mem=5000
 lxc=true
@@ -32,7 +32,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the ovo, gitian-builder, gitian.sigs, and ovo-detached-sigs.
+Run this script from the directory containing the compute, gitian-builder, gitian.sigs, and compute-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -40,7 +40,7 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/minblock/ovo
+-u|--url	Specify the URL of the repository. Default is https://github.com/minblock/compute
 -v|--verify 	Verify the gitian build
 -b|--build	Do a gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -264,7 +264,7 @@ then
 fi
 
 # Set up build
-pushd ./ovo
+pushd ./compute
 git fetch
 git checkout ${COMMIT}
 popd
@@ -273,7 +273,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./ovocore-binaries/${VERSION}
+	mkdir -p ./computecore-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -283,7 +283,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../ovocoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../computecoin/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -291,9 +291,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ovo=${COMMIT} --url ovo=${url} ../ovocoin/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../ovocoin/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/ovocore-*.tar.gz build/out/src/ovocore-*.tar.gz ../ovocore-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit compute=${COMMIT} --url compute=${url} ../computecoin/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs/ ../computecoin/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/computecore-*.tar.gz build/out/src/computecore-*.tar.gz ../computecore-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -301,10 +301,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ovo=${COMMIT} --url ovo=${url} ../ovocoin/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../ovocoin/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/ovocore-*-win-unsigned.tar.gz inputs/ovocore-win-unsigned.tar.gz
-	    mv build/out/ovocore-*.zip build/out/ovocore-*.exe ../ovocore-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit compute=${COMMIT} --url compute=${url} ../computecoin/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../computecoin/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/computecore-*-win-unsigned.tar.gz inputs/computecore-win-unsigned.tar.gz
+	    mv build/out/computecore-*.zip build/out/computecore-*.exe ../computecore-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -312,10 +312,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit ovo=${COMMIT} --url ovo=${url} ../ovocoin/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../ovocoin/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/ovocore-*-osx-unsigned.tar.gz inputs/ovocore-osx-unsigned.tar.gz
-	    mv build/out/ovocore-*.tar.gz build/out/ovocore-*.dmg ../ovocore-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit compute=${COMMIT} --url compute=${url} ../computecoin/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../computecoin/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/computecore-*-osx-unsigned.tar.gz inputs/computecore-osx-unsigned.tar.gz
+	    mv build/out/computecore-*.tar.gz build/out/computecore-*.dmg ../computecore-binaries/${VERSION}
 	fi
 	popd
 
@@ -342,27 +342,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../ovocoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../computecoin/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../ovocoin/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../computecoin/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX	
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""	
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../ovocoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../computecoin/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ovocoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../computecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../ovocoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../computecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
 	popd
 fi
 
@@ -377,10 +377,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../ovocoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../ovocoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/ovocore-*win64-setup.exe ../ovocore-binaries/${VERSION}
-	    mv build/out/ovocore-*win32-setup.exe ../ovocore-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../computecoin/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../computecoin/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/computecore-*win64-setup.exe ../computecore-binaries/${VERSION}
+	    mv build/out/computecore-*win32-setup.exe ../computecore-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -388,9 +388,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../ovocoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../ovocoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/ovocore-osx-signed.dmg ../ovocore-binaries/${VERSION}/ovocore-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../computecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p "$signProg" --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../computecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/computecore-osx-signed.dmg ../computecore-binaries/${VERSION}/computecore-${VERSION}-osx.dmg
 	fi
 	popd
 

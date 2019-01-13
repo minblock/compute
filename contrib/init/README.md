@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: ovod.service
-Upstart: ovod.conf
-OpenRC:  ovod.openrc
-         ovod.openrcconf
-CentOS:  ovod.init
-OS X:    org.ovo.ovod.plist
+SystemD: computed.service
+Upstart: computed.conf
+OpenRC:  computed.openrc
+         computed.openrcconf
+CentOS:  computed.init
+OS X:    org.compute.computed.plist
 
 have been made available to assist packagers in creating node packages here.
 

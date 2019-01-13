@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Ovo-Qt</string>
+  <string>Compute-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Ovo-Qt</string>
+  <string>Compute-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.ovo.Ovo-Qt</string>
+  <string>org.compute.Compute-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.ovo.OvoPayment</string>
+      <string>org.compute.ComputePayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>ovo</string>
+        <string>compute</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.ovo.paymentrequest</string>
+      <string>org.compute.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Ovo payment request</string>
+      <string>Compute payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,7 +68,7 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-ovo-payment-request</string>
+        <string>application/x-compute-payment-request</string>
         <key>public.filename-extension</key>
         <array>
           <string>minblockmentrequest</string>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.ovo.paymentrequest</string>
+        <string>org.compute.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

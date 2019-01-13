@@ -1,8 +1,8 @@
-Source: ovo
+Source: compute
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@ovocoin.ca>
-Uploaders: Holger Schinzel <holger@ovocoin.ca>
+Maintainer: Holger Schinzel <holger@computecoin.ca>
+Uploaders: Holger Schinzel <holger@computecoin.ca>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -26,45 +26,45 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.ovocoin.ca/
-Vcs-Git: git://github.com/minblock/ovo.git
-Vcs-Browser: https://github.com/minblock/ovo
+Homepage: https://www.computecoin.ca/
+Vcs-Git: git://github.com/minblock/compute.git
+Vcs-Browser: https://github.com/minblock/compute
 
-Package: ovod
+Package: computed
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Ovo is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Ovo uses peer-to-peer
+ Compute is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Compute uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Ovo Core
+ and issuing money are carried out collectively by the network. Compute Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, ovod, and the CLI tool
- ovo-cli to interact with the daemon.
+ This package provides the daemon, computed, and the CLI tool
+ compute-cli to interact with the daemon.
 
-Package: ovo-qt
+Package: compute-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Ovo is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Ovo uses peer-to-peer
+ Compute is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Compute uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Ovo Core
+ and issuing money are carried out collectively by the network. Compute Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Ovo-Qt, a GUI for Ovo based on Qt.
+ This package provides Compute-Qt, a GUI for Compute based on Qt.
 
-Package: ovo-tx
+Package: compute-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Ovo is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Ovo uses peer-to-peer
+ Compute is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Compute uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Ovo Core
+ and issuing money are carried out collectively by the network. Compute Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides ovo-tx, a command-line transaction creation
- tool which can be used without a ovo daemon.  Some means of
+ This package provides compute-tx, a command-line transaction creation
+ tool which can be used without a compute daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

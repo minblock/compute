@@ -5,7 +5,7 @@
 #include "serialize.h"
 #include "streams.h"
 #include "hash.h"
-#include "test/test_ovo.h"
+#include "test/test_compute.h"
 
 #include <stdint.h>
 

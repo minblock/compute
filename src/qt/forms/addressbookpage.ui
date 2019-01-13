@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../ovo.qrc"/>
+  <include location="../compute.qrc"/>
  </resources>
  <connections/>
 </ui>

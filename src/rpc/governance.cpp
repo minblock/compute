@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//#define ENABLE_OVO_DEBUG
+//#define ENABLE_COMPUTE_DEBUG
 
 #include "activemasternode.h"
 #include "consensus/validation.h"
@@ -57,7 +57,7 @@ UniValue gobject(const JSONRPCRequest& request)
                 "  list               - List governance objects (can be filtered by signal and/or object type)\n"
                 "  diff               - List differences since last diff\n"
                 "  vote-alias         - Vote on a governance object by masternode alias (using masternode.conf setup)\n"
-                "  vote-conf          - Vote on a governance object by masternode configured in ovo.conf\n"
+                "  vote-conf          - Vote on a governance object by masternode configured in compute.conf\n"
                 "  vote-many          - Vote on a governance object by all masternodes (using masternode.conf setup)\n"
                 );
 
@@ -115,9 +115,9 @@ UniValue gobject(const JSONRPCRequest& request)
         int64_t nTime = GetAdjustedTime();
         std::string strDataHex = request.params[1].get_str();
 
-        CGovernanceObject govobj(hashParent, nRevision, nTime, uint256(), strDataHex);
+        CGovernanceObject gcomputebj(hashParent, nRevision, nTime, uint256(), strDataHex);
 
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_PROPOSAL) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_PROPOSAL) {
             CProposalValidator validator(strDataHex);
             if(!validator.Validate())  {
                 throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid proposal data, error messages:" + validator.GetErrorMessages());
@@ -164,33 +164,33 @@ UniValue gobject(const JSONRPCRequest& request)
 
         // CREATE A NEW COLLATERAL TRANSACTION FOR THIS SPECIFIC OBJECT
 
-        CGovernanceObject govobj(hashParent, nRevision, nTime, uint256(), strDataHex);
+        CGovernanceObject gcomputebj(hashParent, nRevision, nTime, uint256(), strDataHex);
 
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_PROPOSAL) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_PROPOSAL) {
             CProposalValidator validator(strDataHex);
             if(!validator.Validate())  {
                 throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid proposal data, error messages:" + validator.GetErrorMessages());
             }
         }
 
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_TRIGGER) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_TRIGGER) {
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Trigger objects need not be prepared (however only masternodes can create them)");
         }
 
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_WATCHDOG) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_WATCHDOG) {
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Watchdogs are deprecated");
         }
 
         LOCK2(cs_main, pwalletMain->cs_wallet);
 
         std::string strError = "";
-        if(!govobj.IsValidLocally(strError, false))
-            throw JSONRPCError(RPC_INTERNAL_ERROR, "Governance object is not valid - " + govobj.GetHash().ToString() + " - " + strError);
+        if(!gcomputebj.IsValidLocally(strError, false))
+            throw JSONRPCError(RPC_INTERNAL_ERROR, "Governance object is not valid - " + gcomputebj.GetHash().ToString() + " - " + strError);
 
         EnsureWalletIsUnlocked();
 
         CWalletTx wtx;
-        if(!pwalletMain->GetBudgetSystemCollateralTX(wtx, govobj.GetHash(), govobj.GetMinCollateralFee(), false)) {
+        if(!pwalletMain->GetBudgetSystemCollateralTX(wtx, gcomputebj.GetHash(), gcomputebj.GetMinCollateralFee(), false)) {
             throw JSONRPCError(RPC_INTERNAL_ERROR, "Error making collateral transaction for governance object. Please check your wallet balance and make sure your wallet is unlocked.");
         }
 
@@ -203,8 +203,8 @@ UniValue gobject(const JSONRPCRequest& request)
         }
 
         DBG( std::cout << "gobject: prepare "
-             << " GetDataAsPlainString = " << govobj.GetDataAsPlainString()
-             << ", hash = " << govobj.GetHash().GetHex()
+             << " GetDataAsPlainString = " << gcomputebj.GetDataAsPlainString()
+             << ", hash = " << gcomputebj.GetHash().GetHex()
              << ", txidFee = " << wtx.GetHash().GetHex()
              << std::endl; );
 
@@ -252,30 +252,30 @@ UniValue gobject(const JSONRPCRequest& request)
         int64_t nTime = atoi64(strTime);
         std::string strDataHex = request.params[4].get_str();
 
-        CGovernanceObject govobj(hashParent, nRevision, nTime, txidFee, strDataHex);
+        CGovernanceObject gcomputebj(hashParent, nRevision, nTime, txidFee, strDataHex);
 
         DBG( std::cout << "gobject: submit "
-             << " GetDataAsPlainString = " << govobj.GetDataAsPlainString()
-             << ", hash = " << govobj.GetHash().GetHex()
+             << " GetDataAsPlainString = " << gcomputebj.GetDataAsPlainString()
+             << ", hash = " << gcomputebj.GetHash().GetHex()
              << ", txidFee = " << txidFee.GetHex()
              << std::endl; );
 
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_PROPOSAL) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_PROPOSAL) {
             CProposalValidator validator(strDataHex);
             if(!validator.Validate())  {
                 throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid proposal data, error messages:" + validator.GetErrorMessages());
             }
         }
 
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_WATCHDOG) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_WATCHDOG) {
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Watchdogs are deprecated");
         }
 
         // Attempt to sign triggers if we are a MN
-        if(govobj.GetObjectType() == GOVERNANCE_OBJECT_TRIGGER) {
+        if(gcomputebj.GetObjectType() == GOVERNANCE_OBJECT_TRIGGER) {
             if(fMnFound) {
-                govobj.SetMasternodeOutpoint(activeMasternode.outpoint);
-                govobj.Sign(activeMasternode.keyMasternode, activeMasternode.pubKeyMasternode);
+                gcomputebj.SetMasternodeOutpoint(activeMasternode.outpoint);
+                gcomputebj.Sign(activeMasternode.keyMasternode, activeMasternode.pubKeyMasternode);
             }
             else {
                 LogPrintf("gobject(submit) -- Object submission rejected because node is not a masternode\n");
@@ -289,14 +289,14 @@ UniValue gobject(const JSONRPCRequest& request)
             }
         }
 
-        std::string strHash = govobj.GetHash().ToString();
+        std::string strHash = gcomputebj.GetHash().ToString();
 
         std::string strError = "";
         bool fMissingMasternode;
         bool fMissingConfirmations;
         {
             LOCK(cs_main);
-            if(!govobj.IsValidLocally(strError, fMissingMasternode, fMissingConfirmations, true) && !fMissingConfirmations) {
+            if(!gcomputebj.IsValidLocally(strError, fMissingMasternode, fMissingConfirmations, true) && !fMissingConfirmations) {
                 LogPrintf("gobject(submit) -- Object submission rejected because object is not valid - hash = %s, strError = %s\n", strHash, strError);
                 throw JSONRPCError(RPC_INTERNAL_ERROR, "Governance object is not valid - " + strHash + " - " + strError);
             }
@@ -304,7 +304,7 @@ UniValue gobject(const JSONRPCRequest& request)
 
         // RELAY THIS OBJECT
         // Reject if rate check fails but don't update buffer
-        if(!governance.MasternodeRateCheck(govobj)) {
+        if(!governance.MasternodeRateCheck(gcomputebj)) {
             LogPrintf("gobject(submit) -- Object submission rejected because of rate check failure - hash = %s\n", strHash);
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Object creation rate limit exceeded");
         }
@@ -312,13 +312,13 @@ UniValue gobject(const JSONRPCRequest& request)
         LogPrintf("gobject(submit) -- Adding locally created governance object - %s\n", strHash);
 
         if(fMissingConfirmations) {
-            governance.AddPostponedObject(govobj);
-            govobj.Relay(*g_connman);
+            governance.AddPostponedObject(gcomputebj);
+            gcomputebj.Relay(*g_connman);
         } else {
-            governance.AddGovernanceObject(govobj, *g_connman);
+            governance.AddGovernanceObject(gcomputebj, *g_connman);
         }
 
-        return govobj.GetHash().ToString();
+        return gcomputebj.GetHash().ToString();
     }
 
     if(strCommand == "vote-conf")
@@ -363,7 +363,7 @@ UniValue gobject(const JSONRPCRequest& request)
             nFailed++;
             statusObj.push_back(Pair("result", "failed"));
             statusObj.push_back(Pair("errorMessage", "Can't find masternode by collateral output"));
-            resultsObj.push_back(Pair("ovo.conf", statusObj));
+            resultsObj.push_back(Pair("compute.conf", statusObj));
             returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
             returnObj.push_back(Pair("detail", resultsObj));
             return returnObj;
@@ -374,7 +374,7 @@ UniValue gobject(const JSONRPCRequest& request)
             nFailed++;
             statusObj.push_back(Pair("result", "failed"));
             statusObj.push_back(Pair("errorMessage", "Failure to sign."));
-            resultsObj.push_back(Pair("ovo.conf", statusObj));
+            resultsObj.push_back(Pair("compute.conf", statusObj));
             returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
             returnObj.push_back(Pair("detail", resultsObj));
             return returnObj;
@@ -391,7 +391,7 @@ UniValue gobject(const JSONRPCRequest& request)
             statusObj.push_back(Pair("errorMessage", exception.GetMessage()));
         }
 
-        resultsObj.push_back(Pair("ovo.conf", statusObj));
+        resultsObj.push_back(Pair("compute.conf", statusObj));
 
         returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
         returnObj.push_back(Pair("detail", resultsObj));
@@ -937,7 +937,7 @@ UniValue getgovernanceinfo(const JSONRPCRequest& request)
             "  \"superblockcycle\": xxxxx,               (numeric) the number of blocks between superblocks\n"
             "  \"lastsuperblock\": xxxxx,                (numeric) the block number of the last superblock\n"
             "  \"nextsuperblock\": xxxxx,                (numeric) the block number of the next superblock\n"
-            "  \"maxgovobjdatasize\": xxxxx,             (numeric) maximum governance object data size in bytes\n"
+            "  \"maxgcomputebjdatasize\": xxxxx,             (numeric) maximum governance object data size in bytes\n"
             "}\n"
             "\nExamples:\n"
             + HelpExampleCli("getgovernanceinfo", "")
@@ -960,7 +960,7 @@ UniValue getgovernanceinfo(const JSONRPCRequest& request)
     obj.push_back(Pair("superblockcycle", Params().GetConsensus().nSuperblockCycle));
     obj.push_back(Pair("lastsuperblock", nLastSuperblock));
     obj.push_back(Pair("nextsuperblock", nNextSuperblock));
-    obj.push_back(Pair("maxgovobjdatasize", MAX_GOVERNANCE_OBJECT_DATA_SIZE));
+    obj.push_back(Pair("maxgcomputebjdatasize", MAX_GOVERNANCE_OBJECT_DATA_SIZE));
 
     return obj;
 }
@@ -995,11 +995,11 @@ UniValue getsuperblockbudget(const JSONRPCRequest& request)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ ----------
-    /* Ovo features */
-    { "ovo",               "getgovernanceinfo",      &getgovernanceinfo,      true,  {} },
-    { "ovo",               "getsuperblockbudget",    &getsuperblockbudget,    true,  {"index"} },
-    { "ovo",               "gobject",                &gobject,                true,  {} },
-    { "ovo",               "voteraw",                &voteraw,                true,  {} },
+    /* Compute features */
+    { "compute",               "getgovernanceinfo",      &getgovernanceinfo,      true,  {} },
+    { "compute",               "getsuperblockbudget",    &getsuperblockbudget,    true,  {"index"} },
+    { "compute",               "gobject",                &gobject,                true,  {} },
+    { "compute",               "voteraw",                &voteraw,                true,  {} },
 
 };
 

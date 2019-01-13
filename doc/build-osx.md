@@ -24,17 +24,17 @@ If you want to build the disk image with `make deploy` (.dmg / optional), you ne
 
 NOTE: Building with Qt4 is still supported, however, doing so could result in a broken UI. Therefore, building with Qt5 is recommended.
 
-Build Ovo Core
+Build Compute Core
 ------------------------
 
-1. Clone the Ovo Core source code and cd into `ovo`
+1. Clone the Compute Core source code and cd into `compute`
 
-        git clone https://github.com/minblock/ovo
-        cd ovo
+        git clone https://github.com/minblock/compute
+        cd compute
 
-2.  Build Ovo Core:
+2.  Build Compute Core:
 
-    Configure and build the headless ovo binaries as well as the GUI (if Qt is found).
+    Configure and build the headless compute binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -53,37 +53,37 @@ Build Ovo Core
 Running
 -------
 
-Ovo Core is now available at `./src/ovod`
+Compute Core is now available at `./src/computed`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=ovorpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/OvoCore/ovo.conf"
+    echo -e "rpcuser=computerpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/ComputeCore/compute.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/OvoCore/ovo.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/ComputeCore/compute.conf"
 
-The first time you run ovod, it will start downloading the blockchain. This process could take several hours.
+The first time you run computed, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/OvoCore/debug.log
+    tail -f $HOME/Library/Application\ Support/ComputeCore/debug.log
 
 Other commands:
 -------
 
-    ./src/ovod -daemon # Starts the ovo daemon.
-    ./src/ovo-cli --help # Outputs a list of command-line options.
-    ./src/ovo-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/computed -daemon # Starts the compute daemon.
+    ./src/compute-cli --help # Outputs a list of command-line options.
+    ./src/compute-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for ovo development.
+You can use Qt Creator as an IDE, for compute development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "ovo-qt" as project name, enter src/qt as location
+4. Enter "compute-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef OVO_BIP39_H
-#define OVO_BIP39_H
+#ifndef COMPUTE_BIP39_H
+#define COMPUTE_BIP39_H
 
 #include "support/allocators/secure.h"
 

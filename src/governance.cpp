@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -64,8 +64,8 @@ bool CGovernanceManager::HaveVoteForHash(const uint256& nHash) const
 {
     LOCK(cs);
 
-    CGovernanceObject* pGovobj = NULL;
-    return cmapVoteToObject.Get(nHash, pGovobj) && pGovobj->GetVoteFile().HasVote(nHash);
+    CGovernanceObject* pGcomputebj = NULL;
+    return cmapVoteToObject.Get(nHash, pGcomputebj) && pGcomputebj->GetVoteFile().HasVote(nHash);
 }
 
 int CGovernanceManager::GetVoteCount() const
@@ -78,8 +78,8 @@ bool CGovernanceManager::SerializeVoteForHash(const uint256& nHash, CDataStream&
 {
     LOCK(cs);
 
-    CGovernanceObject* pGovobj = NULL;
-    return cmapVoteToObject.Get(nHash,pGovobj) && pGovobj->GetVoteFile().SerializeVoteToStream(nHash, ss);
+    CGovernanceObject* pGcomputebj = NULL;
+    return cmapVoteToObject.Get(nHash,pGcomputebj) && pGcomputebj->GetVoteFile().SerializeVoteToStream(nHash, ss);
 }
 
 void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStream& vRecv, CConnman& connman)
@@ -130,10 +130,10 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
     {
         // MAKE SURE WE HAVE A VALID REFERENCE TO THE TIP BEFORE CONTINUING
 
-        CGovernanceObject govobj;
-        vRecv >> govobj;
+        CGovernanceObject gcomputebj;
+        vRecv >> gcomputebj;
 
-        uint256 nHash = govobj.GetHash();
+        uint256 nHash = gcomputebj.GetHash();
 
         pfrom->setAskFor.erase(nHash);
 
@@ -162,13 +162,13 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
 
         if(mapObjects.count(nHash) || mapPostponedObjects.count(nHash) ||
            mapErasedGovernanceObjects.count(nHash) || mapMasternodeOrphanObjects.count(nHash)) {
-            // TODO - print error code? what if it's GOVOBJ_ERROR_IMMATURE?
+            // TODO - print error code? what if it's GCOMPUTEBJ_ERROR_IMMATURE?
             LogPrint("gobject", "MNGOVERNANCEOBJECT -- Received already seen object: %s\n", strHash);
             return;
         }
 
         bool fRateCheckBypassed = false;
-        if(!MasternodeRateCheck(govobj, true, false, fRateCheckBypassed)) {
+        if(!MasternodeRateCheck(gcomputebj, true, false, fRateCheckBypassed)) {
             LogPrintf("MNGOVERNANCEOBJECT -- masternode rate check failed - %s - (current block height %d) \n", strHash, nCachedBlockHeight);
             return;
         }
@@ -178,10 +178,10 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
 
         bool fMasternodeMissing = false;
         bool fMissingConfirmations = false;
-        bool fIsValid = govobj.IsValidLocally(strError, fMasternodeMissing, fMissingConfirmations, true);
+        bool fIsValid = gcomputebj.IsValidLocally(strError, fMasternodeMissing, fMissingConfirmations, true);
 
         if(fRateCheckBypassed && (fIsValid || fMasternodeMissing)) {
-            if(!MasternodeRateCheck(govobj, true)) {
+            if(!MasternodeRateCheck(gcomputebj, true)) {
                 LogPrintf("MNGOVERNANCEOBJECT -- masternode rate check failed (after signature verification) - %s - (current block height %d) \n", strHash, nCachedBlockHeight);
                 return;
             }
@@ -190,21 +190,21 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
         if(!fIsValid) {
             if(fMasternodeMissing) {
 
-                int& count = mapMasternodeOrphanCounter[govobj.GetMasternodeOutpoint()];
+                int& count = mapMasternodeOrphanCounter[gcomputebj.GetMasternodeOutpoint()];
                 if (count >= 10) {
-                    LogPrint("gobject", "MNGOVERNANCEOBJECT -- Too many orphan objects, missing masternode=%s\n", govobj.GetMasternodeOutpoint().ToStringShort());
+                    LogPrint("gobject", "MNGOVERNANCEOBJECT -- Too many orphan objects, missing masternode=%s\n", gcomputebj.GetMasternodeOutpoint().ToStringShort());
                     // ask for this object again in 2 minutes
-                    CInv inv(MSG_GOVERNANCE_OBJECT, govobj.GetHash());
+                    CInv inv(MSG_GOVERNANCE_OBJECT, gcomputebj.GetHash());
                     pfrom->AskFor(inv);
                     return;
                 }
 
                 count++;
                 ExpirationInfo info(pfrom->GetId(), GetAdjustedTime() + GOVERNANCE_ORPHAN_EXPIRATION_TIME);
-                mapMasternodeOrphanObjects.insert(std::make_pair(nHash, object_info_pair_t(govobj, info)));
+                mapMasternodeOrphanObjects.insert(std::make_pair(nHash, object_info_pair_t(gcomputebj, info)));
                 LogPrintf("MNGOVERNANCEOBJECT -- Missing masternode for: %s, strError = %s\n", strHash, strError);
             } else if(fMissingConfirmations) {
-                AddPostponedObject(govobj);
+                AddPostponedObject(gcomputebj);
                 LogPrintf("MNGOVERNANCEOBJECT -- Not enough fee confirmations for: %s, strError = %s\n", strHash, strError);
             } else {
                 LogPrintf("MNGOVERNANCEOBJECT -- Governance object is invalid - %s\n", strError);
@@ -215,7 +215,7 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
             return;
         }
 
-        AddGovernanceObject(govobj, connman, pfrom);
+        AddGovernanceObject(gcomputebj, connman, pfrom);
     }
 
     // A NEW GOVERNANCE OBJECT VOTE HAS ARRIVED
@@ -268,9 +268,9 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
     }
 }
 
-void CGovernanceManager::CheckOrphanVotes(CGovernanceObject& govobj, CGovernanceException& exception, CConnman& connman)
+void CGovernanceManager::CheckOrphanVotes(CGovernanceObject& gcomputebj, CGovernanceException& exception, CConnman& connman)
 {
-    uint256 nHash = govobj.GetHash();
+    uint256 nHash = gcomputebj.GetHash();
     std::vector<vote_time_pair_t> vecVotePairs;
     cmmapOrphanVotes.GetAll(nHash, vecVotePairs);
 
@@ -285,7 +285,7 @@ void CGovernanceManager::CheckOrphanVotes(CGovernanceObject& govobj, CGovernance
         if(pairVote.second < nNow) {
             fRemove = true;
         }
-        else if(govobj.ProcessVote(NULL, vote, exception, connman)) {
+        else if(gcomputebj.ProcessVote(NULL, vote, exception, connman)) {
             vote.Relay(connman);
             fRemove = true;
         }
@@ -295,32 +295,32 @@ void CGovernanceManager::CheckOrphanVotes(CGovernanceObject& govobj, CGovernance
     }
 }
 
-void CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, CConnman& connman, CNode* pfrom)
+void CGovernanceManager::AddGovernanceObject(CGovernanceObject& gcomputebj, CConnman& connman, CNode* pfrom)
 {
     DBG( std::cout << "CGovernanceManager::AddGovernanceObject START" << std::endl; );
 
-    uint256 nHash = govobj.GetHash();
+    uint256 nHash = gcomputebj.GetHash();
     std::string strHash = nHash.ToString();
 
     // UPDATE CACHED VARIABLES FOR THIS OBJECT AND ADD IT TO OUR MANANGED DATA
 
-    govobj.UpdateSentinelVariables(); //this sets local vars in object
+    gcomputebj.UpdateSentinelVariables(); //this sets local vars in object
 
     LOCK2(cs_main, cs);
     std::string strError = "";
 
     // MAKE SURE THIS OBJECT IS OK
 
-    if(!govobj.IsValidLocally(strError, true)) {
+    if(!gcomputebj.IsValidLocally(strError, true)) {
         LogPrintf("CGovernanceManager::AddGovernanceObject -- invalid governance object - %s - (nCachedBlockHeight %d) \n", strError, nCachedBlockHeight);
         return;
     }
 
-    LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- Adding object: hash = %s, type = %d\n", nHash.ToString(), govobj.GetObjectType());
+    LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- Adding object: hash = %s, type = %d\n", nHash.ToString(), gcomputebj.GetObjectType());
 
     // INSERT INTO OUR GOVERNANCE OBJECT MEMORY
     // IF WE HAVE THIS OBJECT ALREADY, WE DON'T WANT ANOTHER COPY
-    auto objpair = mapObjects.emplace(nHash, govobj);
+    auto objpair = mapObjects.emplace(nHash, gcomputebj);
 
     if(!objpair.second) {
         LogPrintf("CGovernanceManager::AddGovernanceObject -- already have governance object %s\n", nHash.ToString());
@@ -330,11 +330,11 @@ void CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, CConnman
     // SHOULD WE ADD THIS OBJECT TO ANY OTHER MANANGERS?
 
     DBG( std::cout << "CGovernanceManager::AddGovernanceObject Before trigger block, GetDataAsPlainString = "
-              << govobj.GetDataAsPlainString()
-              << ", nObjectType = " << govobj.nObjectType
+              << gcomputebj.GetDataAsPlainString()
+              << ", nObjectType = " << gcomputebj.nObjectType
               << std::endl; );
 
-    if (govobj.nObjectType == GOVERNANCE_OBJECT_TRIGGER) {
+    if (gcomputebj.nObjectType == GOVERNANCE_OBJECT_TRIGGER) {
         DBG( std::cout << "CGovernanceManager::AddGovernanceObject Before AddNewTrigger" << std::endl; );
         if (!triggerman.AddNewTrigger(nHash)) {
             LogPrint("gobject", "CGovernanceManager::AddGovernanceObject -- undo adding invalid trigger object: hash = %s\n", nHash.ToString());
@@ -349,17 +349,17 @@ void CGovernanceManager::AddGovernanceObject(CGovernanceObject& govobj, CConnman
     }
 
     LogPrintf("CGovernanceManager::AddGovernanceObject -- %s new, received from %s\n", strHash, pfrom? pfrom->GetAddrName() : "NULL");
-    govobj.Relay(connman);
+    gcomputebj.Relay(connman);
 
     // Update the rate buffer
-    MasternodeRateUpdate(govobj);
+    MasternodeRateUpdate(gcomputebj);
 
     masternodeSync.BumpAssetLastTime("CGovernanceManager::AddGovernanceObject");
 
     // WE MIGHT HAVE PENDING/ORPHAN VOTES FOR THIS OBJECT
 
     CGovernanceException exception;
-    CheckOrphanVotes(govobj, exception, connman);
+    CheckOrphanVotes(gcomputebj, exception, connman);
 
     DBG( std::cout << "CGovernanceManager::AddGovernanceObject END" << std::endl; );
 }
@@ -507,7 +507,7 @@ std::vector<CGovernanceVote> CGovernanceManager::GetCurrentVotes(const uint256& 
     // Find the governance object or short-circuit.
     object_m_cit it = mapObjects.find(nParentHash);
     if(it == mapObjects.end()) return vecResult;
-    const CGovernanceObject& govobj = it->second;
+    const CGovernanceObject& gcomputebj = it->second;
 
     CMasternode mn;
     std::map<COutPoint, CMasternode> mapMasternodes;
@@ -520,9 +520,9 @@ std::vector<CGovernanceVote> CGovernanceManager::GetCurrentVotes(const uint256& 
     // Loop thru each MN collateral outpoint and get the votes for the `nParentHash` governance object
     for (const auto& mnpair : mapMasternodes)
     {
-        // get a vote_rec_t from the govobj
+        // get a vote_rec_t from the gcomputebj
         vote_rec_t voteRecord;
-        if (!govobj.GetCurrentMNVotes(mnpair.first, voteRecord)) continue;
+        if (!gcomputebj.GetCurrentMNVotes(mnpair.first, voteRecord)) continue;
 
         for (vote_instance_m_it it3 = voteRecord.mapInstances.begin(); it3 != voteRecord.mapInstances.end(); ++it3) {
             int signal = (it3->first);
@@ -668,22 +668,22 @@ void CGovernanceManager::SyncSingleObjAndItsVotes(CNode* pnode, const uint256& n
         LogPrint("gobject", "CGovernanceManager::%s -- no matching object for hash %s, peer=%d\n", __func__, nProp.ToString(), pnode->id);
         return;
     }
-    CGovernanceObject& govobj = it->second;
+    CGovernanceObject& gcomputebj = it->second;
     std::string strHash = it->first.ToString();
 
-    LogPrint("gobject", "CGovernanceManager::%s -- attempting to sync govobj: %s, peer=%d\n", __func__, strHash, pnode->id);
+    LogPrint("gobject", "CGovernanceManager::%s -- attempting to sync gcomputebj: %s, peer=%d\n", __func__, strHash, pnode->id);
 
-    if(govobj.IsSetCachedDelete() || govobj.IsSetExpired()) {
-        LogPrintf("CGovernanceManager::%s -- not syncing deleted/expired govobj: %s, peer=%d\n", __func__,
+    if(gcomputebj.IsSetCachedDelete() || gcomputebj.IsSetExpired()) {
+        LogPrintf("CGovernanceManager::%s -- not syncing deleted/expired gcomputebj: %s, peer=%d\n", __func__,
                   strHash, pnode->id);
         return;
     }
 
-    // Push the govobj inventory message over to the other client
-    LogPrint("gobject", "CGovernanceManager::%s -- syncing govobj: %s, peer=%d\n", __func__, strHash, pnode->id);
+    // Push the gcomputebj inventory message over to the other client
+    LogPrint("gobject", "CGovernanceManager::%s -- syncing gcomputebj: %s, peer=%d\n", __func__, strHash, pnode->id);
     pnode->PushInventory(CInv(MSG_GOVERNANCE_OBJECT, it->first));
 
-    auto fileVotes = govobj.GetVoteFile();
+    auto fileVotes = gcomputebj.GetVoteFile();
 
     for (const auto& vote : fileVotes.GetVotes()) {
         uint256 nVoteHash = vote.GetHash();
@@ -695,8 +695,8 @@ void CGovernanceManager::SyncSingleObjAndItsVotes(CNode* pnode, const uint256& n
     }
 
     CNetMsgMaker msgMaker(pnode->GetSendVersion());
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GOVOBJ, 1));
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GOVOBJ_VOTE, nVoteCount));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ, 1));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ_VOTE, nVoteCount));
     LogPrintf("CGovernanceManager::%s -- sent 1 object and %d votes to peer=%d\n", __func__, nVoteCount, pnode->id);
 }
 
@@ -725,58 +725,58 @@ void CGovernanceManager::SyncAll(CNode* pnode, CConnman& connman) const
 
     // all valid objects, no votes
     for(object_m_cit it = mapObjects.begin(); it != mapObjects.end(); ++it) {
-        const CGovernanceObject& govobj = it->second;
+        const CGovernanceObject& gcomputebj = it->second;
         std::string strHash = it->first.ToString();
 
-        LogPrint("gobject", "CGovernanceManager::%s -- attempting to sync govobj: %s, peer=%d\n", __func__, strHash, pnode->id);
+        LogPrint("gobject", "CGovernanceManager::%s -- attempting to sync gcomputebj: %s, peer=%d\n", __func__, strHash, pnode->id);
 
-        if(govobj.IsSetCachedDelete() || govobj.IsSetExpired()) {
-            LogPrintf("CGovernanceManager::%s -- not syncing deleted/expired govobj: %s, peer=%d\n", __func__,
+        if(gcomputebj.IsSetCachedDelete() || gcomputebj.IsSetExpired()) {
+            LogPrintf("CGovernanceManager::%s -- not syncing deleted/expired gcomputebj: %s, peer=%d\n", __func__,
                       strHash, pnode->id);
             continue;
         }
 
         // Push the inventory budget proposal message over to the other client
-        LogPrint("gobject", "CGovernanceManager::%s -- syncing govobj: %s, peer=%d\n", __func__, strHash, pnode->id);
+        LogPrint("gobject", "CGovernanceManager::%s -- syncing gcomputebj: %s, peer=%d\n", __func__, strHash, pnode->id);
         pnode->PushInventory(CInv(MSG_GOVERNANCE_OBJECT, it->first));
         ++nObjCount;
     }
 
     CNetMsgMaker msgMaker(pnode->GetSendVersion());
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GOVOBJ, nObjCount));
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GOVOBJ_VOTE, nVoteCount));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ, nObjCount));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ_VOTE, nVoteCount));
     LogPrintf("CGovernanceManager::%s -- sent %d objects and %d votes to peer=%d\n", __func__, nObjCount, nVoteCount, pnode->id);
 }
 
-void CGovernanceManager::MasternodeRateUpdate(const CGovernanceObject& govobj)
+void CGovernanceManager::MasternodeRateUpdate(const CGovernanceObject& gcomputebj)
 {
-    if(govobj.GetObjectType() != GOVERNANCE_OBJECT_TRIGGER)
+    if(gcomputebj.GetObjectType() != GOVERNANCE_OBJECT_TRIGGER)
         return;
 
-    const COutPoint& masternodeOutpoint = govobj.GetMasternodeOutpoint();
+    const COutPoint& masternodeOutpoint = gcomputebj.GetMasternodeOutpoint();
     txout_m_it it  = mapLastMasternodeObject.find(masternodeOutpoint);
 
     if(it == mapLastMasternodeObject.end())
         it = mapLastMasternodeObject.insert(txout_m_t::value_type(masternodeOutpoint, last_object_rec(true))).first;
 
-    int64_t nTimestamp = govobj.GetCreationTime();
+    int64_t nTimestamp = gcomputebj.GetCreationTime();
     it->second.triggerBuffer.AddTimestamp(nTimestamp);
 
     if (nTimestamp > GetTime() + MAX_TIME_FUTURE_DEVIATION - RELIABLE_PROPAGATION_TIME) {
         // schedule additional relay for the object
-        setAdditionalRelayObjects.insert(govobj.GetHash());
+        setAdditionalRelayObjects.insert(gcomputebj.GetHash());
     }
 
     it->second.fStatusOK = true;
 }
 
-bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& govobj, bool fUpdateFailStatus)
+bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& gcomputebj, bool fUpdateFailStatus)
 {
     bool fRateCheckBypassed;
-    return MasternodeRateCheck(govobj, fUpdateFailStatus, true, fRateCheckBypassed);
+    return MasternodeRateCheck(gcomputebj, fUpdateFailStatus, true, fRateCheckBypassed);
 }
 
-bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& govobj, bool fUpdateFailStatus, bool fForce, bool& fRateCheckBypassed)
+bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& gcomputebj, bool fUpdateFailStatus, bool fForce, bool& fRateCheckBypassed)
 {
     LOCK(cs);
 
@@ -790,16 +790,16 @@ bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& govobj, bo
         return true;
     }
 
-    if(govobj.GetObjectType() != GOVERNANCE_OBJECT_TRIGGER) {
+    if(gcomputebj.GetObjectType() != GOVERNANCE_OBJECT_TRIGGER) {
         return true;
     }
 
-    const COutPoint& masternodeOutpoint = govobj.GetMasternodeOutpoint();
-    int64_t nTimestamp = govobj.GetCreationTime();
+    const COutPoint& masternodeOutpoint = gcomputebj.GetMasternodeOutpoint();
+    int64_t nTimestamp = gcomputebj.GetCreationTime();
     int64_t nNow = GetAdjustedTime();
     int64_t nSuperblockCycleSeconds = Params().GetConsensus().nSuperblockCycle * Params().GetConsensus().nPowTargetSpacing;
 
-    std::string strHash = govobj.GetHash().ToString();
+    std::string strHash = gcomputebj.GetHash().ToString();
 
     if(nTimestamp < nNow - 2 * nSuperblockCycleSeconds) {
         LogPrintf("CGovernanceManager::MasternodeRateCheck -- object %s rejected due to too old timestamp, masternode = %s, timestamp = %d, current time = %d\n",
@@ -848,10 +848,10 @@ bool CGovernanceManager::ProcessVote(CNode* pfrom, const CGovernanceVote& vote, 
 {
     ENTER_CRITICAL_SECTION(cs);
     uint256 nHashVote = vote.GetHash();
-    uint256 nHashGovobj = vote.GetParentHash();
+    uint256 nHashGcomputebj = vote.GetParentHash();
 
     if(cmapVoteToObject.HasKey(nHashVote)) {
-        LogPrint("gobject", "CGovernanceObject::ProcessVote -- skipping known valid vote %s for object %s\n", nHashVote.ToString(), nHashGovobj.ToString());
+        LogPrint("gobject", "CGovernanceObject::ProcessVote -- skipping known valid vote %s for object %s\n", nHashVote.ToString(), nHashGcomputebj.ToString());
         LEAVE_CRITICAL_SECTION(cs);
         return false;
     }
@@ -860,22 +860,22 @@ bool CGovernanceManager::ProcessVote(CNode* pfrom, const CGovernanceVote& vote, 
         std::ostringstream ostr;
         ostr << "CGovernanceManager::ProcessVote -- Old invalid vote "
                 << ", MN outpoint = " << vote.GetMasternodeOutpoint().ToStringShort()
-                << ", governance object hash = " << nHashGovobj.ToString();
+                << ", governance object hash = " << nHashGcomputebj.ToString();
         LogPrintf("%s\n", ostr.str());
         exception = CGovernanceException(ostr.str(), GOVERNANCE_EXCEPTION_PERMANENT_ERROR, 20);
         LEAVE_CRITICAL_SECTION(cs);
         return false;
     }
 
-    object_m_it it = mapObjects.find(nHashGovobj);
+    object_m_it it = mapObjects.find(nHashGcomputebj);
     if(it == mapObjects.end()) {
         std::ostringstream ostr;
-        ostr << "CGovernanceManager::ProcessVote -- Unknown parent object " << nHashGovobj.ToString()
+        ostr << "CGovernanceManager::ProcessVote -- Unknown parent object " << nHashGcomputebj.ToString()
              << ", MN outpoint = " << vote.GetMasternodeOutpoint().ToStringShort();
         exception = CGovernanceException(ostr.str(), GOVERNANCE_EXCEPTION_WARNING);
-        if(cmmapOrphanVotes.Insert(nHashGovobj, vote_time_pair_t(vote, GetAdjustedTime() + GOVERNANCE_ORPHAN_EXPIRATION_TIME))) {
+        if(cmmapOrphanVotes.Insert(nHashGcomputebj, vote_time_pair_t(vote, GetAdjustedTime() + GOVERNANCE_ORPHAN_EXPIRATION_TIME))) {
             LEAVE_CRITICAL_SECTION(cs);
-            RequestGovernanceObject(pfrom, nHashGovobj, connman);
+            RequestGovernanceObject(pfrom, nHashGcomputebj, connman);
             LogPrintf("%s\n", ostr.str());
             return false;
         }
@@ -885,15 +885,15 @@ bool CGovernanceManager::ProcessVote(CNode* pfrom, const CGovernanceVote& vote, 
         return false;
     }
 
-    CGovernanceObject& govobj = it->second;
+    CGovernanceObject& gcomputebj = it->second;
 
-    if(govobj.IsSetCachedDelete() || govobj.IsSetExpired()) {
-        LogPrint("gobject", "CGovernanceObject::ProcessVote -- ignoring vote for expired or deleted object, hash = %s\n", nHashGovobj.ToString());
+    if(gcomputebj.IsSetCachedDelete() || gcomputebj.IsSetExpired()) {
+        LogPrint("gobject", "CGovernanceObject::ProcessVote -- ignoring vote for expired or deleted object, hash = %s\n", nHashGcomputebj.ToString());
         LEAVE_CRITICAL_SECTION(cs);
         return false;
     }
 
-    bool fOk = govobj.ProcessVote(pfrom, vote, exception, connman) && cmapVoteToObject.Insert(nHashVote, &govobj);
+    bool fOk = gcomputebj.ProcessVote(pfrom, vote, exception, connman) && cmapVoteToObject.Insert(nHashVote, &gcomputebj);
     LEAVE_CRITICAL_SECTION(cs);
     return fOk;
 }
@@ -917,16 +917,16 @@ void CGovernanceManager::CheckMasternodeOrphanObjects(CConnman& connman)
     object_info_m_it it = mapMasternodeOrphanObjects.begin();
     while(it != mapMasternodeOrphanObjects.end()) {
         object_info_pair_t& pair = it->second;
-        CGovernanceObject& govobj = pair.first;
+        CGovernanceObject& gcomputebj = pair.first;
 
         if(pair.second.nExpirationTime >= nNow) {
             std::string strError;
             bool fMasternodeMissing = false;
             bool fConfirmationsMissing = false;
-            bool fIsValid = govobj.IsValidLocally(strError, fMasternodeMissing, fConfirmationsMissing, true);
+            bool fIsValid = gcomputebj.IsValidLocally(strError, fMasternodeMissing, fConfirmationsMissing, true);
 
             if(fIsValid) {
-                AddGovernanceObject(govobj, connman);
+                AddGovernanceObject(gcomputebj, connman);
             } else if(fMasternodeMissing) {
                 ++it;
                 continue;
@@ -936,7 +936,7 @@ void CGovernanceManager::CheckMasternodeOrphanObjects(CConnman& connman)
             Misbehaving(pair.second.idFrom, 20);
         }
 
-        auto it_count = mapMasternodeOrphanCounter.find(govobj.GetMasternodeOutpoint());
+        auto it_count = mapMasternodeOrphanCounter.find(gcomputebj.GetMasternodeOutpoint());
         if(--it_count->second == 0)
             mapMasternodeOrphanCounter.erase(it_count);
 
@@ -954,16 +954,16 @@ void CGovernanceManager::CheckPostponedObjects(CConnman& connman)
     for(object_m_it it = mapPostponedObjects.begin(); it != mapPostponedObjects.end();) {
 
         const uint256& nHash = it->first;
-        CGovernanceObject& govobj = it->second;
+        CGovernanceObject& gcomputebj = it->second;
 
-        assert(govobj.GetObjectType() != GOVERNANCE_OBJECT_TRIGGER);
+        assert(gcomputebj.GetObjectType() != GOVERNANCE_OBJECT_TRIGGER);
 
         std::string strError;
         bool fMissingConfirmations;
-        if (govobj.IsCollateralValid(strError, fMissingConfirmations))
+        if (gcomputebj.IsCollateralValid(strError, fMissingConfirmations))
         {
-            if(govobj.IsValidLocally(strError, false))
-                AddGovernanceObject(govobj, connman);
+            if(gcomputebj.IsValidLocally(strError, false))
+                AddGovernanceObject(gcomputebj, connman);
             else
                 LogPrintf("CGovernanceManager::CheckPostponedObjects -- %s invalid\n", nHash.ToString());
 
@@ -987,17 +987,17 @@ void CGovernanceManager::CheckPostponedObjects(CConnman& connman)
         object_m_it itObject = mapObjects.find(*it);
         if(itObject != mapObjects.end()) {
 
-            CGovernanceObject& govobj = itObject->second;
+            CGovernanceObject& gcomputebj = itObject->second;
 
-            int64_t nTimestamp = govobj.GetCreationTime();
+            int64_t nTimestamp = gcomputebj.GetCreationTime();
 
             bool fValid = (nTimestamp <= nNow + MAX_TIME_FUTURE_DEVIATION) && (nTimestamp >= nNow - 2 * nSuperblockCycleSeconds);
             bool fReady = (nTimestamp <= nNow + MAX_TIME_FUTURE_DEVIATION - RELIABLE_PROPAGATION_TIME);
 
             if(fValid) {
                 if(fReady) {
-                    LogPrintf("CGovernanceManager::CheckPostponedObjects -- additional relay: hash = %s\n", govobj.GetHash().ToString());
-                    govobj.Relay(connman);
+                    LogPrintf("CGovernanceManager::CheckPostponedObjects -- additional relay: hash = %s\n", gcomputebj.GetHash().ToString());
+                    gcomputebj.Relay(connman);
                 } else {
                     it++;
                     continue;
@@ -1115,14 +1115,14 @@ int CGovernanceManager::RequestGovernanceObjectVotes(const std::vector<CNode*>& 
     std::random_shuffle(vpGovObjsTmp.begin(), vpGovObjsTmp.end(), insecure_rand);
 
     for (int i = 0; i < nMaxObjRequestsPerNode; ++i) {
-        uint256 nHashGovobj;
+        uint256 nHashGcomputebj;
 
         // ask for triggers first
         if(vpGovObjsTriggersTmp.size()) {
-            nHashGovobj = vpGovObjsTriggersTmp.back()->GetHash();
+            nHashGcomputebj = vpGovObjsTriggersTmp.back()->GetHash();
         } else {
             if(vpGovObjsTmp.empty()) break;
-            nHashGovobj = vpGovObjsTmp.back()->GetHash();
+            nHashGcomputebj = vpGovObjsTmp.back()->GetHash();
         }
         bool fAsked = false;
         for (const auto& pnode : vNodesCopy) {
@@ -1137,13 +1137,13 @@ int CGovernanceManager::RequestGovernanceObjectVotes(const std::vector<CNode*>& 
             size_t nProjectedSize = pnode->setAskFor.size() + nProjectedVotes;
             if(nProjectedSize > SETASKFOR_MAX_SZ/2) continue;
             // to early to ask the same node
-            if(mapAskedRecently[nHashGovobj].count(pnode->addr)) continue;
+            if(mapAskedRecently[nHashGcomputebj].count(pnode->addr)) continue;
 
-            RequestGovernanceObject(pnode, nHashGovobj, connman, true);
-            mapAskedRecently[nHashGovobj][pnode->addr] = nNow + nTimeout;
+            RequestGovernanceObject(pnode, nHashGcomputebj, connman, true);
+            mapAskedRecently[nHashGcomputebj][pnode->addr] = nNow + nTimeout;
             fAsked = true;
             // stop loop if max number of peers per obj was asked
-            if(mapAskedRecently[nHashGovobj].size() >= nPeersPerHashMax) break;
+            if(mapAskedRecently[nHashGcomputebj].size() >= nPeersPerHashMax) break;
         }
         // NOTE: this should match `if` above (the one before `while`)
         if(vpGovObjsTriggersTmp.size()) {
@@ -1189,10 +1189,10 @@ void CGovernanceManager::RebuildIndexes()
 
     cmapVoteToObject.Clear();
     for(object_m_it it = mapObjects.begin(); it != mapObjects.end(); ++it) {
-        CGovernanceObject& govobj = it->second;
-        std::vector<CGovernanceVote> vecVotes = govobj.GetVoteFile().GetVotes();
+        CGovernanceObject& gcomputebj = it->second;
+        std::vector<CGovernanceVote> vecVotes = gcomputebj.GetVoteFile().GetVotes();
         for(size_t i = 0; i < vecVotes.size(); ++i) {
-            cmapVoteToObject.Insert(vecVotes[i].GetHash(), &govobj);
+            cmapVoteToObject.Insert(vecVotes[i].GetHash(), &gcomputebj);
         }
     }
 }
@@ -1202,16 +1202,16 @@ void CGovernanceManager::AddCachedTriggers()
     LOCK(cs);
 
     for (auto& objpair : mapObjects) {
-        CGovernanceObject& govobj = objpair.second;
+        CGovernanceObject& gcomputebj = objpair.second;
 
-        if(govobj.nObjectType != GOVERNANCE_OBJECT_TRIGGER) {
+        if(gcomputebj.nObjectType != GOVERNANCE_OBJECT_TRIGGER) {
             continue;
         }
 
-        if (!triggerman.AddNewTrigger(govobj.GetHash())) {
-            govobj.fCachedDelete = true;
-            if (govobj.nDeletionTime == 0) {
-                govobj.nDeletionTime = GetAdjustedTime();
+        if (!triggerman.AddNewTrigger(gcomputebj.GetHash())) {
+            gcomputebj.fCachedDelete = true;
+            if (gcomputebj.nDeletionTime == 0) {
+                gcomputebj.nDeletionTime = GetAdjustedTime();
             }
         }
     }

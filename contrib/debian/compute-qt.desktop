@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Compute Core
+Comment=Compute P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Compute peer-to-peer Netzwerk
+Comment[fr]=Compute, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Compute, eşten eşe kriptografik sanal para birimi
+Exec=compute-qt %u
+Terminal=false
+Type=Application
+Icon=compute128
+MimeType=x-scheme-handler/compute;
+Categories=Office;Finance;

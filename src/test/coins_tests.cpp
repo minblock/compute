@@ -7,7 +7,7 @@
 #include "uint256.h"
 #include "undo.h"
 #include "utilstrencodings.h"
-#include "test/test_ovo.h"
+#include "test/test_compute.h"
 #include "test/test_random.h"
 #include "validation.h"
 #include "consensus/validation.h"

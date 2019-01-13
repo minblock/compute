@@ -14,7 +14,7 @@
 #include "util.h"
 #include "validation.h"
 
-#include "test/test_ovo.h"
+#include "test/test_compute.h"
 
 #include <stdint.h>
 

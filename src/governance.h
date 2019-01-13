@@ -1,11 +1,11 @@
-// Copyright (c) 2014-2017 The Ovo Core developers
+// Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef GOVERNANCE_H
 #define GOVERNANCE_H
 
-//#define ENABLE_OVO_DEBUG
+//#define ENABLE_COMPUTE_DEBUG
 
 #include "bloom.h"
 #include "cachemap.h"
@@ -307,7 +307,7 @@ public:
     std::vector<CGovernanceVote> GetCurrentVotes(const uint256& nParentHash, const COutPoint& mnCollateralOutpointFilter) const;
     std::vector<const CGovernanceObject*> GetAllNewerThan(int64_t nMoreThanTime) const;
 
-    void AddGovernanceObject(CGovernanceObject& govobj, CConnman& connman, CNode* pfrom = NULL);
+    void AddGovernanceObject(CGovernanceObject& gcomputebj, CConnman& connman, CNode* pfrom = NULL);
 
     void UpdateCachesAndClean();
 
@@ -371,21 +371,21 @@ public:
 
     bool SerializeVoteForHash(const uint256& nHash, CDataStream& ss) const;
 
-    void AddPostponedObject(const CGovernanceObject& govobj)
+    void AddPostponedObject(const CGovernanceObject& gcomputebj)
     {
         LOCK(cs);
-        mapPostponedObjects.insert(std::make_pair(govobj.GetHash(), govobj));
+        mapPostponedObjects.insert(std::make_pair(gcomputebj.GetHash(), gcomputebj));
     }
 
     void AddSeenGovernanceObject(const uint256& nHash, int status);
 
     void AddSeenVote(const uint256& nHash, int status);
 
-    void MasternodeRateUpdate(const CGovernanceObject& govobj);
+    void MasternodeRateUpdate(const CGovernanceObject& gcomputebj);
 
-    bool MasternodeRateCheck(const CGovernanceObject& govobj, bool fUpdateFailStatus = false);
+    bool MasternodeRateCheck(const CGovernanceObject& gcomputebj, bool fUpdateFailStatus = false);
 
-    bool MasternodeRateCheck(const CGovernanceObject& govobj, bool fUpdateFailStatus, bool fForce, bool& fRateCheckBypassed);
+    bool MasternodeRateCheck(const CGovernanceObject& gcomputebj, bool fUpdateFailStatus, bool fForce, bool& fRateCheckBypassed);
 
     bool ProcessVoteAndRelay(const CGovernanceVote& vote, CGovernanceException& exception, CConnman& connman) {
         bool fOK = ProcessVote(NULL, vote, exception, connman);
@@ -434,7 +434,7 @@ private:
 
     static bool AcceptMessage(const uint256& nHash, hash_s_t& setHash);
 
-    void CheckOrphanVotes(CGovernanceObject& govobj, CGovernanceException& exception, CConnman& connman);
+    void CheckOrphanVotes(CGovernanceObject& gcomputebj, CGovernanceException& exception, CConnman& connman);
 
     void RebuildIndexes();
 

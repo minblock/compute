@@ -5,41 +5,41 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the ovod tests manually, launch `src/test/test_ovo`.
+To run the computed tests manually, launch `src/test/test_compute`.
 
-To add more ovod tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more computed tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the ovo-qt tests manually, launch `src/qt/test/test_ovo-qt`
+To run the compute-qt tests manually, launch `src/qt/test/test_compute-qt`
 
-To add more ovo-qt tests, add them to the `src/qt/test/` directory and
+To add more compute-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.
 
 ### Running individual tests
 
-test_ovo has some built-in command-line arguments; for
+test_compute has some built-in command-line arguments; for
 example, to run just the getarg_tests verbosely:
 
-    test_ovo --log_level=all --run_test=getarg_tests
+    test_compute --log_level=all --run_test=getarg_tests
 
-... or to run just the doubleovo test:
+... or to run just the doublecompute test:
 
-    test_ovo --run_test=getarg_tests/doubleovo
+    test_compute --run_test=getarg_tests/doublecompute
 
-Run `test_ovo --help` for the full list.
+Run `test_compute --help` for the full list.
 
 ### Note on adding test cases
 
 The sources in this directory are unit test cases.  Boost includes a
-unit testing framework, and since Ovo Core already uses boost, it makes
+unit testing framework, and since Compute Core already uses boost, it makes
 sense to simply use this framework rather than require developers to
 configure some other framework (we want as few impediments to creating
 unit tests as possible).
 
-The build system is setup to compile an executable called `test_ovo`
+The build system is setup to compile an executable called `test_compute`
 that runs all of the unit tests.  The main source file is called
-test_ovo.cpp. To add a new unit test file to our test suite you need 
+test_compute.cpp. To add a new unit test file to our test suite you need 
 to add the file to `src/Makefile.test.include`. The pattern is to create 
 one test file for each class or source file for which you want to create 
 unit tests.  The file naming convention is `<source_filename>_tests.cpp` 
@@ -53,7 +53,7 @@ explaining how the boost unit test framework works:
 
 ### bitcoin-util-test.py
 
-The test directory also contains the bitcoin-util-test.py tool, which tests bitcoin utils (currently just ovo-tx). This test gets run automatically during the `make check` build process. It is also possible to run the test manually from the src directory:
+The test directory also contains the bitcoin-util-test.py tool, which tests bitcoin utils (currently just compute-tx). This test gets run automatically during the `make check` build process. It is also possible to run the test manually from the src directory:
 
 ```
 test/bitcoin-util-test.py --srcdir=[current directory]

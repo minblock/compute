@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.ovo.Ovo-Qt";
+        return @"org.compute.Compute-Qt";
     } else {
         return [self __bundleIdentifier];
     }

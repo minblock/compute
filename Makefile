@@ -15,7 +15,7 @@
 
 
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2014-2018 The Ovo Core developers
+# Copyright (c) 2014-2018 The Compute Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -76,10 +76,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/ovocore
-pkgincludedir = $(includedir)/ovocore
-pkglibdir = $(libdir)/ovocore
-pkglibexecdir = $(libexecdir)/ovocore
+pkgdatadir = $(datadir)/computecore
+pkgincludedir = $(includedir)/computecore
+pkglibdir = $(libdir)/computecore
+pkglibexecdir = $(libexecdir)/computecore
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -128,8 +128,8 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = $(top_builddir)/src/config/ovo-config.h
-CONFIG_CLEAN_FILES = libovoconsensus.pc share/setup.nsi \
+CONFIG_HEADER = $(top_builddir)/src/config/compute-config.h
+CONFIG_CLEAN_FILES = libcomputeconsensus.pc share/setup.nsi \
 	share/qt/Info.plist src/test/buildenv.py \
 	qa/pull-tester/tests_config.py contrib/devtools/split-debug.sh
 CONFIG_CLEAN_VPATH_FILES = qa/pull-tester/rpc-tests.py
@@ -220,7 +220,7 @@ CTAGS = ctags
 CSCOPE = cscope
 DIST_SUBDIRS = src doc/man
 am__DIST_COMMON = $(srcdir)/Makefile.in \
-	$(srcdir)/libovoconsensus.pc.in \
+	$(srcdir)/libcomputeconsensus.pc.in \
 	$(top_srcdir)/build-aux/compile \
 	$(top_srcdir)/build-aux/config.guess \
 	$(top_srcdir)/build-aux/config.sub \
@@ -232,7 +232,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/qa/pull-tester/tests_config.py.in \
 	$(top_srcdir)/share/qt/Info.plist.in \
 	$(top_srcdir)/share/setup.nsi.in \
-	$(top_srcdir)/src/config/ovo-config.h.in \
+	$(top_srcdir)/src/config/compute-config.h.in \
 	$(top_srcdir)/src/test/buildenv.py.in COPYING \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
 	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
@@ -277,21 +277,21 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /root/ovoclone/ovo-master/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /root/computeclone/compute-master/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /root/ovoclone/ovo-master/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /root/ovoclone/ovo-master/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /root/ovoclone/ovo-master/build-aux/missing automake-1.15
+AUTOCONF = ${SHELL} /root/computeclone/compute-master/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /root/computeclone/compute-master/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /root/computeclone/compute-master/build-aux/missing automake-1.15
 AWK = mawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
-BITCOIN_CLI_NAME = ovo-cli
-BITCOIN_DAEMON_NAME = ovod
-BITCOIN_GUI_NAME = ovo-qt
-BITCOIN_TX_NAME = ovo-tx
+BITCOIN_CLI_NAME = compute-cli
+BITCOIN_DAEMON_NAME = computed
+BITCOIN_GUI_NAME = compute-qt
+BITCOIN_TX_NAME = compute-tx
 BOOST_CHRONO_LIB = -lboost_chrono
 BOOST_CPPFLAGS = -pthread -I/usr/include
 BOOST_FILESYSTEM_LIB = -lboost_filesystem
@@ -312,8 +312,8 @@ CLIENT_VERSION_MAJOR = 0
 CLIENT_VERSION_MINOR = 12
 CLIENT_VERSION_REVISION = 3
 COPYRIGHT_HOLDERS = The %s developers
-COPYRIGHT_HOLDERS_FINAL = The Ovo Core developers
-COPYRIGHT_HOLDERS_SUBSTITUTION = Ovo Core
+COPYRIGHT_HOLDERS_FINAL = The Compute Core developers
+COPYRIGHT_HOLDERS_SUBSTITUTION = Compute Core
 COPYRIGHT_YEAR = 2018
 CPP = gcc -E
 CPPFILT = /usr/bin/c++filt
@@ -377,7 +377,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/lib/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /root/ovoclone/ovo-master/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /root/computeclone/compute-master/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -395,12 +395,12 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = ovocore
-PACKAGE_BUGREPORT = https://github.com/minblock/ovo/issues
-PACKAGE_NAME = Ovo Core
-PACKAGE_STRING = Ovo Core 0.12.3
-PACKAGE_TARNAME = ovocore
-PACKAGE_URL = https://ovocoin.ca/
+PACKAGE = computecore
+PACKAGE_BUGREPORT = https://github.com/minblock/compute/issues
+PACKAGE_NAME = Compute Core
+PACKAGE_STRING = Compute Core 0.12.3
+PACKAGE_TARNAME = computecore
+PACKAGE_URL = https://computecoin.ca/
 PACKAGE_VERSION = 0.12.3
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
@@ -465,10 +465,10 @@ X11XCB_LIBS =
 XGETTEXT = /usr/bin/xgettext
 ZMQ_CFLAGS = 
 ZMQ_LIBS = -lzmq
-abs_builddir = /root/ovoclone/ovo-master
-abs_srcdir = /root/ovoclone/ovo-master
-abs_top_builddir = /root/ovoclone/ovo-master
-abs_top_srcdir = /root/ovoclone/ovo-master
+abs_builddir = /root/computeclone/compute-master
+abs_srcdir = /root/computeclone/compute-master
+abs_top_builddir = /root/computeclone/compute-master
+abs_top_srcdir = /root/computeclone/compute-master
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -500,7 +500,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/ovoclone/ovo-master/build-aux/install-sh
+install_sh = ${SHELL} /root/computeclone/compute-master/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -526,14 +526,14 @@ ACLOCAL_AMFLAGS = -I build-aux/m4
 SUBDIRS = src $(am__append_1)
 GZIP_ENV = "-9n"
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libovoconsensus.pc
+pkgconfig_DATA = libcomputeconsensus.pc
 BITCOIND_BIN = $(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
 BITCOIN_QT_BIN = $(top_builddir)/src/qt/$(BITCOIN_GUI_NAME)$(EXEEXT)
 BITCOIN_CLI_BIN = $(top_builddir)/src/$(BITCOIN_CLI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 empty := 
 space := $(empty) $(empty)
-OSX_APP = Ovo-Qt.app
+OSX_APP = Compute-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_BACKGROUND_SVG = background.svg
@@ -546,9 +546,9 @@ OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/bitcoin.icns
 OSX_PLIST = $(top_builddir)/share/qt/Info.plist #not installed
 OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
-DIST_CONTRIB = $(top_srcdir)/contrib/ovo-cli.bash-completion \
-	       $(top_srcdir)/contrib/ovo-tx.bash-completion \
-	       $(top_srcdir)/contrib/ovod.bash-completion \
+DIST_CONTRIB = $(top_srcdir)/contrib/compute-cli.bash-completion \
+	       $(top_srcdir)/contrib/compute-tx.bash-completion \
+	       $(top_srcdir)/contrib/computed.bash-completion \
 	       $(top_srcdir)/contrib/init
 
 BIN_CHECKS = $(top_srcdir)/contrib/devtools/symbol-check.py \
@@ -566,13 +566,13 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
 COVERAGE_INFO = baseline_filtered_combined.info baseline.info \
-  leveldb_baseline.info test_ovo_filtered.info total_coverage.info \
+  leveldb_baseline.info test_compute_filtered.info total_coverage.info \
   baseline_filtered.info rpc_test.info rpc_test_filtered.info \
-  leveldb_baseline_filtered.info test_ovo_coverage.info test_ovo.info
+  leveldb_baseline_filtered.info test_compute_coverage.info test_compute.info
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/Ovo-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/Compute-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 APP_DIST_DIR = $(top_builddir)/dist
 APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
@@ -621,21 +621,21 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 
-src/config/ovo-config.h: src/config/stamp-h1
+src/config/compute-config.h: src/config/stamp-h1
 	@test -f $@ || rm -f src/config/stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) src/config/stamp-h1
 
-src/config/stamp-h1: $(top_srcdir)/src/config/ovo-config.h.in $(top_builddir)/config.status
+src/config/stamp-h1: $(top_srcdir)/src/config/compute-config.h.in $(top_builddir)/config.status
 	@rm -f src/config/stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status src/config/ovo-config.h
-$(top_srcdir)/src/config/ovo-config.h.in:  $(am__configure_deps) 
+	cd $(top_builddir) && $(SHELL) ./config.status src/config/compute-config.h
+$(top_srcdir)/src/config/compute-config.h.in:  $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f src/config/stamp-h1
 	touch $@
 
 distclean-hdr:
-	-rm -f src/config/ovo-config.h src/config/stamp-h1
-libovoconsensus.pc: $(top_builddir)/config.status $(srcdir)/libovoconsensus.pc.in
+	-rm -f src/config/compute-config.h src/config/stamp-h1
+libcomputeconsensus.pc: $(top_builddir)/config.status $(srcdir)/libcomputeconsensus.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 share/setup.nsi: $(top_builddir)/config.status $(top_srcdir)/share/setup.nsi.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -1138,7 +1138,7 @@ $(OSX_APP)/Contents/Resources/bitcoin.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Ovo-Qt: $(BITCOIN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Compute-Qt: $(BITCOIN_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -1165,7 +1165,7 @@ $(APP_DIST_DIR)/Applications:
 	@rm -f $@
 	@cd $(@D); $(LN_S) /Applications $(@F)
 
-$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Ovo-Qt
+$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Compute-Qt
 
 $(OSX_DMG): $(APP_DIST_EXTRAS)
 	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "$(OSX_VOLNAME)" -no-pad -r -dir-mode 0755 -apple -o $@ dist
@@ -1179,7 +1179,7 @@ $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE): $(OSX_BACKGROUND_IMAGE_DPIF
 $(APP_DIST_DIR)/.DS_Store: $(OSX_DSSTORE_GEN)
 	$(PYTHON) $< "$@" "$(OSX_VOLNAME)"
 
-$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Ovo-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Compute-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 	INSTALLNAMETOOL=$(INSTALLNAMETOOL)  OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -translations-dir=$(QT_TRANSLATION_DIR) -add-qt-tr $(OSX_QT_TRANSLATIONS) -verbose 2
 
 deploydir: $(APP_DIST_EXTRAS)
@@ -1212,16 +1212,16 @@ $(BITCOIN_CLI_BIN): FORCE
 #baseline_filtered_combined.info: leveldb_baseline_filtered.info baseline_filtered.info
 #	$(LCOV) -a leveldb_baseline_filtered.info -a baseline_filtered.info -o $@
 
-#test_ovo.info: baseline_filtered_combined.info
+#test_compute.info: baseline_filtered_combined.info
 #	$(MAKE) -C src/ check
-#	$(LCOV) -c -d $(abs_builddir)/src -t test_ovo -o $@
+#	$(LCOV) -c -d $(abs_builddir)/src -t test_compute -o $@
 #	$(LCOV) -z -d $(abs_builddir)/src
 #	$(LCOV) -z -d $(abs_builddir)/src/leveldb
 
-#test_ovo_filtered.info: test_ovo.info
+#test_compute_filtered.info: test_compute.info
 #	$(LCOV) -r $< "/usr/include/*" -o $@
 
-#rpc_test.info: test_ovo_filtered.info
+#rpc_test.info: test_compute_filtered.info
 #	-@TIMEOUT=15 python qa/pull-tester/rpc-tests.py $(EXTENDED_RPC_TESTS)
 #	$(LCOV) -c -d $(abs_builddir)/src --t rpc-tests -o $@
 #	$(LCOV) -z -d $(abs_builddir)/src
@@ -1230,13 +1230,13 @@ $(BITCOIN_CLI_BIN): FORCE
 #rpc_test_filtered.info: rpc_test.info
 #	$(LCOV) -r $< "/usr/include/*" -o $@
 
-#test_ovo_coverage.info: baseline_filtered_combined.info test_ovo_filtered.info
-#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_ovo_filtered.info -o $@
+#test_compute_coverage.info: baseline_filtered_combined.info test_compute_filtered.info
+#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_compute_filtered.info -o $@
 
-#total_coverage.info: baseline_filtered_combined.info test_ovo_filtered.info rpc_test_filtered.info
-#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_ovo_filtered.info -a rpc_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
+#total_coverage.info: baseline_filtered_combined.info test_compute_filtered.info rpc_test_filtered.info
+#	$(LCOV) -a baseline_filtered.info -a leveldb_baseline_filtered.info -a test_compute_filtered.info -a rpc_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-#test_ovo.coverage/.dirstamp:  test_ovo_coverage.info
+#test_compute.coverage/.dirstamp:  test_compute_coverage.info
 #	$(GENHTML) -s $< -o $(@D)
 #	@touch $@
 
@@ -1244,12 +1244,12 @@ $(BITCOIN_CLI_BIN): FORCE
 #	$(GENHTML) -s $< -o $(@D)
 #	@touch $@
 
-#cov: test_ovo.coverage/.dirstamp total.coverage/.dirstamp
+#cov: test_compute.coverage/.dirstamp total.coverage/.dirstamp
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 
 clean-local:
-	rm -rf coverage_percent.txt test_ovo.coverage/ total.coverage/ qa/tmp/ cache/ $(OSX_APP)
+	rm -rf coverage_percent.txt test_compute.coverage/ total.coverage/ qa/tmp/ cache/ $(OSX_APP)
 	rm -rf qa/pull-tester/__pycache__
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

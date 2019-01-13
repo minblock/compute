@@ -9,7 +9,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_ovo.h"
+#include "test/test_compute.h"
 
 #include <string>
 #include <vector>
