@@ -1,30 +1,30 @@
-Computesie Core staging tree 0.12.3
+Computesy Core staging tree 0.12.3
 ===============================
 
-https://www.computesie.com
+https://www.computesy.com
 
 
-What is Computesie?
+What is Computesy?
 ----------------
 
-Computesie is an experimental digital currency that enables anonymous, instant payments to anyone, anywhere in the world. Computesie uses peer-to-peer technology to operate with no central authority: managing transactions and issuing money are carried out collectively by the network. X11 Algorythm Hybrid PoW / PoS Blockchain. Master Nodes can be purchased for 10,000  Computesie's. Premined amount = 0 . Main net launch date: today on 1/13/2019 7:26AM EST. Master Nodes will be rewarded a higher rate of return on their investment. Similar to a bond note where you recieve a return on your investment per annum at specified amounts. However, unlike bond notes, you do not recieve your investment back, only reap a high rate of return on your investment. Computesie Core is a fork of Dash / DarkCoin pre-spork. The reason we choose to use a premined amount of 0 is because unlike the release of dash , where 2 million Dash's were insta-mined within 24 hours due to a bug in their code. Even though we could easily justify a premined amount to pay our developers and to secure us from DDoS threats, we already have a strong base and a foothold in DDoS protected Datacenters world wide. Computesie Core's developers plan to have all these issues fixed and plans to launch all bip heights sequentially within 5 years.  The reason X11 Algorythms will be at the Core of Computesie Core's encryption, over Scrypt, is because it over  10% faster and offers other benefits such as auto switching between 11 different algorythms. 10,000 Computesie's are not easily attainable. Only from proof of work and verification of the blockchain, will miners be rewarded. Therefore mining Computesie's, Computesie miners/early adoptors will be rewarded , not only generating blocks, but also a percentage return that sees no deflation. Generating cocurrency interchange, however requires a lot of power useage and is not easily performed. Generating a hash requires a complex energy consuming mathametical computation that requires much work. Furthermore, once the blockchain attains a certan size difficulty increases exponentially. With automatic difficulty retargeting, 51% become nearly impossible. These coins could not be generated any other way. For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS IPv4 IP's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through a program called wireshark in order to decipher. Computesie Core proposes to create a complete Supply chain including resolving issues in order placements from security and paying employees, subdivisions/partners, advertisers, and research and development. Computesie Core is the name of the open source software which enables the use of this currency.
+Computesy is an experimental digital currency that enables anonymous, instant payments to anyone, anywhere in the world. Computesy uses peer-to-peer technology to operate with no central authority: managing transactions and issuing money are carried out collectively by the network. X11 Algorythm Hybrid PoW / PoS Blockchain. Master Nodes can be purchased for 10,000  Computesies'. Premined amount = 0 . In order to do a clean launch, we plan to launch on 12/30/2018 11:46PM. Master Nodes will be rewarded a higher rate of return on their investment. Similar to a bond note where you recieve a return on your investment per annum at specified amounts. However, unlike bond notes, you do not recieve your investment back, only reap a high rate of return on your investment. Compute Core is a fork of Dash / DarkCoin pre-spork. The reason we choose to use a premined amount of 0 is because unlike the release of dash , where 2 million Dash's were insta-mined within 24 hours due to a bug in their code. Even though we could easily justify a premined amount to pay our developers and to secure us from DDoS threats, we already have a strong base and a foothold in DDoS protected Datacenters world wide. Compute Core's developers plan to have all these issues fixed and plans to launch all bip heights sequentially within 5 years.  The reason X11 Algorythms will be at the Core of Compute Core's encryption, over Scrypt, is because it over  10% faster and offers other benefits such as auto switching between 11 different algorythms. 10,0000 Computesy's are not easily attainable. Only from proof of work and verification of the blockchain, will miners be rewarded. Therefore mining Computesy's, Computesy miners/early adoptors will be rewarded , not only generating blocks, but also a percentage return that sees no deflation. Generating cocurrency interchange, however requires a lot of power useage and is not easily performed. Generating a hash requires a complex energy consuming mathametical computation that requires much work. Furthermore, once the blockchain attains a certan size difficulty increases exponentially. With automatic difficulty retargeting, 51% become nearly impossible. These coins could not be generated any other way. For this to be done the main network must be protected from DDoS attacks. The reason for choosing DDoS IPv4 IP's is for the following reasons: They can be encoded into IPv6 Hex's easily. They are harder to DDoS because they must be run through a program called wireshark in order to decipher. Compute Core proposes to create a complete Supply chain including resolving issues in order placements from security and paying employees, subdivisions/partners, advertisers, and research and development. Compute Core is the name of the open source software which enables the use of this currency.
 
 For more information, as well as an immediately useability, compiled binary version of
-the Computesie Core software, see https://www.Computesie.org/.
+the Compute Core software, see https://www.Computesy.org/.
 
 
 License
 -------
 
-Computesie Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Compute Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/minblock/computesie/tags) are created to indicate new official,
-stable release versions of Computesie Core.
+[Tags](https://github.com/minblock/computesy/tags) are created to indicate new official,
+stable release versions of Compute Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -60,7 +60,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Computesie Core's Transifex page](https://www.transifex.com/projects/p/computesie/).
+[Compute Core's Transifex page](https://www.transifex.com/projects/p/computesy/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
