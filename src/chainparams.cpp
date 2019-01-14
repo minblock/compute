@@ -131,8 +131,8 @@ public:
         consensus.nBudgetPaymentsStartBlock = 0; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 9999; // The block at which 12.1 goes live (end of final 12.0 budget cycle)
-        consensus.nSuperblockStartHash = uint256S("0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f");
+        consensus.nSuperblockStartBlock = 9999; // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
+        consensus.nSuperblockStartHash = uint256S("0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"); //Tentative hash should be changed at or around block number 9999
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
@@ -159,19 +159,19 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 0; // October 16, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 0;  //Not yet
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 0; // Feb 5th, 2018
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 999999999999ULL; // Soon come
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 0;  //Not yet
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 0;//999999999999ULL; // Oct 15th, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 999999999999ULL; // Soon come
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 0; //Not yet maybe never. 999999999999ULL; // Soon come
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 0;//999999999999ULL; // Apr 23th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
