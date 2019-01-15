@@ -138,10 +138,10 @@ public:
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x0");
-        consensus.BIP65Height = 0; // 00000000000076d8fcea02ec0963de4abfd01e771fec0863f960c2c64fe6f357 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
+        consensus.BIP34Hash = uint256S("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f");
+        consensus.BIP65Height = 0; // 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
 
-        consensus.BIP66Height = 0; // 00000000000b1fa2dfa312863570e13fae9ca7b5566cb27e55422620b469aefa 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
+        consensus.BIP66Height = 0; // 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
 
         consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
@@ -160,19 +160,19 @@ public:
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 0;  //Not yet
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 0; // Feb 5th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 999999999999ULL; // January 15th, 2019
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 0;  //Not yet
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 0;//999999999999ULL; // Oct 15th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1;//999999999999ULL; // Oct 15th, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 0; //Not yet maybe never. 999999999999ULL; // Soon come
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 0;//999999999999ULL; // Apr 23th, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1;//999999999999ULL; // Apr 23th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
 
@@ -232,7 +232,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        strSporkAddress = "Ogtyuk76vhuFW2iT7UAiHgNdWXCf3J34wh";
+        strSporkAddress = "Xgtyuk76vhuFW2iT7UAiHgNdWXCf3J34wh";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
