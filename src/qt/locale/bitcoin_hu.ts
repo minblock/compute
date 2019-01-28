@@ -274,7 +274,7 @@ Ez a termék az OpenSSL Project által lett kifejlesztve az OpenSSL Toolkit (htt
     </message>
     <message>
         <location line="-56"/>
-        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
+        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your computes from being stolen by malware infecting your computer.</source>
         <translation>ComputeCore will close now to finish the encryption process. Ne feledd, hogy a tárca titkosítása sem nyújt teljes védelmet az adathalász programok fertőzésével szemben.</translation>
     </message>
     <message>
@@ -1069,7 +1069,7 @@ Cím: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start compute: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1365,7 +1365,7 @@ Cím: %4
     <message>
         <location line="+5"/>
         <source>The amount exceeds your balance.</source>
-        <translation>Nincs ennyi darkcoin az egyenlegeden.</translation>
+        <translation>Nincs ennyi compute az egyenlegeden.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2198,8 +2198,8 @@ Cím: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Parancs küldése a -serverhez vagy a darkcoindhez
+        <source>Send command to -server or computed</source>
+        <translation>Parancs küldése a -serverhez vagy a computedhez
 </translation>
     </message>
     <message>
@@ -2222,14 +2222,14 @@ Cím: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Konfigurációs fájl (alapértelmezett: darkcoin.conf)
+        <source>Specify configuration file (default: compute.conf)</source>
+        <translation>Konfigurációs fájl (alapértelmezett: compute.conf)
 </translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>pid-fájl (alapértelmezett: darkcoind.pid)
+        <source>Specify pid file (default: computed.pid)</source>
+        <translation>pid-fájl (alapértelmezett: computed.pid)
 </translation>
     </message>
     <message>
@@ -2311,7 +2311,7 @@ Cím: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -2880,7 +2880,7 @@ for example: alertnotify=echo %%s | mail -s &quot;ComputeCore Alert&quot; admin@
     <message>
         <location line="-6"/>
         <source>Insufficient funds</source>
-        <translation>Nincs elég darkcoinod.</translation>
+        <translation>Nincs elég computeod.</translation>
     </message>
     <message>
         <location line="+10"/>

@@ -1,4 +1,4 @@
-Mac OS X darkcoind build instructions
+Mac OS X computed build instructions
 ====================================
 
 Authors
@@ -72,14 +72,14 @@ Installing the dependencies using MacPorts is very straightforward.
 
     sudo port install boost db48@+no_java openssl miniupnpc
 
-### Building `darkcoind`
+### Building `computed`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone git@github.com:darkcoin-project/darkcoin.git darkcoin
-        cd darkcoin
+        git clone git@github.com:compute-project/compute.git compute
+        cd compute
 
-2.  Build darkcoind:
+2.  Build computed:
 
         cd src
         make -f makefile.osx
@@ -107,12 +107,12 @@ If not, you can ensure that the Brew OpenSSL is correctly linked by running
 
 Rerunning "openssl version" should now return the correct version.
 
-### Building `darkcoind`
+### Building `computed`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone git@github.com:darkcoin-project/darkcoin.git darkcoin
-        cd darkcoin
+        git clone git@github.com:compute-project/compute.git compute
+        cd compute
 
 2.  Modify source in order to pick up the `openssl` library.
 
@@ -122,7 +122,7 @@ Rerunning "openssl version" should now return the correct version.
 
         patch -p1 < contrib/homebrew/makefile.osx.patch
 
-3.  Build darkcoind:
+3.  Build computed:
 
         cd src
         make -f makefile.osx
@@ -134,8 +134,8 @@ Rerunning "openssl version" should now return the correct version.
 Creating a release build
 ------------------------
 
-A darkcoind binary is not included in the ComputeCore-Qt.app bundle. You can ignore
-this section if you are building `darkcoind` for your own use.
+A computed binary is not included in the ComputeCore-Qt.app bundle. You can ignore
+this section if you are building `computed` for your own use.
 
 If you are building `litecond` for others, your build machine should be set up
 as follows for maximum compatibility:
@@ -166,20 +166,20 @@ Once dependencies are compiled, creating `ComputeCore-Qt.app` is easy:
 Running
 -------
 
-It's now available at `./darkcoind`, provided that you are still in the `src`
+It's now available at `./computed`, provided that you are still in the `src`
 directory. We have to first create the RPC configuration file, though.
 
-Run `./darkcoind` to get the filename where it should be put, or just try these
+Run `./computed` to get the filename where it should be put, or just try these
 commands:
 
-    echo -e "rpcuser=darkcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/ComputeCore/darkcoin.conf"
-    chmod 600 "/Users/${USER}/Library/Application Support/ComputeCore/darkcoin.conf"
+    echo -e "rpcuser=computerpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/ComputeCore/compute.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/ComputeCore/compute.conf"
 
 When next you run it, it will start downloading the blockchain, but it won't
 output anything while it's doing this. This process may take several hours.
 
 Other commands:
 
-    ./darkcoind --help  # for a list of command-line options.
-    ./darkcoind -daemon # to start the darkcoin daemon.
-    ./darkcoind help    # When the daemon is running, to get a list of RPC commands
+    ./computed --help  # for a list of command-line options.
+    ./computed -daemon # to start the compute daemon.
+    ./computed help    # When the daemon is running, to get a list of RPC commands

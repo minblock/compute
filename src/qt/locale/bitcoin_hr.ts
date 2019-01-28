@@ -270,8 +270,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>ComputeCore će se sada zatvoriti kako bi dovršio postupak šifriranja. Zapamtite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše darkcoine od krađe preko zloćudnog softvera koji bi bio na vašem računalu.</translation>
+        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your computes from being stolen by malware infecting your computer.</source>
+        <translation>ComputeCore će se sada zatvoriti kako bi dovršio postupak šifriranja. Zapamtite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše computee od krađe preko zloćudnog softvera koji bi bio na vašem računalu.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -415,12 +415,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-347"/>
         <source>Send coins to a ComputeCore address</source>
-        <translation>Slanje novca na darkcoin adresu</translation>
+        <translation>Slanje novca na compute adresu</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>Modify configuration options for ComputeCore</source>
-        <translation>Promijeni postavke konfiguracije za darkcoin</translation>
+        <translation>Promijeni postavke konfiguracije za compute</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -733,7 +733,7 @@ Adresa:%4
     <message>
         <location line="-5"/>
         <source>The entered address &quot;%1&quot; is not a valid ComputeCore address.</source>
-        <translation>Upisana adresa &quot;%1&quot; nije valjana darkcoin adresa.</translation>
+        <translation>Upisana adresa &quot;%1&quot; nije valjana compute adresa.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -935,7 +935,7 @@ Adresa:%4
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio darkcoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio computea koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1064,7 +1064,7 @@ Adresa:%4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start compute: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -2192,8 +2192,8 @@ Adresa:%4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Pošalji komandu usluzi -server ili darkcoind</translation>
+        <source>Send command to -server or computed</source>
+        <translation>Pošalji komandu usluzi -server ili computed</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2212,13 +2212,13 @@ Adresa:%4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Odredi konfiguracijsku datoteku (ugrađeni izbor: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: compute.conf)</source>
+        <translation>Odredi konfiguracijsku datoteku (ugrađeni izbor: compute.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Odredi proces ID datoteku (ugrađeni izbor: darkcoin.pid)</translation>
+        <source>Specify pid file (default: computed.pid)</source>
+        <translation>Odredi proces ID datoteku (ugrađeni izbor: compute.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2295,7 +2295,7 @@ Adresa:%4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.

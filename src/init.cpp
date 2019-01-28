@@ -181,10 +181,10 @@ bool AppInit(int argc, char* argv[])
             // First part of help message is specific to bitcoind / RPC client
             std::string strUsage = _("ComputeCore version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  darkcoind [options]                     " + "\n" +
-                  "  darkcoind [options] <command> [params]  " + _("Send command to -server or darkcoind") + "\n" +
-                  "  darkcoind [options] help                " + _("List commands") + "\n" +
-                  "  darkcoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  computed [options]                     " + "\n" +
+                  "  computed [options] <command> [params]  " + _("Send command to -server or computed") + "\n" +
+                  "  computed [options] help                " + _("List commands") + "\n" +
+                  "  computed [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -194,7 +194,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "darkcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "compute:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -297,8 +297,8 @@ std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
         "  -?                     " + _("This help message") + "\n" +
-        "  -conf=<file>           " + _("Specify configuration file (default: darkcoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: darkcoind.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: compute.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: computed.pid)") + "\n" +
         "  -gen                   " + _("Generate coins (default: 0)") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
         "  -dbcache=<n>           " + _("Set database cache size in megabytes (default: 25)") + "\n" +

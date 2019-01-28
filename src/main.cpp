@@ -1272,7 +1272,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 }
 
 unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const CBlockHeader *pblock) {
-    /* current difficulty formula, darkcoin - DarkGravity, written by Evan Duffield - evan@darkcoin.io */
+    /* current difficulty formula, compute - DarkGravity, written by Evan Duffield - evan@compute.io */
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     const CBlockHeader *BlockCreating = pblock;
@@ -1346,7 +1346,7 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const CBlockH
 }
 
 unsigned int static DarkGravityWave2(const CBlockIndex* pindexLast, const CBlockHeader *pblock) {
-    /* current difficulty formula, darkcoin - DarkGravity v2, written by Evan Duffield - evan@darkcoin.io */
+    /* current difficulty formula, compute - DarkGravity v2, written by Evan Duffield - evan@compute.io */
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     const CBlockHeader *BlockCreating = pblock;
@@ -4861,7 +4861,7 @@ void static ComputeCoreMiner(CWallet *pwallet)
 {
     printf("ComputeCoreMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("darkcoin-miner");
+    RenameThread("compute-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);

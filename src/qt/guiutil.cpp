@@ -84,7 +84,7 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // return if URI is not valid or is no bitcoin URI
-    if(!uri.isValid() || uri.scheme() != QString("darkcoin"))
+    if(!uri.isValid() || uri.scheme() != QString("compute"))
         return false;
 
     SendCoinsRecipient rv;
@@ -139,9 +139,9 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("darkcoin://"))
+    if(uri.startsWith("compute://"))
     {
-        uri.replace(0, 11, "darkcoin:");
+        uri.replace(0, 11, "compute:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -383,7 +383,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "darkcoin.desktop";
+    return GetAutostartDir() / "compute.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -498,7 +498,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
     header = tr("ComputeCore-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  darkcoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  compute-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 

@@ -7,7 +7,7 @@ SetCompressor /SOLID lzma
 !define REGKEY "SOFTWARE\$(^Name)"
 !define COMPANY "ComputeCore project"
 !define VERSION 0.9.0.0
-!define URL http://www.darkcoin.io/
+!define URL http://www.compute.io/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
@@ -20,7 +20,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER ComputeCore
-!define MUI_FINISHPAGE_RUN $INSTDIR\darkcoin-qt.exe
+!define MUI_FINISHPAGE_RUN $INSTDIR\compute-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -45,7 +45,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile darkcoin-0.9.0.0-win32-setup.exe
+OutFile compute-0.9.0.0-win32-setup.exe
 InstallDir $PROGRAMFILES\ComputeCore
 CRCCheck on
 XPStyle on
@@ -66,18 +66,18 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ../release/darkcoin-qt.exe
+    File ../release/compute-qt.exe
     File /oname=COPYING.txt ../COPYING
     File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File ../src/darkcoind.exe
+    File ../src/computed.exe
     SetOutPath $INSTDIR\src
     File /r /x *.exe /x *.o ../src\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
     # Remove old wxwidgets-based-bitcoin executable and locales:
-    Delete /REBOOTOK $INSTDIR\darkcoin.exe
+    Delete /REBOOTOK $INSTDIR\compute.exe
     RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
@@ -87,7 +87,7 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\ComputeCore.lnk" $INSTDIR\darkcoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\ComputeCore.lnk" $INSTDIR\compute-qt.exe
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall ComputeCore.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -98,10 +98,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "darkcoin" "URL Protocol" ""
-    WriteRegStr HKCR "darkcoin" "" "URL:ComputeCore"
-    WriteRegStr HKCR "darkcoin\DefaultIcon" "" $INSTDIR\darkcoin-qt.exe
-    WriteRegStr HKCR "darkcoin\shell\open\command" "" '"$INSTDIR\darkcoin-qt.exe" "%1"'
+    WriteRegStr HKCR "compute" "URL Protocol" ""
+    WriteRegStr HKCR "compute" "" "URL:ComputeCore"
+    WriteRegStr HKCR "compute\DefaultIcon" "" $INSTDIR\compute-qt.exe
+    WriteRegStr HKCR "compute\shell\open\command" "" '"$INSTDIR\compute-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -119,7 +119,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\darkcoin-qt.exe
+    Delete /REBOOTOK $INSTDIR\compute-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -139,7 +139,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "darkcoin"
+    DeleteRegKey HKCR "compute"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

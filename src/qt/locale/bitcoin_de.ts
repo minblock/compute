@@ -275,7 +275,7 @@ Dieses Produkt enthält Software, die vom OpenSSL-Projekt zur Verwendung im Open
     </message>
     <message>
         <location line="-56"/>
-        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
+        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your computes from being stolen by malware infecting your computer.</source>
         <translation>ComputeCore wird jetzt beendet, um den Verschlüsselungsprozess abzuschließen. Bitte beachten Sie, dass die Verschlüsselung Ihrer Brieftasche nicht vollständig vor Diebstahl Ihrer ComputeCores durch Schadsoftware schützt, die Ihren Computer befällt.</translation>
     </message>
     <message>
@@ -1068,8 +1068,8 @@ Adresse: %4</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
-        <translation>&quot;darkcoin: Klicken-zum-Bezahlen&quot;-Handler konnte nicht gestartet werden</translation>
+        <source>Cannot start compute: click-to-pay handler</source>
+        <translation>&quot;compute: Klicken-zum-Bezahlen&quot;-Handler konnte nicht gestartet werden</translation>
     </message>
 </context>
 <context>
@@ -2196,8 +2196,8 @@ Adresse: %4</translation>
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Befehl an -server oder darkcoind senden</translation>
+        <source>Send command to -server or computed</source>
+        <translation>Befehl an -server oder computed senden</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2216,13 +2216,13 @@ Adresse: %4</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Konfigurationsdatei festlegen (Standard: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: compute.conf)</source>
+        <translation>Konfigurationsdatei festlegen (Standard: compute.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>PID-Datei festlegen (Standard: darkcoind.pid)</translation>
+        <source>Specify pid file (default: computed.pid)</source>
+        <translation>PID-Datei festlegen (Standard: computed.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2299,7 +2299,7 @@ Adresse: %4</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -2310,7 +2310,7 @@ for example: alertnotify=echo %%s | mail -s &quot;ComputeCore Alert&quot; admin@
         <translation>%s, Sie müssen den Wert rpcpasswort in dieser Konfigurationsdatei angeben:
 %s
 Es wird empfohlen das folgende Zufallspasswort zu verwenden:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (Sie müssen sich dieses Passwort nicht merken!)
 Der Benutzername und das Passwort dürfen NICHT identisch sein.

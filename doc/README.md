@@ -25,12 +25,12 @@ You need the Qt4 run-time libraries to run ComputeCore-Qt. On Debian or Ubuntu:
 
 Unpack the files into a directory and run:
 
-- bin/32/darkcoin-qt (GUI, 32-bit)
-- bin/32/darkcoind (headless, 32-bit)
-- bin/64/darkcoin-qt (GUI, 64-bit)
-- bin/64/darkcoind (headless, 64-bit)
+- bin/32/compute-qt (GUI, 32-bit)
+- bin/32/computed (headless, 32-bit)
+- bin/64/compute-qt (GUI, 64-bit)
+- bin/64/computed (headless, 64-bit)
 
-See the documentation at the [ComputeCore Wiki](http://darkcoin.info)
+See the documentation at the [ComputeCore Wiki](http://compute.info)
 for help and more information.
 
 

@@ -270,7 +270,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
+        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your computes from being stolen by malware infecting your computer.</source>
         <translation>ComputeCore برای اتمام فرایند رمزگذاری بسته خواهد شد. به خاطر داشته باشید که رمزگذاری WALLET شما،  کامپیوتر شما را از آلودگی به بدافزارها مصون نمی دارد.</translation>
     </message>
     <message>
@@ -451,7 +451,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <location line="-165"/>
         <location line="+530"/>
         <source>ComputeCore</source>
-        <translation>darkcoin</translation>
+        <translation>compute</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -532,7 +532,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+47"/>
         <source>ComputeCore client</source>
-        <translation>مشتری darkcoin</translation>
+        <translation>مشتری compute</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
@@ -731,7 +731,7 @@ Address: %4
     <message>
         <location line="-5"/>
         <source>The entered address &quot;%1&quot; is not a valid ComputeCore address.</source>
-        <translation>آدرس وارد شده &quot;%1&quot; یک آدرس صحیح برای darkcoin نسشت</translation>
+        <translation>آدرس وارد شده &quot;%1&quot; یک آدرس صحیح برای compute نسشت</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1009,7 +1009,7 @@ Address: %4
         <location line="+50"/>
         <location line="+166"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ComputeCore network after a connection is established, but this process has not completed yet.</source>
-        <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه darkcoin به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
+        <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه compute به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1062,7 +1062,7 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start compute: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1443,7 +1443,7 @@ Address: %4
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
         <source>Enter a ComputeCore address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>یک آدرس darkcoin وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>یک آدرس compute وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1466,7 +1466,7 @@ Address: %4
     <message>
         <location line="+18"/>
         <source>The address to sign the message with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>یک آدرس darkcoin وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>یک آدرس compute وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1539,7 +1539,7 @@ Address: %4
     <message>
         <location line="+21"/>
         <source>The address the message was signed with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>یک آدرس darkcoin وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>یک آدرس compute وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -1560,7 +1560,7 @@ Address: %4
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
         <source>Enter a ComputeCore address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>یک آدرس darkcoin وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>یک آدرس compute وارد کنید (مثال Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2182,7 +2182,7 @@ Address: %4
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
         <source>ComputeCore version</source>
-        <translation>نسخه darkcoin</translation>
+        <translation>نسخه compute</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2191,8 +2191,8 @@ Address: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>ارسال دستور به سرور یا darkcoined</translation>
+        <source>Send command to -server or computed</source>
+        <translation>ارسال دستور به سرور یا computeed</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2211,13 +2211,13 @@ Address: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>فایل پیکربندیِ را مشخص کنید (پیش فرض: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: compute.conf)</source>
+        <translation>فایل پیکربندیِ را مشخص کنید (پیش فرض: compute.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>فایل pid  را مشخص کنید (پیش فرض: darkcoind.pid)</translation>
+        <source>Specify pid file (default: computed.pid)</source>
+        <translation>فایل pid  را مشخص کنید (پیش فرض: computed.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2294,7 +2294,7 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.

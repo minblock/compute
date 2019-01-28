@@ -84,6 +84,6 @@ ComputeCore
 -------
 DOS prompt:
 
-	cd \darkcoin\src
+	cd \compute\src
 	mingw32-make -f makefile.mingw
-	strip darkcoind.exe
+	strip computed.exe

@@ -275,8 +275,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>Program ComputeCore zamknie się aby dokończyć proces szyfrowania. Pamiętaj, że szyfrowanie portfela nie zabezpiecza w pełni Twoich darkcoinów przed kradzieżą przez wirusy lub trojany mogące zainfekować Twój komputer.</translation>
+        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your computes from being stolen by malware infecting your computer.</source>
+        <translation>Program ComputeCore zamknie się aby dokończyć proces szyfrowania. Pamiętaj, że szyfrowanie portfela nie zabezpiecza w pełni Twoich computeów przed kradzieżą przez wirusy lub trojany mogące zainfekować Twój komputer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -425,7 +425,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+49"/>
         <source>Modify configuration options for ComputeCore</source>
-        <translation>Zmienia opcje konfiguracji darkcoina</translation>
+        <translation>Zmienia opcje konfiguracji computea</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1016,7 +1016,7 @@ Adres: %4
         <location line="+50"/>
         <location line="+166"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ComputeCore network after a connection is established, but this process has not completed yet.</source>
-        <translation>Wyświetlana informacja może być nieaktualna. Twój portfel synchronizuje się automatycznie z siecią darkcoin, zaraz po tym jak uzyskano połączenie, ale proces ten nie został jeszcze ukończony.</translation>
+        <translation>Wyświetlana informacja może być nieaktualna. Twój portfel synchronizuje się automatycznie z siecią compute, zaraz po tym jak uzyskano połączenie, ale proces ten nie został jeszcze ukończony.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1069,7 +1069,7 @@ Adres: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start compute: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1385,7 +1385,7 @@ Adres: %4
     <message>
         <location line="+5"/>
         <source>Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Błąd: transakcja została odrzucona. Może się to zdarzyć, gdy monety z Twojego portfela zostały już wydane, na przykład gdy używałeś kopii wallet.dat i darkcoiny które tam wydałeś nie zostały jeszcze odjęte z portfela z którego teraz korzystasz.</translation>
+        <translation>Błąd: transakcja została odrzucona. Może się to zdarzyć, gdy monety z Twojego portfela zostały już wydane, na przykład gdy używałeś kopii wallet.dat i computey które tam wydałeś nie zostały jeszcze odjęte z portfela z którego teraz korzystasz.</translation>
     </message>
 </context>
 <context>
@@ -2197,8 +2197,8 @@ Adres: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Wyślij polecenie do -server lub darkcoind</translation>
+        <source>Send command to -server or computed</source>
+        <translation>Wyślij polecenie do -server lub computed</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2217,13 +2217,13 @@ Adres: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Wskaż plik konfiguracyjny (domyślnie: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: compute.conf)</source>
+        <translation>Wskaż plik konfiguracyjny (domyślnie: compute.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Wskaż plik pid (domyślnie: darkcoin.pid)</translation>
+        <source>Specify pid file (default: computed.pid)</source>
+        <translation>Wskaż plik pid (domyślnie: compute.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2300,7 +2300,7 @@ Adres: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -2311,7 +2311,7 @@ for example: alertnotify=echo %%s | mail -s &quot;ComputeCore Alert&quot; admin@
         <translation>%s, musisz ustawić rpcpassword w pliku konfiguracyjnym:⏎
 %s⏎
 Zalecane jest użycie losowego hasła:⏎
-rpcuser=darkcoinrpc⏎
+rpcuser=computerpc⏎
 rpcpassword=%s⏎
 (nie musisz pamiętać tego hasła)⏎
 Użytkownik i hasło nie mogą być takie same.⏎

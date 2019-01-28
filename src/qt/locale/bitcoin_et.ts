@@ -275,8 +275,8 @@ Toode sisaldab OpenSSL Projekti all toodetud tarkvara, mis on kasutamiseks OpenS
     </message>
     <message>
         <location line="-56"/>
-        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your darkcoins from being stolen by malware infecting your computer.</source>
-        <translation>ComputeCore sulgub krüpteeringu lõpetamiseks. Pea meeles, et rahakoti krüpteerimine ei välista darkcoinide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
+        <source>ComputeCore will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your computes from being stolen by malware infecting your computer.</source>
+        <translation>ComputeCore sulgub krüpteeringu lõpetamiseks. Pea meeles, et rahakoti krüpteerimine ei välista computeide vargust, kui sinu arvuti on nakatunud pahavaraga.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1068,7 +1068,7 @@ Aadress: %4⏎</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start darkcoin: click-to-pay handler</source>
+        <source>Cannot start compute: click-to-pay handler</source>
         <translation>ComputeCore ei käivitu: vajuta-maksa toiming</translation>
     </message>
 </context>
@@ -2196,8 +2196,8 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or darkcoind</source>
-        <translation>Saada käsklus -serverile või darkcoindile</translation>
+        <source>Send command to -server or computed</source>
+        <translation>Saada käsklus -serverile või computedile</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2216,13 +2216,13 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: darkcoin.conf)</source>
-        <translation>Täpsusta sätete fail (vaikimisi: darkcoin.conf)</translation>
+        <source>Specify configuration file (default: compute.conf)</source>
+        <translation>Täpsusta sätete fail (vaikimisi: compute.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: darkcoind.pid)</source>
-        <translation>Täpsusta PID fail (vaikimisi: darkcoin.pid)</translation>
+        <source>Specify pid file (default: computed.pid)</source>
+        <translation>Täpsusta PID fail (vaikimisi: compute.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2299,7 +2299,7 @@ Aadress: %4⏎</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -2310,7 +2310,7 @@ for example: alertnotify=echo %%s | mail -s &quot;ComputeCore Alert&quot; admin@
         <translation>%s, sul tuleb rpcpassword määrata seadete failis:
 %s
 Soovitatav on kasutada järgmist juhuslikku parooli:
-rpcuser=darkcoinrpc
+rpcuser=computerpc
 rpcpassword=%s
 (seda parooli ei pea meeles pidama)
 Kasutajanimi ning parool EI TOHI kattuda.
