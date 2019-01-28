@@ -20,7 +20,7 @@ ComputeCore is a lite version of Bitcoin using X11 as a proof-of-work algorithm.
  - Anonymous blockchain using DarkSend technology (Based on CoinJoin): Beta Testing
 
 For more information, as well as an immediately useable, binary version of
-the ComputeCore client sofware, see http://www.darkcoin.io.
+the ComputeCore client sofware, see http://www.computecoin.io.
 
 License
 -------
