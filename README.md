@@ -4,7 +4,8 @@ ComputeCore integration/staging tree
 http://www.compute.io
 
 Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2013-2014 ComputeCore Developers
+Copyright (c) 2013-2014 DarkCoin Developers
+Copyright (c) 2019 stevecat
 
 What is ComputeCore?
 ----------------
