@@ -1,36 +1,33 @@
-Name "Compute Core (-bit)"
+Name ComputeCore
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.12.3
-!define COMPANY "Compute Core project"
-!define URL https://computecoin.ca/
+!define COMPANY "ComputeCore project"
+!define VERSION 0.9.0.0
+!define URL http://www.darkcoin.io/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/computeclone/compute-master/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/computeclone/compute-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "../share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/computeclone/compute-master/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "../share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Compute Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\compute-qt
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER ComputeCore
+!define MUI_FINISHPAGE_RUN $INSTDIR\darkcoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/computeclone/compute-master/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "" == "64"
-!include x64.nsh
-!endif
 
 # Variables
 Var StartMenuGroup
@@ -48,18 +45,14 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/computeclone/compute-master/computecore-${VERSION}-win-setup.exe
-!if "" == "64"
-InstallDir $PROGRAMFILES64\ComputeCore
-!else
+OutFile darkcoin-0.9.0.0-win32-setup.exe
 InstallDir $PROGRAMFILES\ComputeCore
-!endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion ${VERSION}.4
-VIAddVersionKey ProductName "Compute Core"
+VIProductVersion 0.9.0.0
+VIAddVersionKey ProductName ComputeCore
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,16 +66,19 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/computeclone/compute-master/release/compute-qt
-    File /oname=COPYING.txt /root/computeclone/compute-master/COPYING
-    File /oname=readme.txt /root/computeclone/compute-master/doc/README_windows.txt
+    File ../release/darkcoin-qt.exe
+    File /oname=COPYING.txt ../COPYING
+    File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/computeclone/compute-master/release/computed
-    File /root/computeclone/compute-master/release/compute-cli
-    SetOutPath $INSTDIR\doc
-    File /r /root/computeclone/compute-master/doc\*.*
+    File ../src/darkcoind.exe
+    SetOutPath $INSTDIR\src
+    File /r /x *.exe /x *.o ../src\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
+
+    # Remove old wxwidgets-based-bitcoin executable and locales:
+    Delete /REBOOTOK $INSTDIR\darkcoin.exe
+    RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
 Section -post SEC0001
@@ -91,9 +87,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\compute-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Compute Core (testnet, -bit).lnk" "$INSTDIR\compute-qt" "-testnet" "$INSTDIR\compute-qt" 1
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\ComputeCore.lnk" $INSTDIR\darkcoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall ComputeCore.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -103,14 +98,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "computecore" "URL Protocol" ""
-    WriteRegStr HKCR "computecore" "" "URL:Compute"
-    WriteRegStr HKCR "computecore\DefaultIcon" "" $INSTDIR\compute-qt
-    WriteRegStr HKCR "computecore\shell\open\command" "" '"$INSTDIR\compute-qt" "%1"'
-
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'computecore' now, we had 'compute' hardcoded)
-    # TODO remove this line sometime later
-    DeleteRegKey HKCR "compute"
+    WriteRegStr HKCR "darkcoin" "URL Protocol" ""
+    WriteRegStr HKCR "darkcoin" "" "URL:ComputeCore"
+    WriteRegStr HKCR "darkcoin\DefaultIcon" "" $INSTDIR\darkcoin-qt.exe
+    WriteRegStr HKCR "darkcoin\shell\open\command" "" '"$INSTDIR\darkcoin-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -128,20 +119,19 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\compute-qt
+    Delete /REBOOTOK $INSTDIR\darkcoin-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
-    RMDir /r /REBOOTOK $INSTDIR\doc
+    RMDir /r /REBOOTOK $INSTDIR\src
     DeleteRegValue HKCU "${REGKEY}\Components" Main
 SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Compute Core (testnet, -bit).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Compute.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall ComputeCore.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\ComputeCore.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\ComputeCore.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -149,10 +139,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "computecore"
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'computecore' now, we had 'compute' hardcoded)
-    # TODO remove this line sometime later
-    DeleteRegKey HKCR "compute"
+    DeleteRegKey HKCR "darkcoin"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0
@@ -165,15 +152,6 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "" == "64"
-    ${If} ${RunningX64}
-      ; disable registry redirection (enable access to 64-bit portion of registry)
-      SetRegView 64
-    ${Else}
-      MessageBox MB_OK|MB_ICONSTOP "Cannot install 64-bit version on a 32-bit system."
-      Abort
-    ${EndIf}
-!endif
 FunctionEnd
 
 # Uninstaller functions

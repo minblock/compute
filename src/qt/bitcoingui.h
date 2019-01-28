@@ -1,44 +1,35 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+#ifndef BITCOINGUI_H
+#define BITCOINGUI_H
 
-#ifndef BITCOIN_QT_BITCOINGUI_H
-#define BITCOIN_QT_BITCOINGUI_H
-
-#if defined(HAVE_CONFIG_H)
-#include "config/compute-config.h"
-#endif
-
-#include "amount.h"
-
-#include <QLabel>
 #include <QMainWindow>
-#include <QMap>
-#include <QMenu>
-#include <QPoint>
-#include <QPushButton>
 #include <QSystemTrayIcon>
+#include <QMap>
 
-class ClientModel;
-class NetworkStyle;
-class Notificator;
-class OptionsModel;
-class PlatformStyle;
-class RPCConsole;
-class SendCoinsRecipient;
-class UnitDisplayStatusBarControl;
+class TransactionTableModel;
 class WalletFrame;
+class WalletView;
+class ClientModel;
 class WalletModel;
-class HelpMessageDialog;
-class ModalOverlay;
-class MasternodeList;
+class WalletStack;
+class TransactionView;
+class OverviewPage;
+class AddressBookPage;
+class SendCoinsDialog;
+class SignVerifyMessageDialog;
+class Notificator;
+class RPCConsole;
 
 class CWallet;
 
 QT_BEGIN_NAMESPACE
-class QAction;
+class QLabel;
+class QModelIndex;
 class QProgressBar;
-class QProgressDialog;
+class QStackedWidget;
+class QUrl;
+class QListWidget;
+class QPushButton;
+class QAction;
 QT_END_NAMESPACE
 
 /**
@@ -51,31 +42,35 @@ class BitcoinGUI : public QMainWindow
 
 public:
     static const QString DEFAULT_WALLET;
-    static const std::string DEFAULT_UIPLATFORM;
 
-    explicit BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent = 0);
+    explicit BitcoinGUI(QWidget *parent = 0);
     ~BitcoinGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
     */
     void setClientModel(ClientModel *clientModel);
-
-#ifdef ENABLE_WALLET
     /** Set the wallet model.
         The wallet model represents a bitcoin wallet, and offers access to the list of transactions, address book and sending
         functionality.
     */
+
     bool addWallet(const QString& name, WalletModel *walletModel);
     bool setCurrentWallet(const QString& name);
+
     void removeAllWallets();
-#endif // ENABLE_WALLET
-    bool enableWallet;
+
+    /** Used by WalletView to allow access to needed QActions */
+    // Todo: Use Qt signals for these
+    QAction * getOverviewAction() { return overviewAction; }
+    QAction * getHistoryAction() { return historyAction; }
+    QAction * getAddressBookAction() { return addressBookAction; }
+    QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
+    QAction * getSendCoinsAction() { return sendCoinsAction; }
 
 protected:
     void changeEvent(QEvent *e);
     void closeEvent(QCloseEvent *event);
-    void showEvent(QShowEvent *event);
     void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent *event);
     bool eventFilter(QObject *object, QEvent *event);
@@ -84,62 +79,38 @@ private:
     ClientModel *clientModel;
     WalletFrame *walletFrame;
 
-    UnitDisplayStatusBarControl *unitDisplayControl;
-    QLabel *labelWalletEncryptionIcon;
-    QLabel *labelWalletHDStatusIcon;
+    QLabel *labelEncryptionIcon;
     QLabel *labelConnectionsIcon;
     QLabel *labelBlocksIcon;
     QLabel *progressBarLabel;
     QProgressBar *progressBar;
-    QProgressDialog *progressDialog;
 
     QMenuBar *appMenuBar;
     QAction *overviewAction;
     QAction *historyAction;
-    QAction *masternodeAction;
     QAction *quitAction;
     QAction *sendCoinsAction;
-    QAction *sendCoinsMenuAction;
-    QAction *usedSendingAddressesAction;
-    QAction *usedReceivingAddressesAction;
+    QAction *addressBookAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
     QAction *aboutAction;
     QAction *receiveCoinsAction;
-    QAction *receiveCoinsMenuAction;
     QAction *optionsAction;
     QAction *toggleHideAction;
     QAction *encryptWalletAction;
     QAction *backupWalletAction;
     QAction *changePassphraseAction;
-    QAction *unlockWalletAction;
-    QAction *lockWalletAction;
     QAction *aboutQtAction;
-    QAction *openInfoAction;
     QAction *openRPCConsoleAction;
-    QAction *openGraphAction;
-    QAction *openPeersAction;
-    QAction *openRepairAction;
-    QAction *openConfEditorAction;
-    QAction *openMNConfEditorAction;
-    QAction *showBackupsAction;
-    QAction *openAction;
-    QAction *showHelpMessageAction;
-    QAction *showPrivateSendHelpAction;
 
     QSystemTrayIcon *trayIcon;
-    QMenu *trayIconMenu;
-    QMenu *dockIconMenu;
     Notificator *notificator;
+    TransactionView *transactionView;
     RPCConsole *rpcConsole;
-    HelpMessageDialog *helpMessageDialog;
-    ModalOverlay *modalOverlay;
 
+    QMovie *syncIconMovie;
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
-    int spinnerFrame;
-
-    const PlatformStyle *platformStyle;
 
     /** Create the main UI actions. */
     void createActions();
@@ -148,40 +119,26 @@ private:
     /** Create the toolbars */
     void createToolBars();
     /** Create system tray icon and notification */
-    void createTrayIcon(const NetworkStyle *networkStyle);
+    void createTrayIcon();
     /** Create system tray menu (or setup the dock menu) */
-    void createIconMenu(QMenu *pmenu);
-
+    void createTrayIconMenu();
+    /** Save window size and position */
+    void saveWindowGeometry();
+    /** Restore window size and position */
+    void restoreWindowGeometry();
     /** Enable or disable all wallet-related actions */
     void setWalletActionsEnabled(bool enabled);
 
-    /** Connect core signals to GUI client */
-    void subscribeToCoreSignals();
-    /** Disconnect core signals from GUI client */
-    void unsubscribeFromCoreSignals();
-
-    /** Update UI with latest network info from model. */
-    void updateNetworkState();
-
-    void updateHeadersSyncProgressLabel();
-
-Q_SIGNALS:
-    /** Signal raised when a URI was entered or dragged to the GUI */
-    void receivedURI(const QString &uri);
-    /** Restart handling */
-    void requestedRestart(QStringList args);
-
-public Q_SLOTS:
+public slots:
     /** Set number of connections shown in the UI */
     void setNumConnections(int count);
-    /** Set network state shown in the UI */
-    void setNetworkActive(bool networkActive);
-    /** Get restart command-line parameters and request restart */
-    void handleRestart(QStringList args);
-    /** Set number of blocks and last block date shown in the UI */
-    void setNumBlocks(int count, const QDateTime& blockDate, double nVerificationProgress, bool headers);
-    /** Set additional data sync status shown in the UI */
-    void setAdditionalDataSyncProgress(double nSyncProgress);
+    /** Set number of blocks shown in the UI */
+    void setNumBlocks(int count, int nTotalBlocks);
+    /** Set the encryption status as shown in the UI.
+       @param[in] status            current encryption status
+       @see WalletModel::EncryptionStatus
+    */
+    void setEncryptionStatus(int status);
 
     /** Notify the user of an event from the core network or transaction handling code.
        @param[in] title     the message box / notification title
@@ -191,34 +148,27 @@ public Q_SLOTS:
        @param[in] ret       pointer to a bool that will be modified to whether Ok was clicked (modal only)
     */
     void message(const QString &title, const QString &message, unsigned int style, bool *ret = NULL);
+    /** Asks the user whether to pay the transaction fee or to cancel the transaction.
+       It is currently not possible to pass a return value to another thread through
+       BlockingQueuedConnection, so an indirected pointer is used.
+       https://bugreports.qt-project.org/browse/QTBUG-10440
 
-#ifdef ENABLE_WALLET
-    /** Set the hd-enabled status as shown in the UI.
-     @param[in] status            current hd enabled status
-     @see WalletModel::EncryptionStatus
-     */
-    void setHDStatus(int hdEnabled);
-
-    /** Set the encryption status as shown in the UI.
-       @param[in] status            current encryption status
-       @see WalletModel::EncryptionStatus
+      @param[in] nFeeRequired       the required fee
+      @param[out] payFee            true to pay the fee, false to not pay the fee
     */
-    void setEncryptionStatus(int status);
-
-    bool handlePaymentRequest(const SendCoinsRecipient& recipient);
+    void askFee(qint64 nFeeRequired, bool *payFee);
+    void handleURI(QString strURI);
 
     /** Show incoming transaction notification for new transactions. */
-    void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label);
-#endif // ENABLE_WALLET
+    void incomingTransaction(const QString& date, int unit, qint64 amount, const QString& type, const QString& address);
 
-private Q_SLOTS:
-#ifdef ENABLE_WALLET
+private slots:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
-    /** Switch to masternode page */
-    void gotoMasternodePage();
+    /** Switch to address book page */
+    void gotoAddressBookPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
@@ -229,34 +179,10 @@ private Q_SLOTS:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
-    /** Show open dialog */
-    void openClicked();
-#endif // ENABLE_WALLET
     /** Show configuration dialog */
     void optionsClicked();
     /** Show about dialog */
     void aboutClicked();
-    /** Show debug window */
-    void showDebugWindow();
-
-    /** Show debug window and set focus to the appropriate tab */
-    void showInfo();
-    void showConsole();
-    void showGraph();
-    void showPeers();
-    void showRepair();
-
-    /** Open external (default) editor with compute.conf */
-    void showConfEditor();
-    /** Open external (default) editor with masternode.conf */
-    void showMNConfEditor();
-    /** Show folder with wallet backups in default file browser */
-    void showBackups();
-
-    /** Show help message dialog */
-    void showHelpMessageClicked();
-    /** Show PrivateSend help message dialog */
-    void showPrivateSendHelpClicked();
 #ifndef Q_OS_MAC
     /** Handle tray icon clicked */
     void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
@@ -269,46 +195,6 @@ private Q_SLOTS:
 
     /** called by a timer to check if fRequestShutdown has been set **/
     void detectShutdown();
-
-    /** Show progress dialog e.g. for verifychain */
-    void showProgress(const QString &title, int nProgress);
-    
-    /** When hideTrayIcon setting is changed in OptionsModel hide or show the icon accordingly. */
-    void setTrayIconVisible(bool);
-
-    /** Toggle networking */
-    void toggleNetworkActive();
-
-    void showModalOverlay();
 };
 
-class UnitDisplayStatusBarControl : public QLabel
-{
-    Q_OBJECT
-
-public:
-    explicit UnitDisplayStatusBarControl(const PlatformStyle *platformStyle);
-    /** Lets the control know about the Options Model (and its signals) */
-    void setOptionsModel(OptionsModel *optionsModel);
-
-protected:
-    /** So that it responds to left-button clicks */
-    void mousePressEvent(QMouseEvent *event);
-
-private:
-    OptionsModel *optionsModel;
-    QMenu* menu;
-
-    /** Shows context menu with Display Unit options by the mouse coordinates */
-    void onDisplayUnitsClicked(const QPoint& point);
-    /** Creates context menu, its actions, and wires up all the relevant signals for mouse events. */
-    void createContextMenu();
-
-private Q_SLOTS:
-    /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
-    void updateDisplayUnit(int newUnits);
-    /** Tells underlying optionsModel to update its current display unit. */
-    void onMenuSelection(QAction* action);
-};
-
-#endif // BITCOIN_QT_BITCOINGUI_H
+#endif // BITCOINGUI_H

@@ -1,59 +1,20 @@
-// Copyright (c) 2013-2015 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
+//
 // Unit tests for alert system
+//
 
-#include "alert.h"
-#include "chain.h"
-#include "chainparams.h"
-#include "clientversion.h"
-#include "data/alertTests.raw.h"
-#include "serialize.h"
-#include "streams.h"
-#include "utilstrencodings.h"
-
-#include "test/testutil.h"
-#include "test/test_compute.h"
-
+#include <boost/foreach.hpp>
+#include <boost/test/unit_test.hpp>
 #include <fstream>
 
-#include <boost/filesystem/operations.hpp>
-#include <boost/test/unit_test.hpp>
+#include "alert.h"
+#include "serialize.h"
+#include "util.h"
 
+#if 0
 //
-// Sign a CAlert and serialize it
+// alertTests contains 7 alerts, generated with this code:
+// (SignAndSave code not shown, alert signing key is secret)
 //
-bool SignAndSave(CAlert &alert)
-{
-    // Sign
-    if(!alert.Sign())
-    {
-        printf("SignAndSave() : could not sign alert:\n%s", alert.ToString().c_str());
-        return false;
-    }
-
-    std::string strFilePath = "src/test/data/alertTests.raw";
-    // open output file and associate it with CAutoFile
-    FILE *file = fopen(strFilePath.c_str(), "ab+");
-    CAutoFile fileout(file, SER_DISK, CLIENT_VERSION);
-    if (fileout.IsNull())
-        return error("%s: Failed to open file %s", __func__, strFilePath);
-
-    try {
-        fileout << alert;
-    }
-    catch (std::exception &e) {
-        return error("%s: Serialize or I/O error - %s", __func__, e.what());
-    }
-    fileout.fclose();
-    return true;
-}
-
-//
-// alertTests contains 8 alerts, generated with this code
-//
-void GenerateAlertTests()
 {
     CAlert alert;
     alert.nRelayUntil   = 60;
@@ -61,65 +22,80 @@ void GenerateAlertTests()
     alert.nID           = 1;
     alert.nCancel       = 0;   // cancels previous messages up to this ID number
     alert.nMinVer       = 0;  // These versions are protocol versions
-    alert.nMaxVer       = 999001;
+    alert.nMaxVer       = 70001;
     alert.nPriority     = 1;
     alert.strComment    = "Alert comment";
     alert.strStatusBar  = "Alert 1";
 
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     alert.setSubVer.insert(std::string("/Satoshi:0.1.0/"));
     alert.strStatusBar  = "Alert 1 for Satoshi 0.1.0";
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     alert.setSubVer.insert(std::string("/Satoshi:0.2.0/"));
     alert.strStatusBar  = "Alert 1 for Satoshi 0.1.0, 0.2.0";
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     alert.setSubVer.clear();
     ++alert.nID;
     alert.nCancel = 1;
     alert.nPriority = 100;
     alert.strStatusBar  = "Alert 2, cancels 1";
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     alert.nExpiration += 60;
     ++alert.nID;
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     ++alert.nID;
     alert.nMinVer = 11;
     alert.nMaxVer = 22;
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     ++alert.nID;
     alert.strStatusBar  = "Alert 2 for Satoshi 0.1.0";
     alert.setSubVer.insert(std::string("/Satoshi:0.1.0/"));
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 
     ++alert.nID;
     alert.nMinVer = 0;
     alert.nMaxVer = 999999;
     alert.strStatusBar  = "Evil Alert'; /bin/ls; echo '";
     alert.setSubVer.clear();
-    SignAndSave(alert);
+    SignAndSave(alert, "test/alertTests");
 }
+#endif
 
-struct ReadAlerts : public TestingSetup
+struct ReadAlerts
 {
     ReadAlerts()
     {
-        std::vector<unsigned char> vch(raw_tests::alertTests, raw_tests::alertTests + sizeof(raw_tests::alertTests));
-        CDataStream stream(vch, SER_DISK, CLIENT_VERSION);
+        std::string filename("alertTests");
+        namespace fs = boost::filesystem;
+        fs::path testFile = fs::current_path() / "test" / "data" / filename;
+#ifdef TEST_DATA_DIR
+        if (!fs::exists(testFile))
+        {
+            testFile = fs::path(BOOST_PP_STRINGIZE(TEST_DATA_DIR)) / filename;
+        }
+#endif
+        FILE* fp = fopen(testFile.string().c_str(), "rb");
+        if (!fp) return;
+
+
+        CAutoFile filein = CAutoFile(fp, SER_DISK, CLIENT_VERSION);
+        if (!filein) return;
+
         try {
-            while (!stream.eof())
+            while (!feof(filein))
             {
                 CAlert alert;
-                stream >> alert;
+                filein >> alert;
                 alerts.push_back(alert);
             }
         }
-        catch (const std::exception&) { }
+        catch (std::exception) { }
     }
     ~ReadAlerts() { }
 
@@ -140,55 +116,36 @@ struct ReadAlerts : public TestingSetup
 
 BOOST_FIXTURE_TEST_SUITE(Alert_tests, ReadAlerts)
 
-// Steps to generate alert tests:
-// - update alerts in GenerateAlertTests() (optional)
-// - enable code below (#if 1)
-// - replace "fffffffffffffffffffffffffffffffffffffffffffffffffff" with the actual MAINNET privkey
-// - recompile and run "/path/to/test_compute -t Alert_test"
-//
-// NOTE: make sure to disable code and remove alert privkey when you're done!
-//
-#if 0
-BOOST_AUTO_TEST_CASE(GenerateAlerts)
-{
-    SoftSetArg("-alertkey", "fffffffffffffffffffffffffffffffffffffffffffffffffff");
-    GenerateAlertTests();
-}
-#endif
 
 BOOST_AUTO_TEST_CASE(AlertApplies)
 {
     SetMockTime(11);
-    const std::vector<unsigned char>& alertKey = Params(CBaseChainParams::MAIN).AlertKey();
 
-    for (const auto& alert : alerts)
+    BOOST_FOREACH(const CAlert& alert, alerts)
     {
-        BOOST_CHECK(alert.CheckSignature(alertKey));
+        BOOST_CHECK(alert.CheckSignature());
     }
-
-    BOOST_CHECK(alerts.size() >= 3);
-
     // Matches:
     BOOST_CHECK(alerts[0].AppliesTo(1, ""));
-    BOOST_CHECK(alerts[0].AppliesTo(999001, ""));
+    BOOST_CHECK(alerts[0].AppliesTo(70001, ""));
     BOOST_CHECK(alerts[0].AppliesTo(1, "/Satoshi:11.11.11/"));
 
     BOOST_CHECK(alerts[1].AppliesTo(1, "/Satoshi:0.1.0/"));
-    BOOST_CHECK(alerts[1].AppliesTo(999001, "/Satoshi:0.1.0/"));
+    BOOST_CHECK(alerts[1].AppliesTo(70001, "/Satoshi:0.1.0/"));
 
     BOOST_CHECK(alerts[2].AppliesTo(1, "/Satoshi:0.1.0/"));
     BOOST_CHECK(alerts[2].AppliesTo(1, "/Satoshi:0.2.0/"));
 
     // Don't match:
     BOOST_CHECK(!alerts[0].AppliesTo(-1, ""));
-    BOOST_CHECK(!alerts[0].AppliesTo(999002, ""));
+    BOOST_CHECK(!alerts[0].AppliesTo(70002, ""));
 
     BOOST_CHECK(!alerts[1].AppliesTo(1, ""));
     BOOST_CHECK(!alerts[1].AppliesTo(1, "Satoshi:0.1.0"));
     BOOST_CHECK(!alerts[1].AppliesTo(1, "/Satoshi:0.1.0"));
     BOOST_CHECK(!alerts[1].AppliesTo(1, "Satoshi:0.1.0/"));
     BOOST_CHECK(!alerts[1].AppliesTo(-1, "/Satoshi:0.1.0/"));
-    BOOST_CHECK(!alerts[1].AppliesTo(999002, "/Satoshi:0.1.0/"));
+    BOOST_CHECK(!alerts[1].AppliesTo(70002, "/Satoshi:0.1.0/"));
     BOOST_CHECK(!alerts[1].AppliesTo(1, "/Satoshi:0.2.0/"));
 
     BOOST_CHECK(!alerts[2].AppliesTo(1, "/Satoshi:0.3.0/"));
@@ -197,39 +154,29 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
 }
 
 
+// This uses sh 'echo' to test the -alertnotify function, writing to a
+// /tmp file. So skip it on Windows:
+#ifndef WIN32
 BOOST_AUTO_TEST_CASE(AlertNotify)
 {
     SetMockTime(11);
-    const std::vector<unsigned char>& alertKey = Params(CBaseChainParams::MAIN).AlertKey();
 
-    boost::filesystem::path temp = GetTempPath() /
-        boost::filesystem::unique_path("alertnotify-%%%%.txt");
+    boost::filesystem::path temp = GetTempPath() / "alertnotify.txt";
+    boost::filesystem::remove(temp);
 
-    ForceSetArg("-alertnotify", std::string("echo %s >> ") + temp.string());
+    mapArgs["-alertnotify"] = std::string("echo %s >> ") + temp.string();
 
-    for (const auto& alert : alerts)
-        alert.ProcessAlert(alertKey, false);
+    BOOST_FOREACH(CAlert alert, alerts)
+        alert.ProcessAlert(false);
 
     std::vector<std::string> r = read_lines(temp);
-    BOOST_CHECK_EQUAL(r.size(), 4u);
+    BOOST_CHECK_EQUAL(r.size(), 1u);
+    BOOST_CHECK_EQUAL(r[0], "Evil Alert; /bin/ls; echo "); // single-quotes should be removed
 
-// Windows built-in echo semantics are different than posixy shells. Quotes and
-// whitespace are printed literally.
-
-#ifndef WIN32
-    BOOST_CHECK_EQUAL(r[0], "Alert 1");
-    BOOST_CHECK_EQUAL(r[1], "Alert 2, cancels 1");
-    BOOST_CHECK_EQUAL(r[2], "Alert 2, cancels 1");
-    BOOST_CHECK_EQUAL(r[3], "Evil Alert; /bin/ls; echo "); // single-quotes should be removed
-#else
-    BOOST_CHECK_EQUAL(r[0], "'Alert 1' ");
-    BOOST_CHECK_EQUAL(r[1], "'Alert 2, cancels 1' ");
-    BOOST_CHECK_EQUAL(r[2], "'Alert 2, cancels 1' ");
-    BOOST_CHECK_EQUAL(r[3], "'Evil Alert; /bin/ls; echo ' ");
-#endif
     boost::filesystem::remove(temp);
 
     SetMockTime(0);
 }
+#endif
 
 BOOST_AUTO_TEST_SUITE_END()

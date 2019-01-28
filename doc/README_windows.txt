@@ -1,9 +1,17 @@
-Compute Core 0.12.1
-=====================
+ComputeCore 0.8.x BETA
+
+Copyright (c) 2009-2013 Bitcoin Developers
+Copyright (c) 2011-2013 ComputeCore Developers
+Distributed under the MIT/X11 software license, see the accompanying
+file COPYING or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by Eric Young (eay@cryptsoft.com).
+
 
 Intro
 -----
-Compute is a free open source peer-to-peer electronic cash system that is
+ComputeCore is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -11,11 +19,10 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
-Unpack the files into a directory and run compute-qt.exe.
+Unpack the files into a directory and run darkcoin-qt.exe.
 
-Compute Core is the original Compute client and it builds the backbone of the network.
-However, it downloads and stores the entire history of Compute transactions;
+ComputeCore-Qt is the original ComputeCore client and it builds the backbone of the network.
+However, it downloads and stores the entire history of ComputeCore transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
-for more help and information.

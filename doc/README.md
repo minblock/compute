@@ -1,75 +1,47 @@
-Compute Core 0.12.1
-=====================
+ComputeCore 0.8.x BETA
+====================
 
-This is the official reference wallet for Compute digital currency and comprises the backbone of the Compute peer-to-peer network. You can [download Compute Core](https://www.computecoin.ca/downloads/) or [build it yourself](#building) using the guides below.
+Copyright (c) 2009-2013 Bitcoin Developers
+Copyright (c) 2011-2013 ComputeCore Developers
 
-Running
+Distributed under the MIT/X11 software license, see the accompanying
+file COPYING or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](http://www.openssl.org/). This product includes
+cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
+
+
+Intro
 ---------------------
-The following are some helpful notes on how to run Compute on your native platform.
+ComputeCore is a free open source peer-to-peer electronic cash system that is
+completely decentralized, without the need for a central server or trusted
+parties.  Users hold the crypto keys to their own money and transact directly
+with each other, with the help of a P2P network to check for double-spending.
 
-### Unix
+
+Setup
+---------------------
+You need the Qt4 run-time libraries to run ComputeCore-Qt. On Debian or Ubuntu:
+	`sudo apt-get install libqtgui4`
 
 Unpack the files into a directory and run:
 
-- `bin/compute-qt` (GUI) or
-- `bin/computed` (headless)
+- bin/32/darkcoin-qt (GUI, 32-bit)
+- bin/32/darkcoind (headless, 32-bit)
+- bin/64/darkcoin-qt (GUI, 64-bit)
+- bin/64/darkcoind (headless, 64-bit)
 
-### Windows
-
-Unpack the files into a directory, and then run compute-qt.exe.
-
-### OS X
-
-Drag Compute-Qt to your applications folder, and then run Compute-Qt.
-
-### Need Help?
-
-* See the [Compute documentation](https://minblock.atlassian.net/wiki/display/DOC)
+See the documentation at the [ComputeCore Wiki](http://darkcoin.info)
 for help and more information.
-* Ask for help on [Compute Nation Discord](http://computechat.org)
-* Ask for help on the [Compute Forum](https://computecoin.ca/forum)
 
-Building
+
+Other Pages
 ---------------------
-The following are developer notes on how to build Compute Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
-
-- [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
-- [Windows Build Notes](build-windows.md)
-- [OpenBSD Build Notes](build-openbsd.md)
-- [Gitian Building Guide](gitian-building.md)
-
-Development
----------------------
-The Compute Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
-
-- [Developer Notes](developer-notes.md)
-- [Release Notes](release-notes.md)
+- [OSX Build Notes](build-osx.md)
+- [Windows Build Notes](build-msw.md)
+- [Coding Guidelines](coding.md)
 - [Release Process](release-process.md)
-- Source Code Documentation ***TODO***
+- [Release Notes](release-notes.md)
+- [Multiwallet Qt Development](multiwallet-qt.md)
+- [Unit Tests](unit-tests.md)
 - [Translation Process](translation_process.md)
-- [Translation Strings Policy](translation_strings_policy.md)
-- [Travis CI](travis-ci.md)
-- [Unauthenticated REST Interface](REST-interface.md)
-- [Shared Libraries](shared-libraries.md)
-- [BIPS](bips.md)
-- [Dnsseed Policy](dnsseed-policy.md)
-- [Benchmarking](benchmarking.md)
-
-### Resources
-* Discuss on the [Compute Forum](https://computecoin.ca/forum), in the Development & Technical Discussion board.
-* Discuss on [Compute Nation Discord](http://computechat.org)
-
-### Miscellaneous
-- [Assets Attribution](assets-attribution.md)
-- [Files](files.md)
-- [Reduce Traffic](reduce-traffic.md)
-- [Tor Support](tor.md)
-- [Init Scripts (systemd/upstart/openrc)](init.md)
-- [ZMQ](zmq.md)
-
-License
----------------------
-Distributed under the [MIT software license](/COPYING).
-This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](https://www.openssl.org/). This product includes
-cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.

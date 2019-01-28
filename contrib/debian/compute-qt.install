@@ -1,6 +1,0 @@
-usr/local/bin/compute-qt usr/bin
-share/pixmaps/compute32.xpm usr/share/pixmaps
-share/pixmaps/compute16.xpm usr/share/pixmaps
-share/pixmaps/compute128.png usr/share/pixmaps
-debian/compute-qt.desktop usr/share/applications
-debian/compute-qt.protocol usr/share/kde4/services/
