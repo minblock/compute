@@ -31,7 +31,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6"); //mainnet
+uint256 hashGenesisBlock("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"); //mainnet
 
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // ComputeCore: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -3033,11 +3033,11 @@ bool LoadBlockIndex()
 {
     if (fTestNet)
     {
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xc1;
-        pchMessageStart[2] = 0xb7;
-        pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c");
+        pchMessageStart[0] = 0x05;
+        pchMessageStart[1] = 0x04;
+        pchMessageStart[2] = 0x03;
+        pchMessageStart[3] = 0x02;
+        hashGenesisBlock = uint256("0x0000095d065c972d3772dde7b0ae0205f373b47ba80a4fb4dc6a2968888c768b");
     }
 
     //
@@ -3070,26 +3070,26 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block        
-        const char* pszTimestamp = "Wired 09/Jan/2014 The Grand Experiment Goes Live: Overstock.com Is Now Accepting Bitcoins";
+        const char* pszTimestamp = "National Post: Recreational marijuana becomes legal in Canada on October 16, 2018";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1390095618;
+        block.nTime    = 1546072292;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 28917698;
+        block.nNonce   = 5120588;
 
         if (fTestNet)
         {
-            block.nTime    = 1390666206;
-            block.nNonce   = 3861367235;
+            block.nTime    = 1546073052;
+            block.nNonce   = 591101;
         }
 
         //// debug print
@@ -3097,7 +3097,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(block.hashMerkleRoot == uint256("0x8ee8ef52b60829efa6ad473ab74367365112acd8e6aa5724fc328d0c3ec7cd01"));
         block.print();
         assert(hash == hashGenesisBlock);
 
