@@ -1193,19 +1193,20 @@ void MapPort(bool)
 // The second name should resolve to a list of seed addresses.
 
 static const char *strMainNetDNSSeed[][2] = {
-    {"", "23.23.186.131"}, //Evan's seed node
-    {"", "50.16.206.102"}, //InternetApe's seed node
-    {"", "50.19.116.123"},
-    {"", "54.193.124.32"},
-    {"", "62.141.39.175"},
-    {"lotteryingmining.com", "192.99.32.166"},
-    {"", "107.155.71.72"},
-    {"drkpool.com", "162.252.83.44"},
+    {"", "192.3.3.18"}, //stevecat's seed node
+    {"", "192.3.3.19"}, //stevecat's seed node
+    {"", "192.3.3.20"},
+    {"", "192.3.3.21"},
+    {"", "192.3.3.22"},
+    {"bitwall.ca", "192.3.3.23"},
+    {"", "192.3.3.24"},
+    {"putepool.com", "192.3.3.25"},
     {NULL, NULL},
 };
 
 static const char *strTestNetDNSSeed[][2] = {
-    {"", "23.23.186.131"},
+    {"", "192.3.3.18"}, //stevecat's testseed node
+    {"", "192.3.3.19"}, //stevecat's testseed node
     {NULL, NULL},
 };
 
@@ -1257,7 +1258,7 @@ void ThreadDNSAddressSeed()
 
 unsigned int pnSeed[] =
 {
-    0x1717ba83, 0x3210ce66, 0x3213747b, 0x36c17c20, 0x3e8d27af, 0xc06320a6, 0x6b9b4748, 0xa2fc532c
+ 0x120303c0, 0x130303c0, 0x140303c0, 0x150303c0, 0x160303c0, 0x170303c0, 0x180303c0, 0x190303c0, 0x1a0303c0, 0x1b0303c0, 0x1c0303c0, 0x1d0303c0, 0x1e0303c0
 };
 
 void DumpAddresses()

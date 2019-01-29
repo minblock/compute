@@ -272,9 +272,9 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 48+28, // ComputeCore addresses start with X
+        PUBKEY_ADDRESS = 14+14, // ComputeCore addresses start with C
         SCRIPT_ADDRESS = 5,
-        PUBKEY_ADDRESS_TEST = 111,
+        PUBKEY_ADDRESS_TEST = 87, // ComputeCore Testnet addresses begin with c
         SCRIPT_ADDRESS_TEST = 196,
     };
 
