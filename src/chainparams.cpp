@@ -187,10 +187,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x4c;
-        pchMessageStart[1] = 0x65;
-        pchMessageStart[2] = 0x65;
-        pchMessageStart[3] = 0x74;
+        pchMessageStart[0] = 0x4c; //L
+        pchMessageStart[1] = 0x65; //E
+        pchMessageStart[2] = 0x65; //E
+        pchMessageStart[3] = 0x74; //T
         vAlertPubKey = ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
         nDefaultPort = 11337;
         nPruneAfterHeight = 100000;
@@ -206,8 +206,8 @@ public:
         vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
         vSeeds.push_back(CDNSSeedData("computepay.io", "dnsseed.computepay.io"));
 
-        // Compute addresses start with 'O' or 'P'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,116);
+        // Compute addresses start with 'C'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         // Compute script addresses start with '6'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
         // Compute private keys start with '7' or 'X'
