@@ -232,17 +232,17 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        strSporkAddress = "Xgtyuk76vhuFW2iT7UAiHgNdWXCf3J34wh";
+        strSporkAddress = "3PjR3qvbffG8Nt92owiGsgNGWBTiaaTchp";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-/*            (  1500, uint256S("0x000000aaf0300f59f49bc3e970bad15c11f961fe2347accffff19d96ec9778e3"))
-            (  4991, uint256S("0x000000003b01809551952460744d5dbb8fcbd6cbae3c220267bf7fa43f837367"))
-            (  9918, uint256S("0x00000000213e229f332c0ffbe34defdaa9e74de87f2d8d1f01af8d121c3c170b"))
-            ( 16912, uint256S("0x00000000075c0d10371d55a60634da70f197548dbbfa4123e12abfcbc5738af9"))
-            ( 23912, uint256S("0x0000000000335eac6703f3b1732ec8b2f89c3ba3a7889e5767b090556bb9a276"))
-            ( 35457, uint256S("0x0000000000b0ae211be59b048df14820475ad0dd53b9ff83b010f71a77342d9f"))
-            ( 45479, uint256S("0x000000000063d411655d590590e16960f15ceea4257122ac430c6fbe39fbf02d"))
+            (  3000, uint256S("0x000000403a08667a5048e442ff360b5fdad8a7db4e23f03db43c49eb6609474d"))
+            (  5000, uint256S("0x0000002e94d876c2a111ddaf9ce7d6d7136f9d0e299c1efddabd74f80564a5aa"))
+            (  8000, uint256S("0x00000066311c52f078e12f932fe1b86a7f0f82e03ff59d97726fd2b20cbea241"))
+            ( 11000, uint256S("0x000000a1ad1b334963cae55527dd2e643b8ac9bb37bb0856b931c63541674427"))
+            ( 12000, uint256S("0x0000001b6277bbc118819fbba9624da1f01be2d98ccee911cf2bbbff678f27ef"))
+            ( 12237, uint256S("0x0000002098e0117166606447f46fa0cde44ff02bfef9c58af9b7ee804a1ccc62"))
+/*            ( 45479, uint256S("0x000000000063d411655d590590e16960f15ceea4257122ac430c6fbe39fbf02d"))
             ( 55895, uint256S("0x0000000000ae4c53a43639a4ca027282f69da9c67ba951768a20415b6439a2d7"))
             ( 68899, uint256S("0x0000000000194ab4d3d9eeb1f2f792f21bb39ff767cb547fe977640f969d77b7"))
             ( 74619, uint256S("0x000000000011d28f38f05d01650a502cc3f4d0e793fbc26e2a2ca71f07dc3842"))
@@ -257,12 +257,11 @@ public:
             ( 523412, uint256S("0x000000000000e54f036576a10597e0e42cc22a5159ce572f999c33975e121d4d"))
             ( 523930, uint256S("0x0000000000000bccdb11c2b1cfb0ecab452abf267d89b7f46eaf2d54ce6e652c"))
             ( 750000, uint256S("0x00000000000000b4181bbbdddbae464ce11fede5d0292fb63fdede1e7c8ab21c"))*/
-            ( 0, uint256S("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"))
         };
 
         chainTxData = ChainTxData{
-            1529305236, // * UNIX timestamp of last known number of transactions
-            6155435,    // * total number of transactions between genesis and that timestamp
+            1550828213, // * UNIX timestamp of last known number of transactions
+            12242,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.1         // * estimated number of transactions per second after that timestamp
         };
