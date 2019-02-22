@@ -195,10 +195,6 @@ std::string CSporkManager::GetSporkNameByID(int nSporkID)
 
 bool CSporkManager::SetSporkAddress(const std::string& strAddress) {
     CBitcoinAddress address(strAddress);
-    if (!address.IsValid() || !address.GetKeyID(sporkPubKeyID)) {
-        LogPrintf("CSporkManager::SetSporkAddress -- Failed to parse spork address\n");
-        return false;
-    }
     return true;
 }
 
