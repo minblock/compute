@@ -93,12 +93,6 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     
     /* Theme selector */
     ui->theme->addItem(QString("COMPUTE-light"), QVariant("light"));
-    ui->theme->addItem(QString("COMPUTE-light-hires"), QVariant("light-hires"));
-    ui->theme->addItem(QString("COMPUTE-light-retro"), QVariant("light-retro"));
-    ui->theme->addItem(QString("COMPUTE-light-hires-retro"), QVariant("light-hires-retro"));
-    ui->theme->addItem(QString("COMPUTE-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("COMPUTE-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("COMPUTE-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");
