@@ -162,7 +162,7 @@ void CGovernanceManager::ProcessMessage(CNode* pfrom, const std::string& strComm
 
         if(mapObjects.count(nHash) || mapPostponedObjects.count(nHash) ||
            mapErasedGovernanceObjects.count(nHash) || mapMasternodeOrphanObjects.count(nHash)) {
-            // TODO - print error code? what if it's GCOMPUTEBJ_ERROR_IMMATURE?
+            // TODO - print error code? what if it's GPUTEzBJ_ERROR_IMMATURE?
             LogPrint("gobject", "MNGOVERNANCEOBJECT -- Received already seen object: %s\n", strHash);
             return;
         }
@@ -695,8 +695,8 @@ void CGovernanceManager::SyncSingleObjAndItsVotes(CNode* pnode, const uint256& n
     }
 
     CNetMsgMaker msgMaker(pnode->GetSendVersion());
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ, 1));
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ_VOTE, nVoteCount));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GPUTEzBJ, 1));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GPUTEzBJ_VOTE, nVoteCount));
     LogPrintf("CGovernanceManager::%s -- sent 1 object and %d votes to peer=%d\n", __func__, nVoteCount, pnode->id);
 }
 
@@ -743,8 +743,8 @@ void CGovernanceManager::SyncAll(CNode* pnode, CConnman& connman) const
     }
 
     CNetMsgMaker msgMaker(pnode->GetSendVersion());
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ, nObjCount));
-    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GCOMPUTEBJ_VOTE, nVoteCount));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GPUTEzBJ, nObjCount));
+    connman.PushMessage(pnode, msgMaker.Make(NetMsgType::SYNCSTATUSCOUNT, MASTERNODE_SYNC_GPUTEzBJ_VOTE, nVoteCount));
     LogPrintf("CGovernanceManager::%s -- sent %d objects and %d votes to peer=%d\n", __func__, nObjCount, nVoteCount, pnode->id);
 }
 

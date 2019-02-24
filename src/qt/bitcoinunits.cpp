@@ -19,9 +19,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(COMPUTE);
-    unitlist.append(mCOMPUTE);
-    unitlist.append(uCOMPUTE);
+    unitlist.append(PUTEz);
+    unitlist.append(mPUTEz);
+    unitlist.append(uPUTEz);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -30,9 +30,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case COMPUTE:
-    case mCOMPUTE:
-    case uCOMPUTE:
+    case PUTEz:
+    case mPUTEz:
+    case uPUTEz:
     case duffs:
         return true;
     default:
@@ -46,9 +46,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case COMPUTE: return QString("COMPUTE");
-            case mCOMPUTE: return QString("mCOMPUTE");
-            case uCOMPUTE: return QString::fromUtf8("μCOMPUTE");
+            case PUTEz: return QString("PUTEz");
+            case mPUTEz: return QString("mPUTEz");
+            case uPUTEz: return QString::fromUtf8("μPUTEz");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -57,9 +57,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case COMPUTE: return QString("tCOMPUTE");
-            case mCOMPUTE: return QString("mtCOMPUTE");
-            case uCOMPUTE: return QString::fromUtf8("μtCOMPUTE");
+            case PUTEz: return QString("tPUTEz");
+            case mPUTEz: return QString("mtPUTEz");
+            case uPUTEz: return QString::fromUtf8("μtPUTEz");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -72,9 +72,9 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case COMPUTE: return QString("Compute");
-            case mCOMPUTE: return QString("Milli-Compute (1 / 1" THIN_SP_UTF8 "000)");
-            case uCOMPUTE: return QString("Micro-Compute (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case PUTEz: return QString("Compute");
+            case mPUTEz: return QString("Milli-Compute (1 / 1" THIN_SP_UTF8 "000)");
+            case uPUTEz: return QString("Micro-Compute (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case duffs: return QString("Ten Nano-Compute (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -83,9 +83,9 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case COMPUTE: return QString("TestComputes");
-            case mCOMPUTE: return QString("Milli-TestCompute (1 / 1" THIN_SP_UTF8 "000)");
-            case uCOMPUTE: return QString("Micro-TestCompute (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case PUTEz: return QString("TestComputes");
+            case mPUTEz: return QString("Milli-TestCompute (1 / 1" THIN_SP_UTF8 "000)");
+            case uPUTEz: return QString("Micro-TestCompute (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case duffs: return QString("Ten Nano-TestCompute (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -96,9 +96,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case COMPUTE:  return 100000000;
-    case mCOMPUTE: return 100000;
-    case uCOMPUTE: return 100;
+    case PUTEz:  return 100000000;
+    case mPUTEz: return 100000;
+    case uPUTEz: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -108,9 +108,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case COMPUTE: return 8;
-    case mCOMPUTE: return 5;
-    case uCOMPUTE: return 2;
+    case PUTEz: return 8;
+    case mPUTEz: return 5;
+    case uPUTEz: return 2;
     case duffs: return 0;
     default: return 0;
     }

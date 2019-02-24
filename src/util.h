@@ -35,8 +35,8 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_COMPUTE_DEBUG
-#ifdef ENABLE_COMPUTE_DEBUG
+//#define ENABLE_PUTEz_DEBUG
+#ifdef ENABLE_PUTEz_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x ) 

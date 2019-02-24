@@ -57,9 +57,9 @@ public:
      */
     enum Unit
     {
-        COMPUTE,
-        mCOMPUTE,
-        uCOMPUTE,
+        PUTEz,
+        mPUTEz,
+        uPUTEz,
         duffs
     };
 

@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2017 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef COMPUTE_HDCHAIN_H
-#define COMPUTE_HDCHAIN_H
+#ifndef PUTEz_HDCHAIN_H
+#define PUTEz_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -147,4 +147,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // COMPUTE_HDCHAIN_H
+#endif // PUTEz_HDCHAIN_H

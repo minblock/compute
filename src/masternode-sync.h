@@ -17,8 +17,8 @@ static const int MASTERNODE_SYNC_WAITING         = 1; // waiting after initial t
 static const int MASTERNODE_SYNC_LIST            = 2;
 static const int MASTERNODE_SYNC_MNW             = 3;
 static const int MASTERNODE_SYNC_GOVERNANCE      = 4;
-static const int MASTERNODE_SYNC_GCOMPUTEBJ          = 10;
-static const int MASTERNODE_SYNC_GCOMPUTEBJ_VOTE     = 11;
+static const int MASTERNODE_SYNC_GPUTEzBJ          = 10;
+static const int MASTERNODE_SYNC_GPUTEzBJ_VOTE     = 11;
 static const int MASTERNODE_SYNC_FINISHED        = 999;
 
 static const int MASTERNODE_SYNC_TICK_SECONDS    = 6;

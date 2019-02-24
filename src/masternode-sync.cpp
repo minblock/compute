@@ -336,7 +336,7 @@ void CMasternodeSync::ProcessTick(CConnman& connman)
                 return; //this will cause each peer to get one request each six seconds for the various assets we need
             }
 
-            // GCOMPUTEBJ : SYNC GOVERNANCE ITEMS FROM OUR PEERS
+            // GPUTEzBJ : SYNC GOVERNANCE ITEMS FROM OUR PEERS
 
             if(nRequestedMasternodeAssets == MASTERNODE_SYNC_GOVERNANCE) {
                 LogPrint("gobject", "CMasternodeSync::ProcessTick -- nTick %d nRequestedMasternodeAssets %d nTimeLastBumped %lld GetTime() %lld diff %lld\n", nTick, nRequestedMasternodeAssets, nTimeLastBumped, GetTime(), GetTime() - nTimeLastBumped);

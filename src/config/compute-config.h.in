@@ -1,8 +1,8 @@
 /* src/config/compute-config.h.in.  Generated from configure.ac by autoheader.  */
 
-#ifndef COMPUTE_CONFIG_H
+#ifndef PUTEz_CONFIG_H
 
-#define COMPUTE_CONFIG_H
+#define PUTEz_CONFIG_H
 
 /* Define if building universal (internal helper macro) */
 #undef AC_APPLE_UNIVERSAL_BUILD
@@ -384,4 +384,4 @@
 /* Define for large files, on AIX-style hosts. */
 #undef _LARGE_FILES
 
-#endif //COMPUTE_CONFIG_H
+#endif //PUTEz_CONFIG_H

@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef COMPUTE_BIP39_H
-#define COMPUTE_BIP39_H
+#ifndef PUTEz_BIP39_H
+#define PUTEz_BIP39_H
 
 #include "support/allocators/secure.h"
 

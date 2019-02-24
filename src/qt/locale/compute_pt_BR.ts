@@ -172,8 +172,8 @@
         <translation>Confirmar criptografia da carteira</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COMPUTE&lt;/b&gt;!</source>
-        <translation>Aviso: Se você encriptar sua wallet e perder sua senha, você vai &lt;b&gt;PERDER TODAS AS SUAS COMPUTE&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PUTEz&lt;/b&gt;!</source>
+        <translation>Aviso: Se você encriptar sua wallet e perder sua senha, você vai &lt;b&gt;PERDER TODAS AS SUAS PUTEz&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -857,28 +857,28 @@
         <translation>Por favor, escolha um nível de privacidade.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 COMPUTE</source>
-        <translation>Usar 2 Masternodes separados para fazer a mixagem de fundos até 1000 COMPUTE</translation>
+        <source>Use 2 separate masternodes to mix funds up to 1000 PUTEz</source>
+        <translation>Usar 2 Masternodes separados para fazer a mixagem de fundos até 1000 PUTEz</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 COMPUTE</source>
-        <translation>Usar 8 Masternodes separados para fazer a mixagem de fundos até 1000 COMPUTE</translation>
+        <source>Use 8 separate masternodes to mix funds up to 1000 PUTEz</source>
+        <translation>Usar 8 Masternodes separados para fazer a mixagem de fundos até 1000 PUTEz</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Usar 16 Masternodes separados</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 COMPUTE to anonymize 1000 COMPUTE</source>
-        <translation>Esta é a opção mais rápida e custará em torno de ~0,025 COMPUTE para anonimizar 1000 COMPUTE</translation>
+        <source>This option is the quickest and will cost about ~0.025 PUTEz to anonymize 1000 PUTEz</source>
+        <translation>Esta é a opção mais rápida e custará em torno de ~0,025 PUTEz para anonimizar 1000 PUTEz</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 COMPUTE to anonymize 1000 COMPUTE</source>
-        <translation>Esta opção é moderadamente rápida e custará em torno de ~0,05 COMPUTE para anonimizar 1000 COMPUTE</translation>
+        <source>This option is moderately fast and will cost about 0.05 PUTEz to anonymize 1000 PUTEz</source>
+        <translation>Esta opção é moderadamente rápida e custará em torno de ~0,05 PUTEz para anonimizar 1000 PUTEz</translation>
     </message>
     <message>
-        <source>0.1 COMPUTE per 1000 COMPUTE you anonymize.</source>
-        <translation>0,1 COMPUTE por cada 1000 COMPUTE que você anonimizar.</translation>
+        <source>0.1 PUTEz per 1000 PUTEz you anonymize.</source>
+        <translation>0,1 PUTEz por cada 1000 PUTEz que você anonimizar.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1718,8 +1718,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Quantia e Rodadas:</translation>
     </message>
     <message>
-        <source>0 COMPUTE / 0 Rounds</source>
-        <translation>0 COMPUTE / 0 Rodadas</translation>
+        <source>0 PUTEz / 0 Rounds</source>
+        <translation>0 PUTEz / 0 Rodadas</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -3799,8 +3799,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Enviar moedas</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 COMPUTE.</source>
-        <translation>EnvioInstantâneo não suporta o envio de valores tão altos ainda. As transações são limitadas a %1 COMPUTE.</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PUTEz.</source>
+        <translation>EnvioInstantâneo não suporta o envio de valores tão altos ainda. As transações são limitadas a %1 PUTEz.</translation>
     </message>
     <message>
         <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
@@ -4433,8 +4433,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Se &lt;category&gt; não for suprida ou se &lt;category&gt; = 1, mostrar toda informação de depuração.</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 COMPUTE.</source>
-        <translation>EnvioInstantâneo não suporta o envio de valores tão altos ainda. As transações são limitadas a %1 COMPUTE.</translation>
+        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PUTEz.</source>
+        <translation>EnvioInstantâneo não suporta o envio de valores tão altos ainda. As transações são limitadas a %1 PUTEz.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -5021,8 +5021,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Endereço de spork inválido especificado com -sporkaddr</translation>
     </message>
     <message>
-        <source>Keep N COMPUTE anonymized (%u-%u, default: %u)</source>
-        <translation>Mantenha o N COMPUTE anônimo (%u-%u, padrão: %u)</translation>
+        <source>Keep N PUTEz anonymized (%u-%u, default: %u)</source>
+        <translation>Mantenha o N PUTEz anônimo (%u-%u, padrão: %u)</translation>
     </message>
     <message>
         <source>Print this help message and exit</source>
