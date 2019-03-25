@@ -159,20 +159,20 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 0;  //Not yet
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 999999999999ULL; // January 15th, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 0; //Frebruary 23, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1561420800; // June 25th, 2019
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 0;  //February 23, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 999999999999ULL; //February 23, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 0; //Frebruary 23, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1561420800; // June 25th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 0; //Frebruary 23, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 999999999999ULL; //February 23, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1561420800; // June 25th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
 
@@ -187,10 +187,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x4c; //L
-        pchMessageStart[1] = 0x65; //E
-        pchMessageStart[2] = 0x65; //E
-        pchMessageStart[3] = 0x74; //T
+        pchMessageStart[0] = 0x4c;
+        pchMessageStart[1] = 0x65;
+        pchMessageStart[2] = 0x65;
+        pchMessageStart[3] = 0x74;
         vAlertPubKey = ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
         nDefaultPort = 11337;
         nPruneAfterHeight = 100000;
@@ -201,10 +201,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x8ee8ef52b60829efa6ad473ab74367365112acd8e6aa5724fc328d0c3ec7cd01"));
 
 
-        vSeeds.push_back(CDNSSeedData("compute.org", "dnsseed.compute.org"));
-        vSeeds.push_back(CDNSSeedData("computedot.io", "dnsseed.computedot.io"));
-        vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
-        vSeeds.push_back(CDNSSeedData("computepay.io", "dnsseed.computepay.io"));
+        vSeeds.push_back(CDNSSeedData("compute.org", "seed.compute.provgn.com"));
 
         // Compute addresses start with 'C'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
@@ -236,9 +233,11 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  87, uint256S("0x0000007ca70522a795a0386c1f83e66fc76b17675bf23541b74a5e89b30d7276"))
-/*            (  5000, uint256S("0x0000002e94d876c2a111ddaf9ce7d6d7136f9d0e299c1efddabd74f80564a5aa"))
-            (  8000, uint256S("0x00000066311c52f078e12f932fe1b86a7f0f82e03ff59d97726fd2b20cbea241"))
+            (    87, uint256S("0x0000007ca70522a795a0386c1f83e66fc76b17675bf23541b74a5e89b30d7276"))
+            (  1337, uint256S("0x00000005059f5cb53dc09876df151022489dcfa85f2ff0e467f411bca9f784f6"))
+            (  2337, uint256S("0x00000003fea0ba510b4fcbf69339e0bb990c3b7adb85da92fbc29c854b0ab793"))
+            (  3185, uint256S("0x000000045e449c7388ee402c0144e573323a0f7195bd4161d03c01a46c4fbf6a"))
+/*          (  8000, uint256S("0x00000066311c52f078e12f932fe1b86a7f0f82e03ff59d97726fd2b20cbea241"))
             ( 11000, uint256S("0x000000a1ad1b334963cae55527dd2e643b8ac9bb37bb0856b931c63541674427"))
             ( 12000, uint256S("0x0000001b6277bbc118819fbba9624da1f01be2d98ccee911cf2bbbff678f27ef"))
             ( 12237, uint256S("0x0000002098e0117166606447f46fa0cde44ff02bfef9c58af9b7ee804a1ccc62"))
@@ -260,8 +259,8 @@ public:
         };
 
         chainTxData = ChainTxData{
-            1551220844, // * UNIX timestamp of last known number of transactions
-            88,    // * total number of transactions between genesis and that timestamp
+            1553517502, // * UNIX timestamp of last known number of transactions
+            4233,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.2         // * estimated number of transactions per second after that timestamp
         };
@@ -381,9 +380,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    261, uint256S("0x00000c26026d0815a7e2ce4fa270775f61403c040647ff2c3091f99e894a4618"))
-            (   1999, uint256S("0x00000052e538d27fa53693efe6fb6892a0c1d26c0235f599171c48a3cce553b1"))
-            (   2999, uint256S("0x0000024bc3f4f4cb30d29827c13d921ad77d2c6072e586c7f60d83c2722cdcc5"))
+            (    0, uint256S("0x0000095d065c972d3772dde7b0ae0205f373b47ba80a4fb4dc6a2968888c768b"))
         };
 
         chainTxData = ChainTxData{
