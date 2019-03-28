@@ -1,7 +1,7 @@
 Compute Core staging tree 0.12.3
 ===============================
 
-https://www.compute.provgn.com
+https://compute.provgn.com
 
 Explorer https://puteplorer.provgn.com
 
