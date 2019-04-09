@@ -1,9 +1,8 @@
 Compute Core staging tree 0.12.3
 ===============================
 
-https://compute.provgn.com
-
-Explorer https://puteplorer.provgn.com
+https://putez.org
+Explorer https://e.putez.org
 
 
 What is Compute?
