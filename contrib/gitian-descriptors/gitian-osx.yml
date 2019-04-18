@@ -2,7 +2,7 @@
 name: "compute-osx-0.12"
 enable_cache: true
 suites:
-- "trusty"
+- "bionic"
 architectures:
 - "amd64"
 packages:
