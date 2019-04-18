@@ -131,7 +131,7 @@ public:
         consensus.nBudgetPaymentsStartBlock = 0; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 9999; // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
+        consensus.nSuperblockStartBlock = 1337337 // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
         consensus.nSuperblockStartHash = uint256S("0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"); //Tentative hash should be changed at or around block number 9999
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
