@@ -177,10 +177,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00"); // 0
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000004526f907b52"); // 9998
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"); // 0
+        consensus.defaultAssumeValid = uint256S("0x00000001295476ad4e15d49f4de02a37c6f84eb22cb26495f8e79651d678f723"); // 9998
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -201,13 +201,12 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x8ee8ef52b60829efa6ad473ab74367365112acd8e6aa5724fc328d0c3ec7cd01"));
 
 
-        vSeeds.push_back(CDNSSeedData("putez.org", "dns-seed.putez.org);
+        vSeeds.push_back(CDNSSeedData("putez.org", "dns-seed.putez.org");
+        vSeeds.push_back(CDNSSeedData("provgn.com", "z.pool.provgn.com");
+        vSeeds.push_back(CDNSSeedData("mchub.ca", "z.pool.mchub.ca");
 
-        // Compute addresses start with 'C'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
-        // Compute script addresses start with '6'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
-        // Compute private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
         // Compute BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0xff)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
