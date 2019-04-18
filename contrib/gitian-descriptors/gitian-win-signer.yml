@@ -1,7 +1,7 @@
 ---
 name: "compute-win-signer"
 suites:
-- "trusty"
+- "bionic"
 architectures:
 - "amd64"
 packages:

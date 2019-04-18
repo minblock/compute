@@ -131,7 +131,7 @@ public:
         consensus.nBudgetPaymentsStartBlock = 0; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 9999; // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
+        consensus.nSuperblockStartBlock = 1337337 // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
         consensus.nSuperblockStartHash = uint256S("0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"); //Tentative hash should be changed at or around block number 9999
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
@@ -201,7 +201,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x8ee8ef52b60829efa6ad473ab74367365112acd8e6aa5724fc328d0c3ec7cd01"));
 
 
-        vSeeds.push_back(CDNSSeedData("compute.org", "seed.compute.provgn.com"));
+        vSeeds.push_back(CDNSSeedData("putez.org", "dns-seed.putez.org);
 
         // Compute addresses start with 'C'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
@@ -237,30 +237,13 @@ public:
             (  1337, uint256S("0x00000005059f5cb53dc09876df151022489dcfa85f2ff0e467f411bca9f784f6"))
             (  2337, uint256S("0x00000003fea0ba510b4fcbf69339e0bb990c3b7adb85da92fbc29c854b0ab793"))
             (  3185, uint256S("0x000000045e449c7388ee402c0144e573323a0f7195bd4161d03c01a46c4fbf6a"))
-/*          (  8000, uint256S("0x00000066311c52f078e12f932fe1b86a7f0f82e03ff59d97726fd2b20cbea241"))
-            ( 11000, uint256S("0x000000a1ad1b334963cae55527dd2e643b8ac9bb37bb0856b931c63541674427"))
-            ( 12000, uint256S("0x0000001b6277bbc118819fbba9624da1f01be2d98ccee911cf2bbbff678f27ef"))
-            ( 12237, uint256S("0x0000002098e0117166606447f46fa0cde44ff02bfef9c58af9b7ee804a1ccc62"))
-            ( 45479, uint256S("0x000000000063d411655d590590e16960f15ceea4257122ac430c6fbe39fbf02d"))
-            ( 55895, uint256S("0x0000000000ae4c53a43639a4ca027282f69da9c67ba951768a20415b6439a2d7"))
-            ( 68899, uint256S("0x0000000000194ab4d3d9eeb1f2f792f21bb39ff767cb547fe977640f969d77b7"))
-            ( 74619, uint256S("0x000000000011d28f38f05d01650a502cc3f4d0e793fbc26e2a2ca71f07dc3842"))
-            ( 75095, uint256S("0x0000000000193d12f6ad352a9996ee58ef8bdc4946818a5fec5ce99c11b87f0d"))
-            ( 88805, uint256S("0x00000000001392f1652e9bf45cd8bc79dc60fe935277cd11538565b4a94fa85f"))
-            ( 107996, uint256S("0x00000000000a23840ac16115407488267aa3da2b9bc843e301185b7d17e4dc40"))
-            ( 137993, uint256S("0x00000000000cf69ce152b1bffdeddc59188d7a80879210d6e5c9503011929c3c"))
-            ( 167996, uint256S("0x000000000009486020a80f7f2cc065342b0c2fb59af5e090cd813dba68ab0fed"))
-            ( 207992, uint256S("0x00000000000d85c22be098f74576ef00b7aa00c05777e966aff68a270f1e01a5"))
-            ( 312645, uint256S("0x0000000000059dcb71ad35a9e40526c44e7aae6c99169a9e7017b7d84b1c2daf"))
-            ( 407452, uint256S("0x000000000003c6a87e73623b9d70af7cd908ae22fee466063e4ffc20be1d2dbc"))
-            ( 523412, uint256S("0x000000000000e54f036576a10597e0e42cc22a5159ce572f999c33975e121d4d"))
-            ( 523930, uint256S("0x0000000000000bccdb11c2b1cfb0ecab452abf267d89b7f46eaf2d54ce6e652c"))
-            ( 750000, uint256S("0x00000000000000b4181bbbdddbae464ce11fede5d0292fb63fdede1e7c8ab21c"))*/
+            (  8000, uint256S("0x00000066311c52f078e12f932fe1b86a7f0f82e03ff59d97726fd2b20cbea241"))
+            (  9998, uint256S("0x00000001295476ad4e15d49f4de02a37c6f84eb22cb26495f8e79651d678f723"))
         };
 
         chainTxData = ChainTxData{
-            1553517502, // * UNIX timestamp of last known number of transactions
-            4233,    // * total number of transactions between genesis and that timestamp
+            1555523408, // * UNIX timestamp of last known number of transactions
+            12563,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.2         // * estimated number of transactions per second after that timestamp
         };
