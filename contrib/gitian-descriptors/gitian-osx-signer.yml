@@ -1,7 +1,7 @@
 ---
 name: "compute-dmg-signer"
 suites:
-- "bionic"
+- "trusty"
 architectures:
 - "amd64"
 packages:
