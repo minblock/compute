@@ -131,7 +131,7 @@ public:
         consensus.nBudgetPaymentsStartBlock = 0; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 1337337 // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
+        consensus.nSuperblockStartBlock = 1337337; // A block in the future that gives reasonable leeway for modifications in case of being unnecessary
         consensus.nSuperblockStartHash = uint256S("0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f"); //Tentative hash should be changed at or around block number 9999
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
@@ -201,9 +201,11 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x8ee8ef52b60829efa6ad473ab74367365112acd8e6aa5724fc328d0c3ec7cd01"));
 
 
-        vSeeds.push_back(CDNSSeedData("putez.org", "dns-seed.putez.org");
-        vSeeds.push_back(CDNSSeedData("provgn.com", "z.pool.provgn.com");
-        vSeeds.push_back(CDNSSeedData("mchub.ca", "z.pool.mchub.ca");
+        vSeeds.push_back(CDNSSeedData("putez.org", "seed.putez.org"));
+        vSeeds.push_back(CDNSSeedData("provgn.com", "seed.provgn.com"));
+        vSeeds.push_back(CDNSSeedData("mchub.ca", "seed.mchub.ca"));
+        vSeeds.push_back(CDNSSeedData("ogkush.org", "seed.ogkush.org"));
+        vSeeds.push_back(CDNSSeedData("picscoins.org", "seed.picscoins.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
@@ -331,8 +333,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("computedot.io",  "testnet-seed.computedot.io"));
-        vSeeds.push_back(CDNSSeedData("masternode.io", "test.dnsseed.masternode.io"));
+        vSeeds.push_back(CDNSSeedData("putez.org",  "testnet-seed.putez.org"));
+
 
         // Testnet Compute addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
