@@ -174,10 +174,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000004526f907b52"); // 9998
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000004526f907b52"); // 26668
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000001295476ad4e15d49f4de02a37c6f84eb22cb26495f8e79651d678f723"); // 9998
+        consensus.defaultAssumeValid = uint256S("0x00000001295476ad4e15d49f4de02a37c6f84eb22cb26495f8e79651d678f723"); // 26668
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -227,7 +227,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        strSporkAddress = "6FFsAnC9FjTqUTyYUqk62cwdr7hwkgJmqj";
+        strSporkAddress = "6KEv9awTotvKXW9VQYpvsKTX5madX1B3UM";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
@@ -237,13 +237,17 @@ public:
             (  3185, uint256S("0x000000045e449c7388ee402c0144e573323a0f7195bd4161d03c01a46c4fbf6a"))
             (  8000, uint256S("0x00000066311c52f078e12f932fe1b86a7f0f82e03ff59d97726fd2b20cbea241"))
             (  9998, uint256S("0x00000001295476ad4e15d49f4de02a37c6f84eb22cb26495f8e79651d678f723"))
+            (  11337, uint256S("0x00000008b6dbe9ee13e63c18f48249afaf14c2a773bff3d620b180eca16ccc9c"))
+            (  17337, uint256S("0x0000007c5c938ea9e6e3b90aa844f90f2b248127412eec94bd19a2b63fbe24dd"))
+            (  21337, uint256S("0x00000009f3c7e02237d8c9e79a1499e82e99c1e655ccd02f81f2d02690b0d5ed"))
+            (  26669, uint256S("0x00000005850b929e9fa03fcbf0fe12e26a336be24703c00cca8db38255844a92"))
         };
 
         chainTxData = ChainTxData{
-            1555523408, // * UNIX timestamp of last known number of transactions
-            12563,    // * total number of transactions between genesis and that timestamp
+            1559075025, // * UNIX timestamp of last known number of transactions
+            31116,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.2         // * estimated number of transactions per second after that timestamp
+            0.5         // * estimated number of transactions per second after that timestamp
         };
     }
 };
