@@ -140,9 +140,6 @@ public:
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f");
         consensus.BIP65Height = 0; // 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
-
-        consensus.BIP66Height = 0; // 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
-
         consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 24 * 60 * 60; // Compute: 1 day
