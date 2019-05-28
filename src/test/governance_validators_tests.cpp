@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Compute Core developers
+// Copyright (c) 2018-2019 The Compute Core developers
 
 #include "governance-validators.h"
 #include "utilstrencodings.h"
