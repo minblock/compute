@@ -3,7 +3,7 @@ Compute Core version 0.12.2
 
 Release is now available from:
 
-  <https://www.computecoin.ca/downloads/#wallets>
+  <https://www.putez.org/downloads/#wallets>
 
 This is a new major version release, bringing new features and other improvements.
 

@@ -3,7 +3,7 @@ Compute Core version 0.12.3.3
 
 Release is now available from:
 
-  <https://www.computecoin.ca/downloads/#wallets>
+  <https://www.putez.org/downloads/#wallets>
 
 This is a critical bugfix release.
 

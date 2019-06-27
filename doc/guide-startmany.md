@@ -89,7 +89,7 @@ You can confirm that remote server is on the correct block by issuing
 
 ```compute-cli getinfo```
 
-and comparing with the official explorer at https://explorer.computecoin.ca/chain/Compute
+and comparing with the official explorer at https://explorer.putez.org/chain/Compute
 
 ### Local
 

@@ -175,7 +175,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
 | 
@@ -201,7 +201,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
 | 
@@ -222,7 +222,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
 | 
@@ -243,7 +243,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
 | 
@@ -408,7 +408,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
@@ -428,7 +428,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
@@ -539,7 +539,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -571,7 +571,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -693,7 +693,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -728,7 +728,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -763,7 +763,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -809,7 +809,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -844,7 +844,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -920,7 +920,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1004,7 +1004,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1047,7 +1047,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1090,7 +1090,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1160,7 +1160,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1231,7 +1231,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1405,7 +1405,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1483,7 +1483,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1561,7 +1561,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1639,7 +1639,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1717,7 +1717,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1795,7 +1795,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1873,7 +1873,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -1951,7 +1951,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2029,7 +2029,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2107,7 +2107,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2185,7 +2185,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2263,7 +2263,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2341,7 +2341,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2419,7 +2419,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2497,7 +2497,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2657,7 +2657,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2741,7 +2741,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -2937,7 +2937,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -3085,7 +3085,7 @@ configure: failed program was:
 | #define PACKAGE_VERSION "0.12.3"
 | #define PACKAGE_STRING "Compute Core 0.12.3"
 | #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-| #define PACKAGE_URL "https://computecoin.ca/"
+| #define PACKAGE_URL "https://putez.org/"
 | #define HAVE_CXX11 1
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
@@ -3735,7 +3735,7 @@ PACKAGE_BUGREPORT='https://github.com/minblock/compute/issues'
 PACKAGE_NAME='Compute Core'
 PACKAGE_STRING='Compute Core 0.12.3'
 PACKAGE_TARNAME='computecore'
-PACKAGE_URL='https://computecoin.ca/'
+PACKAGE_URL='https://putez.org/'
 PACKAGE_VERSION='0.12.3'
 PATH_SEPARATOR=':'
 PIC_FLAGS='-fPIC'
@@ -3877,7 +3877,7 @@ target_alias=''
 #define PACKAGE_VERSION "0.12.3"
 #define PACKAGE_STRING "Compute Core 0.12.3"
 #define PACKAGE_BUGREPORT "https://github.com/minblock/compute/issues"
-#define PACKAGE_URL "https://computecoin.ca/"
+#define PACKAGE_URL "https://putez.org/"
 #define HAVE_CXX11 1
 #define STDC_HEADERS 1
 #define HAVE_SYS_TYPES_H 1

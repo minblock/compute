@@ -1,8 +1,8 @@
 Source: compute
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@computecoin.ca>
-Uploaders: Holger Schinzel <holger@computecoin.ca>
+Maintainer: Holger Schinzel <holger@putez.org>
+Uploaders: Holger Schinzel <holger@putez.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -26,7 +26,7 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.computecoin.ca/
+Homepage: https://www.putez.org/
 Vcs-Git: git://github.com/minblock/compute.git
 Vcs-Browser: https://github.com/minblock/compute
 

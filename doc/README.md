@@ -1,7 +1,7 @@
 Compute Core 0.12.1
 =====================
 
-This is the official reference wallet for Compute digital currency and comprises the backbone of the Compute peer-to-peer network. You can [download Compute Core](https://www.computecoin.ca/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Compute digital currency and comprises the backbone of the Compute peer-to-peer network. You can [download Compute Core](https://www.putez.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -27,7 +27,7 @@ Drag Compute-Qt to your applications folder, and then run Compute-Qt.
 * See the [Compute documentation](https://minblock.atlassian.net/wiki/display/DOC)
 for help and more information.
 * Ask for help on [Compute Nation Discord](http://computechat.org)
-* Ask for help on the [Compute Forum](https://computecoin.ca/forum)
+* Ask for help on the [Compute Forum](https://putez.org/forum)
 
 Building
 ---------------------
@@ -57,7 +57,7 @@ The Compute Core repo's [root README](/README.md) contains relevant information 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Compute Forum](https://computecoin.ca/forum), in the Development & Technical Discussion board.
+* Discuss on the [Compute Forum](https://putez.org/forum), in the Development & Technical Discussion board.
 * Discuss on [Compute Nation Discord](http://computechat.org)
 
 ### Miscellaneous
