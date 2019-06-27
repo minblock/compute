@@ -71,7 +71,7 @@
         <string>application/x-compute-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>computepaymentrequest</string>
+          <string>minblockmentrequest</string>
         </array>
       </dict>
     </dict>

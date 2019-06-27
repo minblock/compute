@@ -31,7 +31,7 @@ packages:
 - "python3"
 - "libxkbcommon0"
 remotes:
-- "url": "https://github.com/computepay/compute.git"
+- "url": "https://github.com/minblock/compute.git"
   "dir": "compute"
 files: []
 script: |

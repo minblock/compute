@@ -27,8 +27,8 @@ Build-Depends: debhelper,
  libzmq3-dev
 Standards-Version: 3.9.2
 Homepage: https://www.putez.org/
-Vcs-Git: git://github.com/computepay/compute.git
-Vcs-Browser: https://github.com/computepay/compute
+Vcs-Git: git://github.com/minblock/compute.git
+Vcs-Browser: https://github.com/minblock/compute
 
 Package: computed
 Architecture: any

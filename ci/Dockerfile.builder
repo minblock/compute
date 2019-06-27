@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y python3-pip
 RUN pip3 install pyzmq # really needed?
 
 # compute_hash
-RUN git clone https://github.com/computepay/compute_hash
+RUN git clone https://github.com/minblock/compute_hash
 RUN cd compute_hash && python3 setup.py install
 
 ARG USER_ID=1000

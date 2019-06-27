@@ -2,7 +2,7 @@
 
 This issue tracker is only for technical issues related to Compute Core.
 
-General Compute questions and/or support requests and are best directed to the [Computepay Reddit](https://www.reddit.com/r/computepay/).
+General Compute questions and/or support requests and are best directed to the [Computepay Reddit](https://www.reddit.com/r/minblock/).
 
 To report critical security issues, email infosec@putez.org and/or see the PUTEz bug bounty program on [Bugcrowd](https://bugcrowd.com/computedigitalcash) instead of creating Github issues.
 

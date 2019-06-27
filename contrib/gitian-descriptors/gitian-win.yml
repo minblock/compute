@@ -25,7 +25,7 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/computepay/compute.git"
+- "url": "https://github.com/minblock/compute.git"
   "dir": "compute"
 files: []
 script: |

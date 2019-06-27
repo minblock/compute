@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/computepay/compute-detached-sigs.git"
+- "url": "https://github.com/minblock/compute-detached-sigs.git"
   "dir": "signature"
 files:
 - "computecore-osx-unsigned.tar.gz"

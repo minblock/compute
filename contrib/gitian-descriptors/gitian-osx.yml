@@ -30,7 +30,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/computepay/compute.git"
+- "url": "https://github.com/minblock/compute.git"
   "dir": "compute"
 files:
 - "MacOSX10.11.sdk.tar.gz"
