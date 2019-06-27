@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2018-2019 The Compute Core developers
+// Copyright (c) 2014-2018 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +11,6 @@
 #include "timedata.h"
 #include "wallet/wallet.h"
 
-#include "instantx.h"
 #include "privatesend.h"
 
 #include <stdint.h>
@@ -146,14 +145,23 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
             }
             else
             {
-                for (unsigned int nOut = 0; nOut < wtx.tx->vout.size(); nOut++)
+                sub.idx = parts.size();
+                if(wtx.tx->vin.size() == 1 && wtx.tx->vout.size() == 1
+                    && CPrivateSend::IsCollateralAmount(nDebit)
+                    && CPrivateSend::IsCollateralAmount(nCredit)
+                    && CPrivateSend::IsCollateralAmount(-nNet))
                 {
-                    const CTxOut& txout = wtx.tx->vout[nOut];
-                    sub.idx = parts.size();
-
-                    if(txout.nValue == CPrivateSend::GetMaxCollateralAmount()) sub.type = TransactionRecord::PrivateSendMakeCollaterals;
-                    if(CPrivateSend::IsDenominatedAmount(txout.nValue)) sub.type = TransactionRecord::PrivateSendCreateDenominations;
-                    if(nDebit - wtx.tx->GetValueOut() == CPrivateSend::GetCollateralAmount()) sub.type = TransactionRecord::PrivateSendCollateralPayment;
+                    sub.type = TransactionRecord::PrivateSendCollateralPayment;
+                } else {
+                    for (const auto& txout : wtx.tx->vout) {
+                        if (txout.nValue == CPrivateSend::GetMaxCollateralAmount()) {
+                            sub.type = TransactionRecord::PrivateSendMakeCollaterals;
+                            continue; // Keep looking, could be a part of PrivateSendCreateDenominations
+                        } else if (CPrivateSend::IsDenominatedAmount(txout.nValue)) {
+                            sub.type = TransactionRecord::PrivateSendCreateDenominations;
+                            break; // Done, it's definitely a tx creating mixing denoms, no need to look any further
+                        }
+                    }
                 }
             }
 
@@ -171,7 +179,21 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
             //
             CAmount nTxFee = nDebit - wtx.tx->GetValueOut();
 
-            for (unsigned int nOut = 0; nOut < wtx.tx->vout.size(); nOut++)
+            bool fDone = false;
+            if(wtx.tx->vin.size() == 1 && wtx.tx->vout.size() == 1
+                && CPrivateSend::IsCollateralAmount(nDebit)
+                && nCredit == 0 // OP_RETURN
+                && CPrivateSend::IsCollateralAmount(-nNet))
+            {
+                TransactionRecord sub(hash, nTime);
+                sub.idx = 0;
+                sub.type = TransactionRecord::PrivateSendCollateralPayment;
+                sub.debit = -nDebit;
+                parts.append(sub);
+                fDone = true;
+            }
+
+            for (unsigned int nOut = 0; nOut < wtx.tx->vout.size() && !fDone; nOut++)
             {
                 const CTxOut& txout = wtx.tx->vout[nOut];
                 TransactionRecord sub(hash, nTime);
@@ -229,7 +251,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
     return parts;
 }
 
-void TransactionRecord::updateStatus(const CWalletTx &wtx)
+void TransactionRecord::updateStatus(const CWalletTx &wtx, int numISLocks, int chainLockHeight)
 {
     AssertLockHeld(cs_main);
     // Determine transaction status
@@ -249,7 +271,8 @@ void TransactionRecord::updateStatus(const CWalletTx &wtx)
     status.countsForBalance = wtx.IsTrusted() && !(wtx.GetBlocksToMaturity() > 0);
     status.depth = wtx.GetDepthInMainChain();
     status.cur_num_blocks = chainActive.Height();
-    status.cur_num_ix_locks = nCompleteTXLocks;
+    status.cachedNumISLocks = numISLocks;
+    status.cachedChainLockHeight = chainLockHeight;
 
     if (!CheckFinalTx(wtx))
     {
@@ -291,6 +314,7 @@ void TransactionRecord::updateStatus(const CWalletTx &wtx)
     }
     else
     {
+        status.lockedByInstantSend = wtx.IsLockedByInstantSend();
         if (status.depth < 0)
         {
             status.status = TransactionStatus::Conflicted;
@@ -305,7 +329,7 @@ void TransactionRecord::updateStatus(const CWalletTx &wtx)
             if (wtx.isAbandoned())
                 status.status = TransactionStatus::Abandoned;
         }
-        else if (status.depth < RecommendedNumConfirmations)
+        else if (status.depth < RecommendedNumConfirmations && !wtx.IsChainLocked())
         {
             status.status = TransactionStatus::Confirming;
         }
@@ -317,10 +341,12 @@ void TransactionRecord::updateStatus(const CWalletTx &wtx)
 
 }
 
-bool TransactionRecord::statusUpdateNeeded()
+bool TransactionRecord::statusUpdateNeeded(int numISLocks, int chainLockHeight)
 {
     AssertLockHeld(cs_main);
-    return status.cur_num_blocks != chainActive.Height() || status.cur_num_ix_locks != nCompleteTXLocks;
+    return status.cur_num_blocks != chainActive.Height()
+        || status.cachedNumISLocks != numISLocks
+        || status.cachedChainLockHeight != chainLockHeight;
 }
 
 QString TransactionRecord::getTxID() const

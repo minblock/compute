@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2018-2019 The Compute Core developers
+// Copyright (c) 2014-2018 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,6 +34,8 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_TX_STATUS_DANGER QColor(200, 100, 100)
 /* Transaction list -- TX status decoration - default color */
 #define COLOR_BLACK QColor(0, 0, 0)
+/* Transaction list -- TX status decoration - LockedByInstantSend color */
+#define COLOR_TX_STATUS_LOCKED QColor(0, 128, 255)
 
 /* Tooltips longer than this (in characters) are converted into rich text,
    so that they can be word-wrapped.
@@ -50,7 +52,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Compute"
-#define QAPP_ORG_DOMAIN "compute.org"
+#define QAPP_ORG_DOMAIN "putez.org"
 #define QAPP_APP_NAME_DEFAULT "Compute-Qt"
 #define QAPP_APP_NAME_TESTNET "Compute-Qt-testnet"
 #define QAPP_APP_NAME_DEVNET "Compute-Qt-%s"

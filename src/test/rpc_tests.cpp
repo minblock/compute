@@ -149,8 +149,8 @@ BOOST_AUTO_TEST_CASE(rpc_format_monetary_values)
     BOOST_CHECK(ValueFromAmount(50000000LL).write() == "0.50000000");
     BOOST_CHECK(ValueFromAmount(89898989LL).write() == "0.89898989");
     BOOST_CHECK(ValueFromAmount(100000000LL).write() == "1.00000000");
-    BOOST_CHECK(ValueFromAmount(2099999999999990LL).write() == "20999999.99999990");
-    BOOST_CHECK(ValueFromAmount(2099999999999999LL).write() == "20999999.99999999");
+    BOOST_CHECK(ValueFromAmount(2011337113371133790LL).write() == "201133799.113379990");
+    BOOST_CHECK(ValueFromAmount(2011337113371133799LL).write() == "201133799.1133711337");
 
     BOOST_CHECK_EQUAL(ValueFromAmount(0).write(), "0.00000000");
     BOOST_CHECK_EQUAL(ValueFromAmount((COIN/10000)*123456789).write(), "12345.67890000");
@@ -194,8 +194,8 @@ BOOST_AUTO_TEST_CASE(rpc_parse_monetary_values)
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.50000000")), 50000000LL);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.89898989")), 89898989LL);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("1.00000000")), 100000000LL);
-    BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("20999999.9999999")), 2099999999999990LL);
-    BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("20999999.99999999")), 2099999999999999LL);
+    BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("201133799.11337999")), 2011337113371133790LL);
+    BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("201133799.1133711337")), 2011337113371133799LL);
 
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("1e-8")), COIN/100000000);
     BOOST_CHECK_EQUAL(AmountFromValue(ValueFromString("0.1e-7")), COIN/100000000);
@@ -320,6 +320,7 @@ BOOST_AUTO_TEST_CASE(rpc_ban)
     BOOST_CHECK_EQUAL(adr.get_str(), "2001:4d48:ac57:400:cacf:e9ff:fe1d:9c63/128");
 }
 
+#if ENABLE_MINER
 BOOST_AUTO_TEST_CASE(rpc_convert_values_generatetoaddress)
 {
     UniValue result;
@@ -342,12 +343,6 @@ BOOST_AUTO_TEST_CASE(rpc_convert_values_generatetoaddress)
     BOOST_CHECK_EQUAL(result[1].get_str(), "yTG8jLL3MvteKXgbEcHyaN7JvTPCejQpSh");
     BOOST_CHECK_EQUAL(result[2].get_int(), 9);
 }
-
-BOOST_AUTO_TEST_CASE(rpc_sentinel_ping)
-{
-    BOOST_CHECK_NO_THROW(CallRPC("sentinelping 1.0.2"));
-    BOOST_CHECK_THROW(CallRPC("sentinelping"), std::runtime_error);
-    BOOST_CHECK_THROW(CallRPC("sentinelping 2"), std::bad_cast);
-}
+#endif // ENABLE_MINER
 
 BOOST_AUTO_TEST_SUITE_END()

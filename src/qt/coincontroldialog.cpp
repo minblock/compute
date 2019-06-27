@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2018-2019 The Compute Core developers
+// Copyright (c) 2014-2018 The Compute Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -54,7 +54,7 @@ CoinControlDialog::CoinControlDialog(const PlatformStyle *_platformStyle, QWidge
     platformStyle(_platformStyle)
 {
     ui->setupUi(this);
-    
+
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
@@ -433,10 +433,10 @@ void CoinControlDialog::viewItemChanged(QTreeWidgetItem* item, int column)
             item->setCheckState(COLUMN_CHECKBOX, Qt::Unchecked);
         else {
             coinControl->Select(outpt);
-            int nRounds = pwalletMain->GetOutpointPrivateSendRounds(outpt);
+            int nRounds = pwalletMain->GetRealOutpointPrivateSendRounds(outpt);
             if (coinControl->fUsePrivateSend && nRounds < privateSendClient.nPrivateSendRounds) {
                 QMessageBox::warning(this, windowTitle(),
-                    tr("Non-anonymized input selected. <b>PrivateSend will be disabled.</b><br><br>If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again."),
+                    tr("Non-anonymized input selected. <b>PrivateSend will be disabled.</b><br><br>If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again."),
                     QMessageBox::Ok, QMessageBox::Ok);
                 coinControl->fUsePrivateSend = false;
             }
@@ -499,11 +499,8 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
     CAmount nChange             = 0;
     unsigned int nBytes         = 0;
     unsigned int nBytesInputs   = 0;
-    double dPriority            = 0;
-    double dPriorityInputs      = 0;
     unsigned int nQuantity      = 0;
     int nQuantityUncompressed   = 0;
-    bool fAllowFree             = false;
 
     std::vector<COutPoint> vCoinControl;
     std::vector<COutput>   vOutputs;
@@ -527,9 +524,6 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         // Amount
         nAmount += out.tx->tx->vout[out.i].nValue;
 
-        // Priority
-        dPriorityInputs += (double)out.tx->tx->vout[out.i].nValue * (out.nDepth+1);
-
         // Bytes
         CTxDestination address;
         if(ExtractDestination(out.tx->tx->vout[out.i].scriptPubKey, address))
@@ -539,8 +533,6 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
             if (keyid && model->getPubKey(*keyid, pubkey))
             {
                 nBytesInputs += (pubkey.IsCompressed() ? 148 : 180);
-                if (!pubkey.IsCompressed())
-                    nQuantityUncompressed++;
             }
             else
                 nBytesInputs += 148; // in all error cases, simply assume 148 here
@@ -569,17 +561,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
             nPayFee = coinControl->nMinimumTotalFee;
 
         // InstantSend Fee
-        if (coinControl->fUseInstantSend) nPayFee = std::max(nPayFee, CTxLockRequest(txDummy).GetMinFee());
-
-        // Allow free? (require at least hard-coded threshold and default to that if no estimate)
-        double mempoolEstimatePriority = mempool.estimateSmartPriority(nTxConfirmTarget);
-        dPriority = dPriorityInputs / (nBytes - nBytesInputs + (nQuantityUncompressed * 29)); // 29 = 180 - 151 (uncompressed public keys are over the limit. max 151 bytes of the input are ignored for priority)
-        double dPriorityNeeded = std::max(mempoolEstimatePriority, AllowFreeThreshold());
-        fAllowFree = (dPriority >= dPriorityNeeded);
-
-        if (fSendFreeTransactions)
-            if (fAllowFree && nBytes <= MAX_FREE_TRANSACTION_CREATE_SIZE)
-                nPayFee = 0;
+        if (coinControl->fUseInstantSend) nPayFee = std::max(nPayFee, CTxLockRequest(txDummy).GetMinFee(true));
 
         if (nPayAmount > 0)
         {
@@ -690,7 +672,7 @@ void CoinControlDialog::updateView()
 
     bool treeMode = ui->radioTreeMode->isChecked();
     QString theme = GUIUtil::getThemeName();
-    
+
     ui->treeWidget->clear();
     ui->treeWidget->setEnabled(false); // performance, otherwise updateLabels would be called for every checked checkbox
     ui->treeWidget->setAlternatingRowColors(!treeMode);
@@ -781,7 +763,7 @@ void CoinControlDialog::updateView()
 
             // PrivateSend rounds
             COutPoint outpoint = COutPoint(out.tx->tx->GetHash(), out.i);
-            int nRounds = pwalletMain->GetOutpointPrivateSendRounds(outpoint);
+            int nRounds = pwalletMain->GetRealOutpointPrivateSendRounds(outpoint);
 
             if (nRounds >= 0 || fDebug) itemOutput->setText(COLUMN_PRIVATESEND_ROUNDS, QString::number(nRounds));
             else itemOutput->setText(COLUMN_PRIVATESEND_ROUNDS, tr("n/a"));

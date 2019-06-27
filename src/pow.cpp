@@ -80,7 +80,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const Conse
 }
 
 unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params) {
-    /* current difficulty formula, compute - DarkGravity v3, written by Evan Duffield - evan@compute.org */
+    /* current difficulty formula, compute - DarkGravity v3, written by Evan Duffield - evan@putez.org */
     const arith_uint256 bnPowLimit = UintToArith256(params.powLimit);
     int64_t nPastBlocks = 24;
 
@@ -146,11 +146,8 @@ unsigned int static DarkGravityWave(const CBlockIndex* pindexLast, const CBlockH
 
 unsigned int GetNextWorkRequiredBTC(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
+    assert(pindexLast != NULL);
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
-
-    // Genesis block
-    if (pindexLast == NULL)
-        return nProofOfWorkLimit;
 
     // Only change once per interval
     if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
@@ -185,6 +182,12 @@ unsigned int GetNextWorkRequiredBTC(const CBlockIndex* pindexLast, const CBlockH
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
+    // this is only active on devnets
+    if (pindexLast->nHeight < params.nMinimumDifficultyBlocks) {
+        unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
+        return nProofOfWorkLimit;
+    }
+
     // Most recent algo first
     if (pindexLast->nHeight + 1 >= params.nPowDGWHeight) {
         return DarkGravityWave(pindexLast, pblock, params);

@@ -1,4 +1,4 @@
-Compute Core 0.12.1
+Compute Core 0.14.0
 =====================
 
 Intro
@@ -18,4 +18,6 @@ However, it downloads and stores the entire history of Compute transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
+See the Compute documentation at:
+  https://docs.putez.org
 for more help and information.

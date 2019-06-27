@@ -1,4 +1,0 @@
-qt/qt_libcomputeqt_a-qrc_compute_locale.o: qt/qrc_compute_locale.cpp \
- /usr/include/stdc-predef.h
-
-/usr/include/stdc-predef.h:

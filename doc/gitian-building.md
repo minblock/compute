@@ -270,14 +270,14 @@ echo "%sudo ALL=NOPASSWD: /usr/bin/lxc-execute" >> /etc/sudoers.d/gitian-lxc
 # make /etc/rc.local script that sets up bridge between guest and host
 echo '#!/bin/sh -e' > /etc/rc.local
 echo 'brctl addbr lxcbr0' >> /etc/rc.local
-echo 'ifconfig lxcbr0 10.0.3.2/24 up' >> /etc/rc.local
+echo 'ifconfig lxcbr0 10.0.3.1/24 up' >> /etc/rc.local
 echo 'iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE' >> /etc/rc.local
 echo 'echo 1 > /proc/sys/net/ipv4/ip_forward' >> /etc/rc.local
 echo 'exit 0' >> /etc/rc.local
 # make sure that USE_LXC is always set when logging in as debian,
 # and configure LXC IP addresses
 echo 'export USE_LXC=1' >> /home/debian/.profile
-echo 'export GITIAN_HOST_IP=10.0.3.2' >> /home/debian/.profile
+echo 'export GITIAN_HOST_IP=10.0.3.1' >> /home/debian/.profile
 echo 'export LXC_GUEST_IP=10.0.3.5' >> /home/debian/.profile
 reboot
 ```
@@ -309,8 +309,8 @@ Clone the git repositories for Compute Core and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/minblock/compute
-git clone https://github.com/minblock/gitian.sigs.git
+git clone https://github.com/computepay/compute
+git clone https://github.com/computepay/gitian.sigs.git
 ```
 
 Setting up the Gitian image
@@ -326,7 +326,7 @@ Execute the following as user `debian`:
 
 ```bash
 cd gitian-builder
-bin/make-base-vm --lxc --arch amd64 --suite trusty
+bin/make-base-vm --lxc --arch amd64 --suite bionic
 ```
 
 There will be a lot of warnings printed during the build of the image. These can be ignored.
@@ -344,7 +344,7 @@ There will be a lot of warnings printed during the build of the image. These can
 Getting and building the inputs
 --------------------------------
 
-At this point you have two options, you can either use the automated script (found in [contrib/gitian-build.sh](/contrib/gitian-build.sh)) or you could manually do everything by following this guide. If you're using the automated script, then run it with the "--setup" command. Afterwards, run it with the "--build" command (example: "contrib/gitian-building.sh -b signer 0.13.0"). Otherwise ignore this.
+At this point you have two options, you can either use the automated script (found in [contrib/gitian-build.py](/contrib/gitian-build.py)) or you could manually do everything by following this guide. If you're using the automated script, then run it with the "--setup" command. Afterwards, run it with the "--build" command (example: "contrib/gitian-building.sh -b signer 0.13.0"). Otherwise ignore this.
 
 Follow the instructions in [doc/release-process.md](release-process.md#fetch-and-create-inputs-first-time-or-when-dependency-versions-change)
 in the Compute Core repository under 'Fetch and create inputs' to install sources which require
@@ -376,9 +376,9 @@ Output from `gbuild` will look something like
     remote: Total 57959 (delta 0), reused 0 (delta 0), pack-reused 57958
     Receiving objects: 100% (57959/57959), 53.76 MiB | 484.00 KiB/s, done.
     Resolving deltas: 100% (41590/41590), done.
-    From https://github.com/minblock/compute
+    From https://github.com/computepay/compute
     ... (new tags, new branch etc)
-    --- Building for trusty amd64 ---
+    --- Building for bionic amd64 ---
     Stopping target if it is up
     Making a new image copy
     stdin: is not a tty
@@ -427,14 +427,14 @@ So, if you use LXC:
 export PATH="$PATH":/path/to/gitian-builder/libexec
 export USE_LXC=1
 cd /path/to/gitian-builder
-./libexec/make-clean-vm --suite trusty --arch amd64
+./libexec/make-clean-vm --suite bionic --arch amd64
 
-LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root apt-get update
-LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root \
+LXC_ARCH=amd64 LXC_SUITE=bionic on-target -u root apt-get update
+LXC_ARCH=amd64 LXC_SUITE=bionic on-target -u root \
   -e DEBIAN_FRONTEND=noninteractive apt-get --no-install-recommends -y install \
   $( sed -ne '/^packages:/,/[^-] .*/ {/^- .*/{s/"//g;s/- //;p}}' ../compute/contrib/gitian-descriptors/*|sort|uniq )
-LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root apt-get -q -y purge grub
-LXC_ARCH=amd64 LXC_SUITE=trusty on-target -u root -e DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
+LXC_ARCH=amd64 LXC_SUITE=bionic on-target -u root apt-get -q -y purge grub
+LXC_ARCH=amd64 LXC_SUITE=bionic on-target -u root -e DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 ```
 
 And then set offline mode for apt-cacher-ng:
@@ -452,7 +452,7 @@ Then when building, override the remote URLs that gbuild would otherwise pull fr
 ```bash
 
 cd /some/root/path/
-git clone https://github.com/minblock/compute-detached-sigs.git
+git clone https://github.com/computepay/compute-detached-sigs.git
 
 BTCPATH=/some/root/path/compute
 SIGPATH=/some/root/path/compute-detached-sigs
@@ -484,6 +484,6 @@ Uploading signatures (not yet implemented)
 ---------------------
 
 In the future it will be possible to push your signatures (both the `.assert` and `.assert.sig` files) to the
-[compute/gitian.sigs](https://github.com/minblock/gitian.sigs/) repository, or if that's not possible to create a pull
+[compute/gitian.sigs](https://github.com/computepay/gitian.sigs/) repository, or if that's not possible to create a pull
 request.
 There will be an official announcement when this repository is online.

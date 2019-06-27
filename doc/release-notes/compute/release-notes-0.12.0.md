@@ -4,11 +4,11 @@
 
 Compute Core version 0.12.0 is now available from:
 
-  https://minblock.io/downloads
+  https://computepay.io/downloads
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/minblock/compute/issues
+  https://github.com/computepay/compute/issues
 
 
 How to Upgrade

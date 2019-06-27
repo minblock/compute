@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy computed.init to /etc/init.d/computed. Test by running `service computed start`.
 
 Using this script, you can adjust the path and flags to the computed program by
-setting the COMPUTED and FLAGS environment variables in the file
+setting the PUTEzD and FLAGS environment variables in the file
 /etc/sysconfig/computed. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X

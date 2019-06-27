@@ -19,7 +19,7 @@ Budgets go through a series of stages before being paid:
 1. Prepare collateral transaction
 --
 
-In this transaction we prepare collateral for "_cool-project_". This proposal will pay _1200_ COMPUTE, _12_ times over the course of a year totaling _24000_ COMPUTE.
+In this transaction we prepare collateral for "_cool-project_". This proposal will pay _1200_ PUTEz, _12_ times over the course of a year totaling _24000_ PUTEz.
 
 **Warning: if you change any fields within this command, the collateral transaction will become invalid.**
 
@@ -128,7 +128,7 @@ After you get enough votes, execute ```mngovernance projection``` to see if you 
 6. Get paid
 --
 
-When block ```1000000``` is reached you'll receive a payment for ```1200``` COMPUTE to ```y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7```.
+When block ```1000000``` is reached you'll receive a payment for ```1200``` PUTEz to ```y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7```.
 
 7. Command list
 --
@@ -147,7 +147,7 @@ The following RPC commands are supported:
   - nextsuperblocksize - Get superblock size for a given blockheight
   - projection         - Show the projection of which proposals will be paid the next cycle
   - vote               - Vote on a proposal by single masternode (using compute.conf setup)
-  - vote-many          - Vote on a proposal by all masternodes (using masternode.conf setup)
+  - vote-many          - Vote on a proposal by all masternodes for which the voting key is in the wallet
   - vote-alias         - Vote on a proposal by alias
  - mnfinalbudget "command"... ( "passphrase" )
   - vote-many   - Vote on a finalized budget

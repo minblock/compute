@@ -22,6 +22,14 @@
         <translation>&amp;Копировать</translation>
     </message>
     <message>
+        <source>Show QR code for the currently selected address</source>
+        <translation>Показать QR-код для выбранного адреса</translation>
+    </message>
+    <message>
+        <source>&amp;Show QR code</source>
+        <translation>&amp;Показать QR-код</translation>
+    </message>
+    <message>
         <source>Delete the currently selected address from the list</source>
         <translation>Удалить выбранный адрес из списка</translation>
     </message>
@@ -80,6 +88,14 @@
     <message>
         <source>&amp;Edit</source>
         <translation>&amp;Правка</translation>
+    </message>
+    <message>
+        <source>&amp;Show address QR code</source>
+        <translation>&amp;Показать QR-код адреса</translation>
+    </message>
+    <message>
+        <source>QR code</source>
+        <translation>QR-код</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -383,7 +399,7 @@
     </message>
     <message>
         <source>&amp;Verify message...</source>
-        <translation>П&amp;роверить сообщение...</translation>
+        <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Compute addresses</source>
@@ -436,14 +452,6 @@
     <message>
         <source>Open configuration file</source>
         <translation>Открыть файл настроек</translation>
-    </message>
-    <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Открыть файл настроек &amp;мастернод</translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Открыть файл настроек мастернод</translation>
     </message>
     <message>
         <source>Show Automatic &amp;Backups</source>
@@ -651,10 +659,6 @@
 <context>
     <name>ClientModel</name>
     <message>
-        <source>Total: %1 (PS compatible: %2 / Enabled: %3)</source>
-        <translation>Всего: %1 (Совместимых с PS: %2 / Активных: %3)</translation>
-    </message>
-    <message>
         <source>Network Alert</source>
         <translation>Сетевая тревога</translation>
     </message>
@@ -794,8 +798,8 @@
         <translation>Пожалуйста, переключитесь в режим списка для использования этой функции.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</source>
-        <translation>Выбраны неанонимизированные средства. &lt;b&gt;PrivateSend будет отключен.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Если Вы все-таки хотите использовать PrivateSend, пожалуйста, снимите выделение с со всех неанонимизированных средств и заново поставьте галочку напротив PrivateSend.</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
+        <translation>Выбраны неанонимизированные средства. &lt;b&gt;PrivateSend будет отключен.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Если Вы все-таки хотите использовать PrivateSend, пожалуйста, снимите выделение со всех неанонимизированных средств и заново поставьте галочку напротив PrivateSend.</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -832,73 +836,6 @@
     <message>
         <source>n/a</source>
         <translation>н/д</translation>
-    </message>
-</context>
-<context>
-    <name>DarksendConfig</name>
-    <message>
-        <source>Configure PrivateSend</source>
-        <translation>Настройте PrivateSend</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Обычная приватность</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Высокая приватность</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Максимальная приватность</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Пожалуйста, выберите уровень приватности.</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 PUTEz</source>
-        <translation>Использовать 2 отдельные мастерноды для перемешивания до 1000 PUTEz</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 PUTEz</source>
-        <translation>Использовать 8 отдельных мастернод для перемешивания до 1000 PUTEz</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Использовать 16 отдельных мастернод</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 PUTEz to anonymize 1000 PUTEz</source>
-        <translation>Это самый быстрый вариант, анонимизация 1000 PUTEz будет стоить вам примерно 0.025 PUTEz</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 PUTEz to anonymize 1000 PUTEz</source>
-        <translation>Это относительно быстрый вариант, анонимизация 1000 PUTEz будет стоить вам примерно 0.05 PUTEz</translation>
-    </message>
-    <message>
-        <source>0.1 PUTEz per 1000 PUTEz you anonymize.</source>
-        <translation>0.1 PUTEz за каждые анонимизированные 1000 PUTEz.</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Этот самый медленный и безопасный вариант. Анонимизация будет стоить</translation>
-    </message>
-    <message>
-        <source>PrivateSend Configuration</source>
-        <translation>Настройки PrivateSend</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Compute's configuration screen.</source>
-        <translation>PrivateSend успешно установлен в режим базовой приватности (%1 и 2 раунда). Вы можете изменить это в любое время, используя окно настроек.</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Compute's configuration screen.</source>
-        <translation>PrivateSend успешно установлен в режим высокой приватности (%1 и 8 раундов). Вы можете изменить это в любое время, используя окно настроек.</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Compute's configuration screen.</source>
-        <translation>PrivateSend успешно установлен в режим максимальной приватности (%1 и 16 раундов). Вы можете изменить это в любое время, используя окно настроек.</translation>
     </message>
 </context>
 <context>
@@ -1038,8 +975,8 @@
         <translation>Информация о PrivateSend</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Compute in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 PUTEz, 0.1 PUTEz, 1 PUTEz and 10 PUTEz -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href="https://computepay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://computepay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </source>
-        <translation>&lt;h3&gt;Основы PrivateSend&lt;/h3&gt;PrivateSend позволяет Вам получить настоящую финансовую конфиденциальность за счет скрытия источников Ваших средств. Все Compute в  Вашем кошельке состоят из различных ""входов", Вы можете думать о них как об отдельных монетах.&lt;br&gt;PrivateSend использует инновационный процесс для перемешивания Ваших входов со входами еще двоих человек, но при этом Ваши монеты никогда не покидают Ваш кошелек. Вы сохраняете контроль над Вашими деньгами на протяжении всего времени.&lt;hr&gt; &lt;b&gt;PrivateSend работает так:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend начинается с разбиения Ваших входов транзакций на стандартные номиналы. Такими номиналами являются 0.01 PUTEz, 0.1 PUTEz, 1 PUTEz и 10 PUTEz -- что-то вроде купюр, которыми вы пользуетесь каждый день.&lt;/li&gt; &lt;li&gt;Ваш кошелек затем отправляет запросы к особым образом настроенным сетевым узлам, называемым "мастернодами". Эти мастерноды знают только то, что Вы хотите перемешать определенные номиналы. Никакой идентифицирующей информации мастернодам не отправляется, так что они не знают "кто" Вы конкретно.&lt;/li&gt; &lt;li&gt;Сессия перемешивания начинается тогда, когда еще двое человек отправляют схожее сообщение, подтверждающее, что они хотят перемешать точно такой же номинал. Мастернода перемешивает входы и просит кошельки всех пользователей осуществить платежи по ним. Ваш кошелек осуществляет выплату самому себе, но на другой адрес (тоже из вашего кошелька).&lt;/li&gt; &lt;li&gt;Для скрытия Ваших средств кошелек должен повторить этот процесс несколько раз с каждым номиналом. Каждый раз, когда такой процесс завершается, называется "раундом". С каждым раундом PrivateSend становится экспоненциально сложнее определить откуда поступили средства.&lt;/li&gt; &lt;li&gt;Процесс перемешивания выполняется в фоне, без участия пользователя. Когда Вы захотите провести транзакцию, средства уже будут анонимизированы. Дополнительно ждать не требуется.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ВАЖНО:&lt;/b&gt; Ваш кошелек содержит 1000 адресов. Каждое перемешивание использует до 9 из этих адресов. Это означает, что 1000 адресов хватит примерно на 100 перемешиваний. Когда 900 адресов будут уже использованы, Ваш кошелек должен создать новые адреса. Однако, он может сделать это, только если у Вас включены автоматические резервные копии.&lt;br&gt;Соответственно, пользователям с отключенным резервным копированием PrivateSend не доступен. &lt;hr&gt;Дополнительная информация доступна по ссылке &lt;a href="https://computepay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://computepay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Compute in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PUTEz, 0.01 PUTEz, 0.1 PUTEz, 1 PUTEz and 10 PUTEz -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.putez.org/en/latest/wallets/computecore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Основы PrivateSend&lt;/h3&gt;PrivateSend позволяет Вам получить настоящую финансовую конфиденциальность за счет скрытия источников Ваших средств. Все Compute в  Вашем кошельке состоят из различных "входов", Вы можете думать о них как об отдельных монетах.&lt;br&gt;PrivateSend использует инновационный процесс для перемешивания Ваших входов со входами еще двоих человек, но при этом Ваши монеты никогда не покидают Ваш кошелек. Вы сохраняете контроль над Вашими деньгами на протяжении всего времени.&lt;hr&gt; &lt;b&gt;PrivateSend работает так:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend начинается с разбиения Ваших входов транзакций на стандартные номиналы. Такими номиналами являются 0.001 PUTEz, 0.01 PUTEz, 0.1 PUTEz, 1 PUTEz и 10 PUTEz -- что-то вроде купюр, которыми вы пользуетесь каждый день.&lt;/li&gt; &lt;li&gt;Ваш кошелек затем отправляет запросы к особым образом настроенным сетевым узлам, называемым "мастернодами". Эти мастерноды знают только то, что Вы хотите перемешать определенные номиналы. Никакой идентифицирующей информации мастернодам не отправляется, так что они не знают "кто" Вы конкретно.&lt;/li&gt; &lt;li&gt;Сессия перемешивания начинается тогда, когда еще двое человек отправляют схожее сообщение, подтверждающее, что они хотят перемешать точно такой же номинал. Мастернода перемешивает входы и просит кошельки всех пользователей осуществить платежи по ним. Ваш кошелек осуществляет выплату самому себе, но на другой адрес (тоже из вашего кошелька).&lt;/li&gt; &lt;li&gt;Для скрытия Ваших средств кошелек должен повторить этот процесс несколько раз с каждым номиналом. Каждый раз, когда такой процесс завершается, называется "раундом". С каждым раундом PrivateSend становится экспоненциально сложнее определить откуда поступили средства.&lt;/li&gt; &lt;li&gt;Процесс перемешивания выполняется в фоне, без участия пользователя. Когда Вы захотите провести транзакцию, средства уже будут анонимизированы. Дополнительно ждать не требуется.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ВАЖНО:&lt;/b&gt; Ваш кошелек содержит 1000 адресов. Каждое перемешивание использует до 9 из этих адресов. Это означает, что 1000 адресов хватит примерно на 100 перемешиваний. Когда 900 адресов будут уже использованы, Ваш кошелек должен создать новые адреса. Однако, он может сделать это, только если у Вас включены автоматические резервные копии.&lt;br&gt;Соответственно, пользователям с отключенным резервным копированием PrivateSend не доступен. &lt;hr&gt;Дополнительная информация доступна в &lt;a href="https://computepay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;документации по PrivateSend&lt;/a&gt;         </translation>
     </message>
 </context>
 <context>
@@ -1057,8 +994,16 @@
         <translation>Так как вы впервые запустили программу, вы можете выбрать, где %1 будет хранить данные.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Compute block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 скачает и сохранит копию цепочки блоков. Как минимум %2ГБ данных будет храниться в этом каталоге и размер данных будет со временем расти. В этом же каталоге будет сохранён кошелёк.</translation>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation>После нажатия OK, %1 начнет скачивать и проверять всю цепочку блоков %4 (%2GB), начиная с самых ранних транзакций %3, т.е. со времени запуска проекта %4.</translation>
+    </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation>Начальная синхронизация требует много ресурсов и, возможно, обнаружит проблемы с Вашим компьютером, которых Вы ранее не замечали. Каждый раз, когда Вы запускаете %1, скачивание будет продолжено с того места, где оно было остановлено в прошлый раз.</translation>
+    </message>
+    <message>
+        <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
+        <translation>Если Вы выбрали ограниченное хранение цепочки блоков (удаление старых блоков), исторические данные все равно будут скачаны и проверены, после чего они будут удалены для уменьшения размера хранимых данных.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1067,6 +1012,22 @@
     <message>
         <source>Use a custom data directory:</source>
         <translation>Использовать другой каталог данных:</translation>
+    </message>
+    <message>
+        <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
+        <translation>Как минимум %1 GB данных будет сохранено в этой папке, но со временем размер будет увеличиваться.</translation>
+    </message>
+    <message>
+        <source>Approximately %1 GB of data will be stored in this directory.</source>
+        <translation>Приблизительно %1 GB данных будет сохранено в этой папке.</translation>
+    </message>
+    <message>
+        <source>%1 will download and store a copy of the Compute block chain.</source>
+        <translation>%1 скачает и сохранит копию цепочки блоков Compute.</translation>
+    </message>
+    <message>
+        <source>The wallet will also be stored in this directory.</source>
+        <translation>Ваш кошелек будет сохранен в этой же папке.</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1092,76 +1053,20 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>Мои мастерноды</translation>
-    </message>
-    <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see "ENABLED" in "Status" field.</source>
-        <translation>Примечание: Статус Ваших мастернод в локальном кошельке может быть не совсем корректным.&lt;br /&gt;Всегда дожидайтесь окончания синхронизации дополнительных данных и перепроверяйте с другой ноды,&lt;br /&gt;если Ваша ьастернода должна быть активна, но Вы ее статус все равно не отображается как "ENABLED".</translation>
-    </message>
-    <message>
-        <source>Alias</source>
-        <translation>Имя</translation>
-    </message>
-    <message>
         <source>Address</source>
         <translation>Адрес</translation>
-    </message>
-    <message>
-        <source>Protocol</source>
-        <translation>Протокол</translation>
     </message>
     <message>
         <source>Status</source>
         <translation>Статус</translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation>Активна</translation>
-    </message>
-    <message>
-        <source>Last Seen</source>
-        <translation>Последняя активность</translation>
-    </message>
-    <message>
         <source>Payee</source>
         <translation>Получатель</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>Запуск по &amp;имени</translation>
-    </message>
-    <message>
-        <source>Start &amp;all</source>
-        <translation>Запуск &amp;всех</translation>
-    </message>
-    <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Запуск &amp;MISSING</translation>
-    </message>
-    <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Обновить статус</translation>
-    </message>
-    <message>
-        <source>Show additional Masternode information</source>
-        <translation>Показать дополнительную информацию о мастерноде</translation>
-    </message>
-    <message>
-        <source>Show &amp;Info...</source>
-        <translation>Показать &amp;информацию</translation>
-    </message>
-    <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Статус будет обновлен автоматически через (сек):</translation>
-    </message>
-    <message>
         <source>0</source>
         <translation>0</translation>
-    </message>
-    <message>
-        <source>All Masternodes</source>
-        <translation>Все мастерноды</translation>
     </message>
     <message>
         <source>Filter List:</source>
@@ -1176,72 +1081,76 @@
         <translation>Количество узлов:</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Запуск по имени</translation>
+        <source>DIP3 Masternodes</source>
+        <translation>DIP3 мастерноды</translation>
     </message>
     <message>
-        <source>Confirm masternode start</source>
-        <translation>Подтверждение запуска мастерноды</translation>
+        <source>Show only masternodes this wallet has keys for.</source>
+        <translation>Показывать только мастерноды, ключи от которых есть в этом кошельке.</translation>
     </message>
     <message>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Вы уверены, что хотите запустить мастерноду %1?</translation>
+        <source>My masternodes only</source>
+        <translation>Только мои мастерноды</translation>
     </message>
     <message>
-        <source>Confirm all masternodes start</source>
-        <translation>Подтверждение запуска всех мастернод</translation>
+        <source>PoSe Score</source>
+        <translation>PoSe штраф</translation>
     </message>
     <message>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Вы уверены, что хотите запустить ВСЕ мастерноды?</translation>
+        <source>Registered</source>
+        <translation>Зарегистрирована</translation>
     </message>
     <message>
-        <source>Command is not available right now</source>
-        <translation>Команда в данный момент недоступна</translation>
+        <source>Last Paid</source>
+        <translation>Последний платеж</translation>
     </message>
     <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Вы не можете использовать данную команду до завершения синхронизации списка мастернод</translation>
+        <source>Next Payment</source>
+        <translation>Следующий платеж</translation>
     </message>
     <message>
-        <source>Confirm missing masternodes start</source>
-        <translation>Подтверждение запуска отсутствующих мастернод</translation>
+        <source>Operator Reward</source>
+        <translation>Награда оператора</translation>
     </message>
     <message>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Вы уверены, что хотите запустить ОТСУТСТВУЮЩИЕ мастерноды?</translation>
+        <source>Copy ProTx Hash</source>
+        <translation>Скопировать хэш ProTx</translation>
     </message>
     <message>
-        <source>Additional information for Masternode %1</source>
-        <translation>Дополнительная информация по мастерноде %1</translation>
+        <source>Copy Collateral Outpoint</source>
+        <translation>Скопировать залоговый выход</translation>
     </message>
     <message>
-        <source>Masternode Private Key</source>
-        <translation>Закрытый ключ мастерноды</translation>
+        <source>ENABLED</source>
+        <translation>ENABLED</translation>
     </message>
     <message>
-        <source>Private Key</source>
-        <translation>Закрытый ключ</translation>
+        <source>POSE_BANNED</source>
+        <translation>POSE_BANNED</translation>
     </message>
     <message>
-        <source>Collateral</source>
-        <translation>Обеспечительная транзакция</translation>
+        <source>UNKNOWN</source>
+        <translation>UNKNOWN</translation>
     </message>
     <message>
-        <source>IP</source>
-        <translation>IP</translation>
+        <source>to %1</source>
+        <translation>на %1</translation>
     </message>
     <message>
-        <source>Version</source>
-        <translation>Версия</translation>
+        <source>to UNKNOWN</source>
+        <translation>на UNKNOWN</translation>
     </message>
     <message>
-        <source>Unknown</source>
-        <translation>Неизвестно</translation>
+        <source>but not claimed</source>
+        <translation>, но не затребовано</translation>
     </message>
     <message>
-        <source>Sentinel</source>
-        <translation>Sentinel</translation>
+        <source>NONE</source>
+        <translation>NONE</translation>
+    </message>
+    <message>
+        <source>Additional information for DIP3 Masternode %1</source>
+        <translation>Дополнительная информация для DIP3 мастерноды %1</translation>
     </message>
 </context>
 <context>
@@ -1447,6 +1356,14 @@
     <message>
         <source>Enable coin &amp;control features</source>
         <translation>Включить функции &amp;контроля монет</translation>
+    </message>
+    <message>
+        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Показывать всплывающие уведомления для транзакций перемешивания PrivateSend&lt;br/&gt;также как для всех остальных типов транзакций.</translation>
+    </message>
+    <message>
+        <source>Show popups for PrivateSend transactions</source>
+        <translation>Показывать всплывающие уведомления для транзакций PrivateSend</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1864,10 +1781,6 @@ https://www.transifex.com/projects/p/compute/</translation>
 </translation>
     </message>
     <message>
-        <source>N/A</source>
-        <translation>Н/Д</translation>
-    </message>
-    <message>
         <source>PrivateSend was successfully reset.</source>
         <translation>PrivateSend был успешно прерван.</translation>
     </message>
@@ -1997,16 +1910,8 @@ https://www.transifex.com/projects/p/compute/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>Compute Core</source>
-        <translation>Compute Core</translation>
-    </message>
-    <message>
         <source>%1 didn't yet exit safely...</source>
         <translation>%1 еще не завершил работу...</translation>
-    </message>
-    <message>
-        <source>Error reading masternode configuration file: %1</source>
-        <translation>Ошибка чтения файла конфигурации мастернод: %1</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2470,6 +2375,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Network activity disabled</source>
         <translation>Сетевая активность отключена</translation>
+    </message>
+    <message>
+        <source>Total: %1 (Enabled: %2)</source>
+        <translation>Всего: %1 (Активных: %2)</translation>
     </message>
     <message>
         <source>%1 B</source>
@@ -3321,6 +3230,14 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>%1 подтверждений</translation>
     </message>
     <message>
+        <source>locked via LLMQ based ChainLocks</source>
+        <translation>зафиксировано с помощью ChainLocks на основе LLMQ</translation>
+    </message>
+    <message>
+        <source>verified via LLMQ based InstantSend</source>
+        <translation>проверено с помощью InstantSend на основе LLMQ</translation>
+    </message>
+    <message>
         <source>verified via InstantSend</source>
         <translation>проверено через InstantSend</translation>
     </message>
@@ -3607,6 +3524,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Участвовал ли адрес для просмотра в этой транзакции.</translation>
     </message>
     <message>
+        <source>Whether or not this transaction was locked by InstantSend.</source>
+        <translation>Была ли данная транзакция заблокирована с помощью InstantSend.</translation>
+    </message>
+    <message>
         <source>User-defined intent/purpose of the transaction.</source>
         <translation>Определенное пользователем назначение транзакции.</translation>
     </message>
@@ -3620,6 +3541,14 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>All</source>
         <translation>Все</translation>
+    </message>
+    <message>
+        <source>Locked by InstantSend</source>
+        <translation>Заблокировано с помощью InstantSend</translation>
+    </message>
+    <message>
+        <source>Not locked by InstantSend</source>
+        <translation>Не заблокировано с помощью InstantSend</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3734,6 +3663,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Показать подробности транзакции</translation>
     </message>
     <message>
+        <source>Show address QR code</source>
+        <translation>Показать QR-код адреса</translation>
+    </message>
+    <message>
         <source>Export Transaction History</source>
         <translation>Экспортировать историю транзакций</translation>
     </message>
@@ -3784,6 +3717,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>История транзакций была успешно сохранена в %1.</translation>
+    </message>
+    <message>
+        <source>QR code</source>
+        <translation>QR-код</translation>
     </message>
     <message>
         <source>Range:</source>
@@ -3909,10 +3846,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Внимание: обнаружено несогласие с подключенными участниками! Вам или другим участникам, возможно, следует обновиться.</translation>
     </message>
     <message>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>Необходимо указать masternodeprivkey в файле конфигурации. Пожалуйста, ознакомьтесь с документацией.</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Принимать командную строку и команды JSON-RPC</translation>
     </message>
@@ -4033,16 +3966,20 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Привязаться к указанному адресу и внести пиров, использующих его, в белый список. Используйте [хост]:порт для IPv6</translation>
     </message>
     <message>
-        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation>Привязаться к указанному адресу для прослушивания JSON-RPC соединений. Используйте [хост]:порт для IPv6. Эту опцию можно указывать несколько раз (по умолчанию: привязаться ко всем интерфейсам)</translation>
-    </message>
-    <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
         <translation>Создавать новые файлы с разрешениями по умолчанию вместо umask 077 (актуально только с отключенной функциональностью кошелька)</translation>
     </message>
     <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
         <translation>Удалить все трансакции из кошелька и при рестарте с помощью -rescan восстановить только те, которые есть в цепочке блоков</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Включить публикацию кода транзакции при попытке двойной траты другой транзакции, заблокированной через InstantSend, на &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Включить публикацию хэша транзакции при попытке двойной траты другой транзакции, заблокированной через InstantSend, на &lt;address&gt;</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
@@ -4089,6 +4026,14 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Вывод отладочной информации (по умолчанию: %u, указание &lt;category&gt; необязательно)</translation>
     </message>
     <message>
+        <source>Overrides minimum spork signers to change spork value. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</source>
+        <translation>Установить новый минимум количества подписантов спорков. Полезно только для regtest и devnet. Использование этого параметра на mainnet или testnet приведет к блокировке.</translation>
+    </message>
+    <message>
+        <source>Use N separate masternodes in parallel to mix funds (%u-%u, default: %u)</source>
+        <translation>Использовать N отдельных мастернод для параллельного перемешивания средств (%u-%u, по умолчанию: %u)</translation>
+    </message>
+    <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>Использовать отдельный SOCKS5 прокси для подключения к участникам через скрытые сервисы Tor (по умолчанию: %s)</translation>
     </message>
@@ -4109,8 +4054,16 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Вам необходимо пересобрать базы данных с помощью -reindex-chainstate, чтобы изменить -txindex</translation>
     </message>
     <message>
+        <source>You should specify a masternodeblsprivkey in the configuration. Please see documentation for help.</source>
+        <translation>Необходимо указать masternodeblsprivkey в кофигурации. Пожалуйста, ознакомьтесь с документацией.</translation>
+    </message>
+    <message>
         <source>(default: %s)</source>
         <translation>(по умолчанию: %s)</translation>
+    </message>
+    <message>
+        <source>-wallet parameter must only specify a filename (not a path)</source>
+        <translation>Параметр -wallet должен указывать только имя файла (без пути)</translation>
     </message>
     <message>
         <source>Accept public REST requests (default: %u)</source>
@@ -4158,11 +4111,7 @@ https://www.transifex.com/projects/p/compute/</translation>
     </message>
     <message>
         <source>Failed to load masternode cache from</source>
-        <translation>Ошибка загрузка кэша мастернод из</translation>
-    </message>
-    <message>
-        <source>Failed to load masternode payments cache from</source>
-        <translation>Ошибка загрузка кэша выплат мастернодам из</translation>
+        <translation>Ошибка загрузки кэша мастернод из</translation>
     </message>
     <message>
         <source>Found enough users, signing ( waiting %s )</source>
@@ -4209,16 +4158,16 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Недостаточно средств.</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Неверный -onion адрес: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Неверный адрес -proxy: '%s'</translation>
-    </message>
-    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>Неверная сумма в параметре -paytxfee=&lt;amount&gt;: '%s' (должна быть минимум %s)</translation>
+    </message>
+    <message>
+        <source>Invalid masternodeblsprivkey. Please see documenation.</source>
+        <translation>Некорректный masternodeblsprivkey. Пожалуйста, ознакомьтесь с документацией.</translation>
+    </message>
+    <message>
+        <source>Invalid minimum number of spork signers specified with -minsporkkeys</source>
+        <translation>Некорректное минимальное количество подписантов спорков, указанное в -minsporkkeys</translation>
     </message>
     <message>
         <source>Keypool ran out, please call keypoolrefill first</source>
@@ -4245,16 +4194,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Загрузка кэша мастернод...</translation>
     </message>
     <message>
-        <source>Loading masternode payment cache...</source>
-        <translation>Загрузка кэша выплат Мастернодам...</translation>
-    </message>
-    <message>
         <source>Lock is already in place.</source>
         <translation>Установлена блокировка.</translation>
-    </message>
-    <message>
-        <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation>Заблокировать средства мастернод, указанных в настроечном файле (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -4293,10 +4234,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Соединяться только по сети &lt;net&gt; (ipv4, ipv6 или onion)</translation>
     </message>
     <message>
-        <source>Port: %d</source>
-        <translation>Порт: %d</translation>
-    </message>
-    <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Дописывать в начало отладочного вывода отметки времени (по умолчанию: %u)</translation>
     </message>
@@ -4321,6 +4258,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Установить размер пула ключей в &lt;n&gt; (по умолчанию: %u)</translation>
     </message>
     <message>
+        <source>Set the masternode BLS private key</source>
+        <translation>Установить закрытый BLS ключ мастерноды</translation>
+    </message>
+    <message>
         <source>Set the number of threads to service RPC calls (default: %d)</source>
         <translation>Задать число потоков выполнения запросов RPC (по умолчанию: %d)</translation>
     </message>
@@ -4333,10 +4274,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Указать тайм-аут соединения в миллисекундах (минимально: 1, по умолчанию: %d)</translation>
     </message>
     <message>
-        <source>Specify masternode configuration file (default: %s)</source>
-        <translation>Указать конфигурационный файл для мастернод (по умолчанию: %s)</translation>
-    </message>
-    <message>
         <source>Specify pid file (default: %s)</source>
         <translation>Указать pid-файл (по умолчанию: %s)</translation>
     </message>
@@ -4345,20 +4282,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Тратить неподтвержденную сдачу при отправке транзакций (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Мастерноде отправлены следующие записи: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Отправлено мастерноде, ожидаем больше записей ( %u / %d ) %s</translation>
-    </message>
-    <message>
         <source>Submitted to masternode, waiting in queue %s</source>
         <translation>Отправлено на мастерноду, ожидаем в очереди %s</translation>
-    </message>
-    <message>
-        <source>Synchroning blockchain...</source>
-        <translation>Синхронизация блокчейна...</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -4367,10 +4292,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Synchronization finished</source>
         <translation>Синхронизация завершена</translation>
-    </message>
-    <message>
-        <source>Synchronizing masternodes...</source>
-        <translation>Синхронизация списка мастернод...</translation>
     </message>
     <message>
         <source>This is not a Masternode.</source>
@@ -4383,6 +4304,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Too many %f denominations, removing.</source>
         <translation>Слишком много номиналов %f, удаляем.</translation>
+    </message>
+    <message>
+        <source>Too many %f denominations, skipping.</source>
+        <translation>Слишком много номиналов %f, пропускаем.</translation>
     </message>
     <message>
         <source>Tor control port password (default: empty)</source>
@@ -4437,10 +4362,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Попробуем еще раз...</translation>
     </message>
     <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>Неправильное значение masternodeprivkey. Пожалуйста, ознакомьтесь с документацией.</translation>
-    </message>
-    <message>
         <source>Can't find random Masternode.</source>
         <translation>Не получилось выбрать случайную Мастерноду.</translation>
     </message>
@@ -4449,16 +4370,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Перемешивание до завершения синхронизации невозможно.</translation>
     </message>
     <message>
-        <source>Could not parse masternode.conf</source>
-        <translation>Не могу разобрать masternode.conf</translation>
-    </message>
-    <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation>В параметре -whitelist указана некорректная маска: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>Обнаружен некорректный порт в masternode.conf</translation>
     </message>
     <message>
         <source>Invalid script detected.</source>
@@ -4479,6 +4392,14 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Disable all Compute specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
         <translation>Отключить всю функциональность, относящуюся к Compute (Мастерноды, PrivateSend, InstantSend, Governance) (0-1, по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
+        <translation>%s файл содержит в себе все закрытые ключи для этого кошелька. Никому его не показывайте!</translation>
+    </message>
+    <message>
+        <source>Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)</source>
+        <translation>Привязаться к указанному адресу для прослушивания JSON-RPC соединений. Эта опция игнорируется, если опция -rpcallowip не указана. Порт можно не указывать, но если указать то он перекроет опцию -rpcport. Используйте [хост]:порт для IPv6. Эту опцию можно указывать несколько раз (по умолчанию: 127.0.0.1 и ::1, т.е. localhost, а если указан -rpcallowip, то 0.0.0.0 и ::, т.е. все интерфейсы)</translation>
     </message>
     <message>
         <source>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</source>
@@ -4503,6 +4424,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>Выполнить команду, когда транзакция InstantSend успешно заблокирована (%s в команде заменяется на TxID)</translation>
+    </message>
+    <message>
+        <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
+        <translation>Количество дополнительных транзакций, которые нужно держать в памяти для реконструкции компактных блоков (по умолчанию: %u)</translation>
     </message>
     <message>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
@@ -4585,6 +4510,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Длина строки сетевой версии (%i) превышает максимально допустимую (%i). Уменьшите количество или размер строк uacomment.</translation>
     </message>
     <message>
+        <source>Transaction index can't be disabled in full mode. Either start with -litemode command line switch or enable transaction index.</source>
+        <translation>Индексирование транзакций нельзя отключить в полном режиме. Либо запустите кошелек с опцией -litemode, либо включите индексирование транзакций.</translation>
+    </message>
+    <message>
         <source>Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = no limit (default: %d)</source>
         <translation>Пытаться ограничить исходящий трафик в пределах установленного лимита (в МБ за 24ч), 0 = не ограничивать (по умолчанию: %d)</translation>
     </message>
@@ -4617,20 +4546,16 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Внимание: создаются блоки неизвестной версии! Возможно активированы неизвестные правила</translation>
     </message>
     <message>
+        <source>You are starting in lite mode, all Compute-specific functionality is disabled.</source>
+        <translation>Вы запускаете кошелек в облегченном режиме, все специфичные для Compute функции отключены.</translation>
+    </message>
+    <message>
         <source>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</source>
         <translation>Вам необходимо пересоздать базы данных, запустив клиент с ключом -reindex, чтобы вернуться в полный режим. Это приведет к повторному скачиванию всей цепи блоков.</translation>
     </message>
     <message>
-        <source>(%d could be used only on mainnet)</source>
-        <translation>(%d можно использовать только в главной сети)</translation>
-    </message>
-    <message>
         <source>(default: %u)</source>
         <translation>(по умолчанию: %u)</translation>
-    </message>
-    <message>
-        <source>(must be %d for mainnet)</source>
-        <translation>(должно быть %d в главной сети)</translation>
     </message>
     <message>
         <source>-maxmempool must be at least %d MB</source>
@@ -4661,6 +4586,14 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Включить публикацию хэша блока на &lt;address&gt;</translation>
     </message>
     <message>
+        <source>Enable publish hash of governance objects (like proposals) in &lt;address&gt;</source>
+        <translation>Включить публикацию хэша объектов управления (таких как бюджетные предложения) на &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish hash of governance votes in &lt;address&gt;</source>
+        <translation>Включить публикацию хэша голосов за объекты управления на &lt;address&gt;</translation>
+    </message>
+    <message>
         <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
         <translation>Включить публикацию хэша транзакции (заблокированной через InstantSend) на &lt;address&gt;</translation>
     </message>
@@ -4681,10 +4614,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Включить публикацию кода транзакции на &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable transaction replacement in the memory pool (default: %u)</source>
-        <translation>Разрешить подмену транзакций в пуле памяти (по умолчанию: %u)</translation>
-    </message>
-    <message>
         <source>Error: A fatal internal error occurred, see debug.log for details</source>
         <translation>Ошибка: Произошла критическая ошибка, подробности смотрите в файле debug.log</translation>
     </message>
@@ -4701,8 +4630,12 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Не удалось удалить резервную копию, ошибка: %s</translation>
     </message>
     <message>
-        <source>Failed to parse host:port string</source>
-        <translation>Не удалось разбить строку host:port</translation>
+        <source>Failed to load InstantSend data cache from</source>
+        <translation>Ошибка загрузки кэша InstantSend из</translation>
+    </message>
+    <message>
+        <source>Failed to load sporks cache from</source>
+        <translation>Ошибка загрузки кэша спорков из</translation>
     </message>
     <message>
         <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
@@ -4733,12 +4666,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Последнее успешное действие PrivateSend было слишком недавно.</translation>
     </message>
     <message>
-        <source>Line: %d</source>
-        <translation>Строка: %d</translation>
-    </message>
-    <message>
-        <source>Loading addresses...</source>
-        <translation>Загрузка адресов...</translation>
+        <source>Loading InstantSend data cache...</source>
+        <translation>Загрузка кэша InstantSend...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -4747,6 +4676,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Loading governance cache...</source>
         <translation>Загрузка кэша управления...</translation>
+    </message>
+    <message>
+        <source>Loading sporks cache...</source>
+        <translation>Загрузка кэша спорков...</translation>
     </message>
     <message>
         <source>Loading wallet... (%3.2f %%)</source>
@@ -4763,10 +4696,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Make the wallet broadcast transactions</source>
         <translation>Рассылать транзакции из бумажника</translation>
-    </message>
-    <message>
-        <source>Masternode cache is empty, skipping payments and governance cache...</source>
-        <translation>Кэш мастернод пуст, пропускаем кэш платежей и объектов управления...</translation>
     </message>
     <message>
         <source>Masternode options:</source>
@@ -4865,6 +4794,18 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Перепроверить цепочку блоков на предмет отсутствующих в бумажнике транзакций на старте</translation>
     </message>
     <message>
+        <source>Submitted following entries to masternode: %u</source>
+        <translation>Мастерноде отправлены следующие записи: %u</translation>
+    </message>
+    <message>
+        <source>Submitted to masternode, waiting for more entries ( %u ) %s</source>
+        <translation>Отправлено мастерноде, ожидаем больше записей ( %u ) %s</translation>
+    </message>
+    <message>
+        <source>Synchronizing blockchain...</source>
+        <translation>Синхронизация блокчейна...</translation>
+    </message>
+    <message>
         <source>The wallet will avoid paying less than the minimum relay fee.</source>
         <translation>Кошелек не будет платить комиссию меньше, чем необходимо для передачи. </translation>
     </message>
@@ -4889,6 +4830,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>У транзакции должен быть хотя бы один получатель</translation>
     </message>
     <message>
+        <source>Transaction too large</source>
+        <translation>Транзакция слишком большая</translation>
+    </message>
+    <message>
         <source>Trying to connect...</source>
         <translation>Попытка соединения...</translation>
     </message>
@@ -4909,6 +4854,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Параметры отладки/тестирования кошелька:</translation>
     </message>
     <message>
+        <source>Wallet is not initialized</source>
+        <translation>Кошелек не инициализирован</translation>
+    </message>
+    <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
         <translation>Необходимо перезаписать кошелёк: перезапустите %s для завершения операции</translation>
     </message>
@@ -4923,6 +4872,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Whether to operate in a blocks only mode (default: %u)</source>
         <translation>Работать в режиме обработки только блоков (по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>You can not start a masternode in lite mode.</source>
+        <translation>Вы не можете запустить мастерноду в облегченном режиме.</translation>
     </message>
     <message>
         <source>ZeroMQ notification options:</source>
@@ -5013,10 +4966,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Установить минимальную комиссию (в %s/kB) для добавления транзакций в блок (по умолчанию: %s)</translation>
     </message>
     <message>
-        <source>Show N confirmations for a successfully locked transaction (%u-%u, default: %u)</source>
-        <translation>Показывать N подтверждений для успешно заблокированной транзакции (%u-%u, по умолчанию: %u)</translation>
-    </message>
-    <message>
         <source>This is the transaction fee you may pay when fee estimates are not available.</source>
         <translation>Это комиссия, которую Вы заплатите при отправке транзакции, если расчет комиссии не доступен.</translation>
     </message>
@@ -5047,14 +4996,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Wallet will not create transactions that violate mempool chain limits (default: %u)</source>
         <translation>Кошелек не будет создавать транзакции превышающие ограничения мемпула по длине цепочки (default: %u)</translation>
-    </message>
-    <message>
-        <source>Warning: At least %d of %d masternodes are running on a newer software version. Please check latest releases, you might need to update too.</source>
-        <translation>Внимание: как минимум %d из %d мастернод используют новое ПО. Пожалуйста, ознакомьтесь с последними релизами, возможно Вам тоже необходимо перейти на новую версию.</translation>
-    </message>
-    <message>
-        <source>Warning: Every masternode (out of %d known ones) is running on a newer software version. Please check latest releases, it's very likely that you missed a major/critical update.</source>
-        <translation>Внимание: все мастерноды (из %d известных) используют новое ПО. Пожалуйста, ознакомьтесь с последними релизами, крайне вероятно, что Вы пропустили значимое либо критическое обновление.</translation>
     </message>
     <message>
         <source>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
@@ -5141,8 +5082,20 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Проверка на непротиворечивость закончилась неудачно. %s выключается.</translation>
     </message>
     <message>
+        <source>Invalid -onion address or hostname: '%s'</source>
+        <translation>Неверный адрес или имя хоста -onion: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid -proxy address or hostname: '%s'</source>
+        <translation>Неверный адрес или имя хоста -proxy: '%s'</translation>
+    </message>
+    <message>
         <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
         <translation>Некорректное значение в параметре -%s=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid characters in -wallet filename</source>
+        <translation>Некорректные символы в имени файла -wallet</translation>
     </message>
     <message>
         <source>Invalid spork address specified with -sporkaddr</source>
@@ -5151,6 +5104,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Keep N PUTEz anonymized (%u-%u, default: %u)</source>
         <translation>Держать N PUTEz анонимизированными (%u-%u, по умолчанию: %u)</translation>
+    </message>
+    <message>
+        <source>Loading P2P addresses...</source>
+        <translation>Загрузка P2P адресов...</translation>
     </message>
     <message>
         <source>Print this help message and exit</source>
@@ -5201,10 +5158,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Установить максимальный размер блока в байтах (по умолчанию: %d)</translation>
     </message>
     <message>
-        <source>Set the masternode private key</source>
-        <translation>Установить закрытый ключ мастерноды</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Показать все отладочные параметры (использование: --help -help-debug)</translation>
     </message>
@@ -5239,10 +5192,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Synchronizing governance objects...</source>
         <translation>Синхронизация объектов управления...</translation>
-    </message>
-    <message>
-        <source>Synchronizing masternode payments...</source>
-        <translation>Синхронизация выплат мастернодам...</translation>
     </message>
     <message>
         <source>The source code is available from %s.</source>

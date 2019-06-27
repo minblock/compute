@@ -7,11 +7,11 @@
     </message>
     <message>
         <source>Create a new address</source>
-        <translation>Crea un nucompute indirizzo</translation>
+        <translation>Crea un nuovo indirizzo</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Nucompute</translation>
+        <translation>&amp;Nuovo</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
@@ -20,6 +20,14 @@
     <message>
         <source>&amp;Copy</source>
         <translation>&amp;Copia</translation>
+    </message>
+    <message>
+        <source>Show QR code for the currently selected address</source>
+        <translation>Mostra il codice QR per l'indirizzo attualmente selezionato</translation>
+    </message>
+    <message>
+        <source>&amp;Show QR code</source>
+        <translation>&amp;Mostra il codice QR</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
@@ -67,7 +75,7 @@
     </message>
     <message>
         <source>These are your Compute addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Questi sono i tuoi indirizzi di Compute per ricevere i pagamenti. Si raccomanda di usare un nucompute indirizzo di ricezione per ogni operazione.</translation>
+        <translation>Questi sono i tuoi indirizzi di Compute per ricevere i pagamenti. Si raccomanda di usare un nuovo indirizzo di ricezione per ogni operazione.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -80,6 +88,14 @@
     <message>
         <source>&amp;Edit</source>
         <translation>&amp;Modifica</translation>
+    </message>
+    <message>
+        <source>&amp;Show address QR code</source>
+        <translation>&amp;Mostra l'indirizzo del codice QR</translation>
+    </message>
+    <message>
+        <source>QR code</source>
+        <translation>codice QR</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -189,11 +205,11 @@
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. Previous backups of the unencrypted wallet file contain the same HD seed and still have full access to all your funds just like the new, encrypted wallet.</source>
-        <translation>IMPORTANTE: tutti i backup precedenti che hai fatto del tuo file del portafoglio devono essere sostituiti con il file del portafoglio appena generato. I backup precedenti del file del portafoglio non crittografato contengono lo stesso seed dell'HD e hanno ancora pieno accesso a tutti i tuoi fondi, proprio come il nucompute portafoglio crittografato.</translation>
+        <translation>IMPORTANTE: tutti i backup precedenti che hai fatto del tuo file del portafoglio devono essere sostituiti con il file del portafoglio appena generato. I backup precedenti del file del portafoglio non crittografato contengono lo stesso seed dell'HD e hanno ancora pieno accesso a tutti i tuoi fondi, proprio come il nuovo portafoglio crittografato.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>IMPORTANTE: qualsiasi backup del file del portafoglio effettuato in precedenza dovrà essere sostituito con il file del portafoglio cifrato appena generato. Per ragioni di sicurezza, i precedenti backup del file del portafoglio non cifrato diventeranno inservibili non appena si inizierà ad utilizzare il nucompute portafoglio cifrato.</translation>
+        <translation>IMPORTANTE: qualsiasi backup del file del portafoglio effettuato in precedenza dovrà essere sostituito con il file del portafoglio cifrato appena generato. Per ragioni di sicurezza, i precedenti backup del file del portafoglio non cifrato diventeranno inservibili non appena si inizierà ad utilizzare il nuovo portafoglio cifrato.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -438,14 +454,6 @@
         <translation>Apri il file di configurazione</translation>
     </message>
     <message>
-        <source>Open &amp;Masternode Configuration File</source>
-        <translation>Apri il &amp;Configuration File dei Masternode</translation>
-    </message>
-    <message>
-        <source>Open Masternode configuration file</source>
-        <translation>Apri il file di configurazione dei Masternode</translation>
-    </message>
-    <message>
         <source>Show Automatic &amp;Backups</source>
         <translation>Mostra Copie Automatiche</translation>
     </message>
@@ -651,10 +659,6 @@
 <context>
     <name>ClientModel</name>
     <message>
-        <source>Total: %1 (PS compatible: %2 / Enabled: %3)</source>
-        <translation>Totale: %1 (PS compatibile: %2 / Abilitato: %3)</translation>
-    </message>
-    <message>
         <source>Network Alert</source>
         <translation>Avviso di rete</translation>
     </message>
@@ -794,7 +798,7 @@
         <translation>Passare a "Modalità elenco" per utilizzare questa funzione.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</source>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
         <translation>Selezionato input non anonimo. &lt;b&gt;PrivateSend sarà disabilitato.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Se vuoi ancora utilizzare PrivateSend, deseleziona prima tutti gli input non anonimi e poi controlla nuovamente la checkbox di PrivateSend.</translation>
     </message>
     <message>
@@ -835,73 +839,6 @@
     </message>
 </context>
 <context>
-    <name>DarksendConfig</name>
-    <message>
-        <source>Configure PrivateSend</source>
-        <translation>Configura il PrivateSend</translation>
-    </message>
-    <message>
-        <source>Basic Privacy</source>
-        <translation>Privacy base</translation>
-    </message>
-    <message>
-        <source>High Privacy</source>
-        <translation>Privacy alta</translation>
-    </message>
-    <message>
-        <source>Maximum Privacy</source>
-        <translation>Privacy massima</translation>
-    </message>
-    <message>
-        <source>Please select a privacy level.</source>
-        <translation>Selezionare il livello di privacy</translation>
-    </message>
-    <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 PUTEz</source>
-        <translation>Usa 2 masternode separati  per mixare fino al 1000 PUTEz</translation>
-    </message>
-    <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 PUTEz</source>
-        <translation>Usa 8 masternode separati per mixare fino al 1000 PUTEz</translation>
-    </message>
-    <message>
-        <source>Use 16 separate masternodes</source>
-        <translation>Usa 16 masternode separati</translation>
-    </message>
-    <message>
-        <source>This option is the quickest and will cost about ~0.025 PUTEz to anonymize 1000 PUTEz</source>
-        <translation>Questa opzione è la più veloce e ti costerà ~0.025PUTEz circa per anonimizzare 1000PUTEz</translation>
-    </message>
-    <message>
-        <source>This option is moderately fast and will cost about 0.05 PUTEz to anonymize 1000 PUTEz</source>
-        <translation>Questa opzione è moderatamente veloce e costerà 0.05PUTEz circa per anonimizzare 1000PUTEz</translation>
-    </message>
-    <message>
-        <source>0.1 PUTEz per 1000 PUTEz you anonymize.</source>
-        <translation>0.1 PUTEz ogni 1000 PUTEz che anonimizzi.</translation>
-    </message>
-    <message>
-        <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Questa è l'opzione più lenta ma più sicura . Usare il massimo grado di anonimizzazione costerà</translation>
-    </message>
-    <message>
-        <source>PrivateSend Configuration</source>
-        <translation>Configurazione del PrivateSend</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Compute's configuration screen.</source>
-        <translation>PrivateSend è stato impostato correttamente sul basic (%1 e 2 round). Puoi cambiarlo in qualsiasi momento aprendo la schermata di configurazione di Compute.</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Compute's configuration screen.</source>
-        <translation>PrivateSend è stato impostato correttamente su high (%1 e 8 round). Puoi cambiarlo in qualsiasi momento aprendo la schermata di configurazione di Compute.</translation>
-    </message>
-    <message>
-        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Compute's configuration screen.</source>
-        <translation>PrivateSend è stato impostato correttamente su maximum (%1 e 16 round). Puoi cambiarlo in qualsiasi momento aprendo la schermata di configurazione di Compute.</translation>
-    </message>
-</context>
-<context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
@@ -925,11 +862,11 @@
     </message>
     <message>
         <source>New receiving address</source>
-        <translation>Nucompute indirizzo di ricezione</translation>
+        <translation>Nuovo indirizzo di ricezione</translation>
     </message>
     <message>
         <source>New sending address</source>
-        <translation>Nucompute indirizzo d'invio</translation>
+        <translation>Nuovo indirizzo d'invio</translation>
     </message>
     <message>
         <source>Edit receiving address</source>
@@ -1038,8 +975,8 @@
         <translation>Informazioni di Private Send</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Compute in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.01 PUTEz, 0.1 PUTEz, 1 PUTEz and 10 PUTEz -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href="https://computepay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://computepay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;         </source>
-        <translation>&lt;h3&gt;Nozioni di base di PrivateSend&lt;/h3&gt; PrivateSend ti offre una vera privacy finanziaria oscurando le origini dei tuoi fondi. Tutti i Compute nel tuo portafoglio sono costituiti da diversi "input" che puoi pensare come monete separate e discrete. &lt;br&gt;PrivateSend utilizza un processo innovativo per mescolare i tuoi input con gli input di due altre persone, senza che le tue monete lascino mai il tuo portafoglio. Si mantiene il controllo del proprio denaro in ogni momento. &lt;hr&gt;&lt;b&gt;Il processo di PrivateSend funziona in questo modo: &lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend inizia dividendo gli input della transazioni in denominazioni standard. Queste denominazioni sono 0,01 PUTEz, 0,1 PUTEz, 1 PUTEz e 10 PUTEz: una specie di carta moneta che utilizzi ogni giorno.&lt;/li&gt;&lt;li&gt; Il tuo portafoglio quindi invia richieste ai nodi software appositamente configurati sulla rete, chiamati "masternode". Questi masternode vengono informati che sei interessato a mescolare una certa denominazione. Nessuna informazione identificabile viene inviata ai masternodes, quindi non sanno mai "chi" tu sia. &lt;/li&gt;&lt;li&gt;Quando altre due persone inviano messaggi simili, indicando che desiderano mescolare la stessa denominazione, inizia una sessione di mixaggio. Il masternode mescola gli input e incarica i portafogli di tutti e tre gli utenti di pagare a loro stessi l'input trasformato. Il tuo portafoglio paga quella denominazione direttamente a se stessa, ma in un indirizzo diverso (chiamato indirizzo di modifica). &lt;/li&gt;&lt;li&gt;Per oscurare completamente i tuoi fondi, il tuo portafoglio deve ripetere questo processo un certo numero di volte con ogni denominazione. Ogni  processo completato, è chiamato "round". Ogni ciclo di PrivateSend rende esponenzialmente più difficile determinare la provenienza dei fondi. &lt;/li&gt;&lt;li&gt;Questo processo di miscelazione avviene in background senza alcun intervento da parte dell'utente. Quando desideri effettuare una transazione, i tuoi fondi saranno già resi anonimi. Non è richiesta alcuna attesa aggiuntiva.&lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt; IMPORTANTE: &lt;/b&gt;il tuo portafoglio contiene solo 1000 di questi "indirizzi di modifica". Ogni volta che si verifica un evento di mixaggio, vengono usati fino a 9 dei tuoi indirizzi. Ciò significa che i 1000 indirizzi durano per circa 100 eventi di mixaggio. Quando vengono utilizzati 900 di questi, il tuo portafoglio deve creare altri indirizzi. Può farlo solo se si dispone dei backup automatici abilitati. &lt;br&gt;Di conseguenza, gli utenti che hanno disabilitato i backup avranno anche PrivateSend disabilitato. &lt;hr&gt;Per maggiori informazioni consulta &lt;a href="https://computepay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;https://computepay.atlassian.net/wiki/display/DOC/PrivateSend&lt;/a&gt;</translation>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Compute in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PUTEz, 0.01 PUTEz, 0.1 PUTEz, 1 PUTEz and 10 PUTEz -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.putez.org/en/latest/wallets/computecore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Nozioni di base di PrivateSend&lt;/h3&gt; PrivateSend ti offre una vera privacy finanziaria oscurando le origini dei tuoi fondi. Tutti i Compute nel tuo portafoglio sono costituiti da diversi "input" che puoi pensare come monete separate e discrete. &lt;br&gt;PrivateSend utilizza un processo innovativo per mescolare i tuoi input con gli input di due altre persone, senza che le tue monete lascino mai il tuo portafoglio. Si mantiene il controllo del proprio denaro in ogni momento. &lt;hr&gt;&lt;b&gt;Il processo di PrivateSend funziona in questo modo: &lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend inizia dividendo gli input della transazioni in denominazioni standard. Queste denominazioni sono 0,001 PUTEz, 0,01 PUTEz, 0,1 PUTEz, 1 PUTEz e 10 PUTEz: una specie di carta moneta che utilizzi ogni giorno.&lt;/li&gt;&lt;li&gt; Il tuo portafoglio quindi invia richieste ai nodi software appositamente configurati sulla rete, chiamati "masternode". Questi masternode vengono informati che sei interessato a mescolare una certa denominazione. Nessuna informazione identificabile viene inviata ai masternodes, quindi non sanno mai "chi" tu sia. &lt;/li&gt;&lt;li&gt;Quando altre due persone inviano messaggi simili, indicando che desiderano mescolare la stessa denominazione, inizia una sessione di mixaggio. Il masternode mescola gli input e incarica i portafogli di tutti e tre gli utenti di pagare a loro stessi l'input trasformato. Il tuo portafoglio paga quella denominazione direttamente a se stessa, ma in un indirizzo diverso (chiamato indirizzo di modifica). &lt;/li&gt;&lt;li&gt;Per oscurare completamente i tuoi fondi, il tuo portafoglio deve ripetere questo processo un certo numero di volte con ogni denominazione. Ogni  processo completato, è chiamato "round". Ogni ciclo di PrivateSend rende esponenzialmente più difficile determinare la provenienza dei fondi. &lt;/li&gt;&lt;li&gt;Questo processo di miscelazione avviene in background senza alcun intervento da parte dell'utente. Quando desideri effettuare una transazione, i tuoi fondi saranno già resi anonimi. Non è richiesta alcuna attesa aggiuntiva.&lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt; IMPORTANTE: &lt;/b&gt;il tuo portafoglio contiene solo 1000 di questi "indirizzi di modifica". Ogni volta che si verifica un evento di mixaggio, vengono usati fino a 9 dei tuoi indirizzi. Ciò significa che i 1000 indirizzi durano per circa 100 eventi di mixaggio. Quando vengono utilizzati 900 di questi, il tuo portafoglio deve creare altri indirizzi. Può farlo solo se si dispone dei backup automatici abilitati. &lt;br&gt;Di conseguenza, gli utenti che hanno disabilitato i backup avranno anche PrivateSend disabilitato. &lt;hr&gt;Per maggiori informazioni consulta la &lt;a href="https://docs.putez.org/en/latest/wallets/computecore/privatesend-instantsend.html"&gt;documentazione di PrivateSend&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1057,8 +994,16 @@
         <translation>Dato che questa è la prima volta che il programma viene lanciato, puoi scegliere dove %1 salverà i suoi dati.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Compute block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 scaricherà e memorizzerà una copia della catena di blocchi di Compute. Almeno %2GB di dati verranno archiviati in questa directory e aumenteranno nel tempo. Anche il portafoglio sarà memorizzato in questa directory.</translation>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation>Quando fai click su OK, %1 comincerà a scaricare e processare l'intera %4 block chain (%2GB) a partire dalla prime transazioni del %3 quando %4 venne inaugurato.</translation>
+    </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation>La sincronizzazione iniziale è molto dispendiosa e potrebbe mettere in luce problemi di harware del tuo computer che erano prima passati inosservati. Ogni volta che lanci %1 continuerà a scaricare da dove l'avevi lasciato.</translation>
+    </message>
+    <message>
+        <source>If you have chosen to limit block chain storage (pruning), the historical data must still be downloaded and processed, but will be deleted afterward to keep your disk usage low.</source>
+        <translation>Se hai scelto di limitare l'immagazzinamento della block chain (operazione nota come "pruning" o "potatura"), i dati storici devono comunque essere scaricati e processati, ma verranno cancellati in seguito per mantenere basso l'utilizzo del tuo disco.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -1067,6 +1012,22 @@
     <message>
         <source>Use a custom data directory:</source>
         <translation>Usa una cartella dati personalizzata:</translation>
+    </message>
+    <message>
+        <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
+        <translation>Almeno %1 GB di dati verrà salvato in questa cartella e continuerà ad aumentare col tempo.</translation>
+    </message>
+    <message>
+        <source>Approximately %1 GB of data will be stored in this directory.</source>
+        <translation>Verranno salvati circa %1 GB di dati in questa cartella.</translation>
+    </message>
+    <message>
+        <source>%1 will download and store a copy of the Compute block chain.</source>
+        <translation>%1 scaricherà e salverà una copia della block chain di Compute.</translation>
+    </message>
+    <message>
+        <source>The wallet will also be stored in this directory.</source>
+        <translation>Anche il portafoglio verrà salvato in questa cartella.</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1092,76 +1053,20 @@
         <translation>Modulo</translation>
     </message>
     <message>
-        <source>My Masternodes</source>
-        <translation>I miei Masternode</translation>
-    </message>
-    <message>
-        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see "ENABLED" in "Status" field.</source>
-        <translation>Nota: lo stato dei tuoi Masternode nel Portafoglio locale potrebbe presentare un piccolo errore.&lt;br /&gt; Attendi sempre che il wallet sincronizzi i dati aggiuntivi e poi controlla da un altro nodo, &lt;br /&gt;il tuo Masternode potrebbe essere in esecuzione ma potresti non vedere ancora "ENABLED" nel campo "Status". </translation>
-    </message>
-    <message>
-        <source>Alias</source>
-        <translation>Alias</translation>
-    </message>
-    <message>
         <source>Address</source>
         <translation>Indirizzo</translation>
-    </message>
-    <message>
-        <source>Protocol</source>
-        <translation>Protocollo</translation>
     </message>
     <message>
         <source>Status</source>
         <translation>Stato</translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation>Attivo</translation>
-    </message>
-    <message>
-        <source>Last Seen</source>
-        <translation>Ultima accesso</translation>
-    </message>
-    <message>
         <source>Payee</source>
         <translation>Beneficiario</translation>
     </message>
     <message>
-        <source>S&amp;tart alias</source>
-        <translation>&amp;Inizia alias</translation>
-    </message>
-    <message>
-        <source>Start &amp;all</source>
-        <translation>Inizia &amp;tutti</translation>
-    </message>
-    <message>
-        <source>Start &amp;MISSING</source>
-        <translation>Inizia &amp;MISSING</translation>
-    </message>
-    <message>
-        <source>&amp;Update status</source>
-        <translation>&amp;Aggiorna stato</translation>
-    </message>
-    <message>
-        <source>Show additional Masternode information</source>
-        <translation>Mostra ulteriori informazioni sul Masternode</translation>
-    </message>
-    <message>
-        <source>Show &amp;Info...</source>
-        <translation>Mostra &amp;info ...</translation>
-    </message>
-    <message>
-        <source>Status will be updated automatically in (sec):</source>
-        <translation>Lo stato verrà aggiornato automaticamente in (sec):</translation>
-    </message>
-    <message>
         <source>0</source>
         <translation>0</translation>
-    </message>
-    <message>
-        <source>All Masternodes</source>
-        <translation>Tutti i Masternode</translation>
     </message>
     <message>
         <source>Filter List:</source>
@@ -1176,72 +1081,76 @@
         <translation>Numero dei nodi:</translation>
     </message>
     <message>
-        <source>Start alias</source>
-        <translation>Inizia alias</translation>
+        <source>DIP3 Masternodes</source>
+        <translation>DIP3 Masternodes</translation>
     </message>
     <message>
-        <source>Confirm masternode start</source>
-        <translation>Conferma avviamento del Masternode</translation>
+        <source>Show only masternodes this wallet has keys for.</source>
+        <translation>Mostra solo i masternodes per cui questo portafoglio ha le chiavi.</translation>
     </message>
     <message>
-        <source>Are you sure you want to start masternode %1?</source>
-        <translation>Sei sicuro di voler avviare il Masternode %1?</translation>
+        <source>My masternodes only</source>
+        <translation>Solo i miei masternodes</translation>
     </message>
     <message>
-        <source>Confirm all masternodes start</source>
-        <translation>Confermare l'avviamento di tutti i Masternode</translation>
+        <source>PoSe Score</source>
+        <translation>Punteggio PoSe</translation>
     </message>
     <message>
-        <source>Are you sure you want to start ALL masternodes?</source>
-        <translation>Sei sicuro di voler avviare TUTTI i Masternode?</translation>
+        <source>Registered</source>
+        <translation>Registrato</translation>
     </message>
     <message>
-        <source>Command is not available right now</source>
-        <translation>Il comando non è disponibile al momento</translation>
+        <source>Last Paid</source>
+        <translation>Ultimo pagato</translation>
     </message>
     <message>
-        <source>You can't use this command until masternode list is synced</source>
-        <translation>Non è possibile utilizzare questo comando finché l'elenco dei Masternode non viene sincronizzato</translation>
+        <source>Next Payment</source>
+        <translation>Pagamento successivo</translation>
     </message>
     <message>
-        <source>Confirm missing masternodes start</source>
-        <translation>Conferma l'avviamento dei Masternode mancanti</translation>
+        <source>Operator Reward</source>
+        <translation>Ricompensa dell'Operatore</translation>
     </message>
     <message>
-        <source>Are you sure you want to start MISSING masternodes?</source>
-        <translation>Sei sicuro di voler avviare i Masternode mancanti?</translation>
+        <source>Copy ProTx Hash</source>
+        <translation>Copia ProTx Hash</translation>
     </message>
     <message>
-        <source>Additional information for Masternode %1</source>
-        <translation>Ulteriori informazioni per il Masternode %1</translation>
+        <source>Copy Collateral Outpoint</source>
+        <translation>Copia Collateral Outpoint</translation>
     </message>
     <message>
-        <source>Masternode Private Key</source>
-        <translation>Chiave Privata del Masternode</translation>
+        <source>ENABLED</source>
+        <translation>ABILITATO</translation>
     </message>
     <message>
-        <source>Private Key</source>
-        <translation>Chiave Privata</translation>
+        <source>POSE_BANNED</source>
+        <translation>POSIZIONE_BANNATA</translation>
     </message>
     <message>
-        <source>Collateral</source>
-        <translation>Collaterale</translation>
+        <source>UNKNOWN</source>
+        <translation>SCONOSCIUTO</translation>
     </message>
     <message>
-        <source>IP</source>
-        <translation>IP</translation>
+        <source>to %1</source>
+        <translation>a %1</translation>
     </message>
     <message>
-        <source>Version</source>
-        <translation>Versione</translation>
+        <source>to UNKNOWN</source>
+        <translation>a SCONOSCIUTO</translation>
     </message>
     <message>
-        <source>Unknown</source>
-        <translation>Sconosciuto</translation>
+        <source>but not claimed</source>
+        <translation>ma non richiesto</translation>
     </message>
     <message>
-        <source>Sentinel</source>
-        <translation>Sentinel</translation>
+        <source>NONE</source>
+        <translation>nessuna</translation>
+    </message>
+    <message>
+        <source>Additional information for DIP3 Masternode %1</source>
+        <translation>Ulteriori informazioni per DIP3 Masternode %1</translation>
     </message>
 </context>
 <context>
@@ -1447,6 +1356,14 @@
     <message>
         <source>Enable coin &amp;control features</source>
         <translation>Abilita le funzionalità di coin &amp;control</translation>
+    </message>
+    <message>
+        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Mostra popup di sistema per le transazioni di missaggio PrivateSend&lt;br/&gt;proprio come per tutti gli altri tipi di transazione.</translation>
+    </message>
+    <message>
+        <source>Show popups for PrivateSend transactions</source>
+        <translation>Mostra popup per transazioni PrivateSend</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1827,11 +1744,11 @@ https://www.transifex.com/projects/p/compute/</translation>
     </message>
     <message>
         <source>We are about to create a new automatic backup for you, however &lt;span style='color:red;'&gt; you should always make sure you have backups saved in some safe place&lt;/span&gt;!</source>
-        <translation>Stiamo per creare un nucompute backup automatico per te, tuttavia &lt;span style='color:red;'&gt;devi sempre assicurarti di avere dei backup salvati in un posto sicuro&lt;/span&gt;!</translation>
+        <translation>Stiamo per creare un nuovo backup automatico per te, tuttavia &lt;span style='color:red;'&gt;devi sempre assicurarti di avere dei backup salvati in un posto sicuro&lt;/span&gt;!</translation>
     </message>
     <message>
         <source>Note: You can turn this message off in options.</source>
-        <translation>Nota: puoi disattivare questo messaggio nelle opzioni.</translation>
+        <translation>Nota: è possibile disattivare questo messaggio nelle opzioni.</translation>
     </message>
     <message>
         <source>WARNING! Something went wrong on automatic backup</source>
@@ -1862,10 +1779,6 @@ https://www.transifex.com/projects/p/compute/</translation>
 </source>
         <translation>Ultimo messaggio di PrivateSend:
 </translation>
-    </message>
-    <message>
-        <source>N/A</source>
-        <translation>N/A</translation>
     </message>
     <message>
         <source>PrivateSend was successfully reset.</source>
@@ -1997,16 +1910,8 @@ https://www.transifex.com/projects/p/compute/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>Compute Core</source>
-        <translation>Compute Core</translation>
-    </message>
-    <message>
         <source>%1 didn't yet exit safely...</source>
         <translation>%1 non è ancora stato chiuso in modo sicuro</translation>
-    </message>
-    <message>
-        <source>Error reading masternode configuration file: %1</source>
-        <translation>Errore durante la lettura del file di configurazione del Masternode: %1</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2472,6 +2377,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Attività di rete disabilitata</translation>
     </message>
     <message>
+        <source>Total: %1 (Enabled: %2)</source>
+        <translation>Totale: %1 (Abilitato: %2)</translation>
+    </message>
+    <message>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
@@ -2540,7 +2449,7 @@ https://www.transifex.com/projects/p/compute/</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
-        <translation>Un'etichetta facoltativa da associare al nucompute indirizzo di ricezione</translation>
+        <translation>Un'etichetta facoltativa da associare al nuovo indirizzo di ricezione</translation>
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Compute network.</source>
@@ -2765,7 +2674,7 @@ https://www.transifex.com/projects/p/compute/</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>Se è abilitato, ma l'indirizzo per il resto è vuoto o invalido, il resto sarà inviato ad un nucompute indirizzo generato appositamente.</translation>
+        <translation>Se è abilitato, ma l'indirizzo per il resto è vuoto o invalido, il resto sarà inviato ad un nuovo indirizzo generato appositamente.</translation>
     </message>
     <message>
         <source>Custom change address</source>
@@ -3321,6 +3230,14 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>%1 conferme</translation>
     </message>
     <message>
+        <source>locked via LLMQ based ChainLocks</source>
+        <translation>bloccato tramite ChainLock basati su LLMQ</translation>
+    </message>
+    <message>
+        <source>verified via LLMQ based InstantSend</source>
+        <translation>verificato tramite InstantSend basato su LLMQ</translation>
+    </message>
+    <message>
         <source>verified via InstantSend</source>
         <translation>verificato via InstantSend</translation>
     </message>
@@ -3607,6 +3524,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Anche se in questa transazione è coinvolto un indirizzo di sola lettura</translation>
     </message>
     <message>
+        <source>Whether or not this transaction was locked by InstantSend.</source>
+        <translation>Indipendentemente dal fatto che questa transazione sia stata bloccata da InstantSend.</translation>
+    </message>
+    <message>
         <source>User-defined intent/purpose of the transaction.</source>
         <translation>Intento/scopo della transazione definito dall'utente.</translation>
     </message>
@@ -3620,6 +3541,14 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>All</source>
         <translation>Tutti</translation>
+    </message>
+    <message>
+        <source>Locked by InstantSend</source>
+        <translation>Bloccato da InstantSend</translation>
+    </message>
+    <message>
+        <source>Not locked by InstantSend</source>
+        <translation>Non bloccato da InstantSend</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3734,6 +3663,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Mostra i dettagli della transazione</translation>
     </message>
     <message>
+        <source>Show address QR code</source>
+        <translation>Mostra indirizzo del codice QR</translation>
+    </message>
+    <message>
         <source>Export Transaction History</source>
         <translation>Esporta lo storico delle transazioni</translation>
     </message>
@@ -3784,6 +3717,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>The transaction history was successfully saved to %1.</source>
         <translation>Lo storico delle transazioni e' stato salvato con successo in %1.</translation>
+    </message>
+    <message>
+        <source>QR code</source>
+        <translation>codice QR</translation>
     </message>
     <message>
         <source>Range:</source>
@@ -3909,10 +3846,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Attenzione: Sembra che non ci sia completo accordo con i nostri peer! Un aggiornamento da parte tua o degli altri nodi potrebbe essere necessario.</translation>
     </message>
     <message>
-        <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation>Devi specificare una masternodeprivkey nella configurazione. Per favore consulta la documentazione di aiuto.</translation>
-    </message>
-    <message>
         <source>Accept command line and JSON-RPC commands</source>
         <translation>Accetta comandi da riga di comando e JSON-RPC</translation>
     </message>
@@ -4033,16 +3966,20 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Resta in ascolto sull'indirizzo indicato ed inserisce in whitelist i peer che vi si collegano. Usa la notazione [host]:porta per l'IPv6</translation>
     </message>
     <message>
-        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation>Associare a un dato indirizzo per ascoltare le connessioni JSON-RPC. Usa [host]: notazione della porta per IPv6. Questa opzione può essere specificata più volte (default:  associare  a tutte le interfacce)</translation>
-    </message>
-    <message>
         <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
         <translation>Crea nuovi file con i permessi di default del sistema, invece che con umask 077 (ha effetto solo con funzionalità di portamonete disabilitate)</translation>
     </message>
     <message>
         <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
         <translation>Cancella tutte le transazioni del portafoglio e sistema solo quelle parti della blockchain mediante -rescan quando apri il portafoglio</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Abilita le prime transazioni pubblicate del tentativo di doppia spesa di InstantSend in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
+        <translation>Abilita gli hash delle transazioni di pubblicazione del tentativo di doppia spesa di InstantSend in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
@@ -4089,6 +4026,14 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Emette informazioni di debug (default: : %u, fornire &lt;category&gt; è opzionale)</translation>
     </message>
     <message>
+        <source>Overrides minimum spork signers to change spork value. Only useful for regtest and devnet. Using this on mainnet or testnet will ban you.</source>
+        <translation>Sovrascrive i segnaposti di spork minimi per modificare il valore di spork. Utile solo per regtest e devnet. Se lo usi su mainnet o testnet  sarai bannato .</translation>
+    </message>
+    <message>
+        <source>Use N separate masternodes in parallel to mix funds (%u-%u, default: %u)</source>
+        <translation>Usa N masternodes separati in parallelo per mescolare i fondi (%u-%u, predefinito: %u)</translation>
+    </message>
+    <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
         <translation>Usa un proxy SOCKS5 a parte per raggiungere i peer attraverso gli hidden services di Tor (default: %s)</translation>
     </message>
@@ -4109,8 +4054,16 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>È necessario ricostruire il database usando -reindex-chainstate per cambiare -txindex</translation>
     </message>
     <message>
+        <source>You should specify a masternodeblsprivkey in the configuration. Please see documentation for help.</source>
+        <translation>È necessario specificare un masternodeblsprivkey nella configurazione. Si prega di consultare la documentazione per aiuto.</translation>
+    </message>
+    <message>
         <source>(default: %s)</source>
         <translation>(default: %s)</translation>
+    </message>
+    <message>
+        <source>-wallet parameter must only specify a filename (not a path)</source>
+        <translation>-il parametro wallet deve specificare solo un nome file (non un percorso)</translation>
     </message>
     <message>
         <source>Accept public REST requests (default: %u)</source>
@@ -4161,10 +4114,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Impossibile caricare la cache del masternode da</translation>
     </message>
     <message>
-        <source>Failed to load masternode payments cache from</source>
-        <translation>Impossibile caricare la cache dei pagamenti masternode da</translation>
-    </message>
-    <message>
         <source>Found enough users, signing ( waiting %s )</source>
         <translation>Trovati utenti sufficienti, firma (in attesa di %s)</translation>
     </message>
@@ -4209,16 +4158,16 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Fondi insufficienti.</translation>
     </message>
     <message>
-        <source>Invalid -onion address: '%s'</source>
-        <translation>Indirizzo -onion non valido: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Indirizzo -proxy non valido: '%s'</translation>
-    </message>
-    <message>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: '%s' (must be at least %s)</source>
         <translation>Importo non valido per -paytxfee=&lt;amount&gt;: '%s' (deve essere almeno %s)</translation>
+    </message>
+    <message>
+        <source>Invalid masternodeblsprivkey. Please see documenation.</source>
+        <translation>Invalid masternodeblsprivkey. Per favore vedi documentazione.</translation>
+    </message>
+    <message>
+        <source>Invalid minimum number of spork signers specified with -minsporkkeys</source>
+        <translation>Numero minimo non valido di firmatari di spork specificato con -minsporkkeys</translation>
     </message>
     <message>
         <source>Keypool ran out, please call keypoolrefill first</source>
@@ -4245,16 +4194,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Caricamento della cache del masternode ...</translation>
     </message>
     <message>
-        <source>Loading masternode payment cache...</source>
-        <translation>Caricamento della cache di pagamento del masternode ...</translation>
-    </message>
-    <message>
         <source>Lock is already in place.</source>
         <translation>Il blocco è già presente.</translation>
-    </message>
-    <message>
-        <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation>Blocca i masternodes  nel file di configurazione del masternode (default: %u)</translation>
     </message>
     <message>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
@@ -4293,10 +4234,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Connessione ai soli nodi appartenenti alla rete &lt;net&gt; (ipv4, ipv6 o Tor)</translation>
     </message>
     <message>
-        <source>Port: %d</source>
-        <translation>Porta: %d</translation>
-    </message>
-    <message>
         <source>Prepend debug output with timestamp (default: %u)</source>
         <translation>Antepone un timestamp all'output del debug (predefinito: %u)</translation>
     </message>
@@ -4321,6 +4258,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Imposta la dimensione del pool di chiavi a &lt;n&gt; (default: %u)</translation>
     </message>
     <message>
+        <source>Set the masternode BLS private key</source>
+        <translation>Imposta la chiave privata BLS masternode</translation>
+    </message>
+    <message>
         <source>Set the number of threads to service RPC calls (default: %d)</source>
         <translation>Imposta il numero di thread destinati a rispondere alle chiamate RPC (default: %d)</translation>
     </message>
@@ -4333,10 +4274,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Specifica il timeout di connessione in millisecondi (minimo: 1, default: %d)</translation>
     </message>
     <message>
-        <source>Specify masternode configuration file (default: %s)</source>
-        <translation>Specifica il file di configurazione del masternode (default: %s)</translation>
-    </message>
-    <message>
         <source>Specify pid file (default: %s)</source>
         <translation>Specifica il file pid (default: %s)</translation>
     </message>
@@ -4345,20 +4282,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Abilita la spesa di resto non confermato quando si inviano transazioni (default: %u)</translation>
     </message>
     <message>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation>Inviate le seguenti voci al masternode: %u / %d</translation>
-    </message>
-    <message>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation>Inviato al masternode, in attesa di più voci (%u / %d) %s</translation>
-    </message>
-    <message>
         <source>Submitted to masternode, waiting in queue %s</source>
         <translation>Inviato al masternode, attendendo in coda %s</translation>
-    </message>
-    <message>
-        <source>Synchroning blockchain...</source>
-        <translation>Sincronizzando la blockchain...</translation>
     </message>
     <message>
         <source>Synchronization failed</source>
@@ -4367,10 +4292,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Synchronization finished</source>
         <translation>Sincronizzazione finita</translation>
-    </message>
-    <message>
-        <source>Synchronizing masternodes...</source>
-        <translation>Sincronizzando i masternode..</translation>
     </message>
     <message>
         <source>This is not a Masternode.</source>
@@ -4383,6 +4304,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Too many %f denominations, removing.</source>
         <translation>Troppe denominazioni %f, rimuovendo.</translation>
+    </message>
+    <message>
+        <source>Too many %f denominations, skipping.</source>
+        <translation>Troppe denominazioni %f, saltando.</translation>
     </message>
     <message>
         <source>Tor control port password (default: empty)</source>
@@ -4437,10 +4362,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Ritenterà ...</translation>
     </message>
     <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation>masternodeprivkey non valida. Per favore consulta la documentazione</translation>
-    </message>
-    <message>
         <source>Can't find random Masternode.</source>
         <translation>Impossibile trovare un Masternode casuale.</translation>
     </message>
@@ -4449,16 +4370,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Impossibile fare il mixing quando la sincronizzazione è in corso.</translation>
     </message>
     <message>
-        <source>Could not parse masternode.conf</source>
-        <translation>Impossibile analizzare masternode.conf</translation>
-    </message>
-    <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation>Netmask non valida specificata in -whitelist: '%s'</translation>
-    </message>
-    <message>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation>Rilevata porta non valida in masternode.conf</translation>
     </message>
     <message>
         <source>Invalid script detected.</source>
@@ -4479,6 +4392,14 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Disable all Compute specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
         <translation>Disabilitare tutte le funzionalità specifiche di Compute (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
+        <translation>%s il file contiene tutte le chiavi private di questo portafoglio. Non condividerlo con nessuno!</translation>
+    </message>
+    <message>
+        <source>Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)</source>
+        <translation>Associare a un dato indirizzo per ascoltare le connessioni JSON-RPC. Questa opzione viene ignorata a meno che venga passato anche -rpcallowip. La porta è facoltativa e sovrascrive -rpcport. Usa [host]: notazione della porta per IPv6. Questa opzione può essere specificata più volte (default: 127.0.0.1 e :: 1 vale a dire, localhost, o se è stato specificato -rpcallowip, 0.0.0.0 e :: i.e., tutti gli indirizzi)</translation>
     </message>
     <message>
         <source>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</source>
@@ -4503,6 +4424,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>Esegui comando quando una transazione InstantSend del portafoglio è bloccata correttamente (%s in cmd è sostituito da TxID)</translation>
+    </message>
+    <message>
+        <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
+        <translation>Transazioni aggiuntive da tenere in memoria per ricostruzioni di blocchi compatti (default: %u)</translation>
     </message>
     <message>
         <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
@@ -4585,6 +4510,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>La lunghezza totale della stringa di network version (%i) eccede la lunghezza massima (%i). Ridurre il numero o la dimensione di uacomments.</translation>
     </message>
     <message>
+        <source>Transaction index can't be disabled in full mode. Either start with -litemode command line switch or enable transaction index.</source>
+        <translation>L'indice di transazione non può essere disabilitato in modalità completa. Iniziare con l'opzione della riga di comando -litemode o abilitare l'indice delle transazioni.</translation>
+    </message>
+    <message>
         <source>Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = no limit (default: %d)</source>
         <translation>Cerca di mantenere il traffico in uscita al di sotto della soglia scelta (in MiB ogni 24h), 0 = nessun limite (default: %d)</translation>
     </message>
@@ -4617,20 +4546,16 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Attenzione: si stanno minando versioni sconocsiute di blocchi! E' possibile che siano attive regole sconosciute</translation>
     </message>
     <message>
+        <source>You are starting in lite mode, all Compute-specific functionality is disabled.</source>
+        <translation>Stai iniziando in modalità lite, tutte le funzionalità specifiche di Compute sono disabilitate.</translation>
+    </message>
+    <message>
         <source>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</source>
         <translation>Per ritornare alla modalità unpruned sarà necessario ricostruire il database utilizzando l'opzione -reindex. L'intera blockchain sarà riscaricata.</translation>
     </message>
     <message>
-        <source>(%d could be used only on mainnet)</source>
-        <translation>(%d potrebbe essere utilizzato solo su mainnet)</translation>
-    </message>
-    <message>
         <source>(default: %u)</source>
         <translation>(default: %u)</translation>
-    </message>
-    <message>
-        <source>(must be %d for mainnet)</source>
-        <translation>(deve essere %d per mainnet)</translation>
     </message>
     <message>
         <source>-maxmempool must be at least %d MB</source>
@@ -4661,6 +4586,14 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Abilita pubblicazione hash blocco in &lt;address&gt;</translation>
     </message>
     <message>
+        <source>Enable publish hash of governance objects (like proposals) in &lt;address&gt;</source>
+        <translation>Abilita l'hash di pubblicazione degli oggetti di governance (come le proposte) in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish hash of governance votes in &lt;address&gt;</source>
+        <translation>Abilita l'hash di pubblicazione dei voti di governance in &lt;address&gt;</translation>
+    </message>
+    <message>
         <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
         <translation>Abilita la pubblicazione della hash della transazione (bloccata tramite InstantSend) in &lt;address&gt;</translation>
     </message>
@@ -4681,10 +4614,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Abilita la pubblicazione delle transazione raw in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable transaction replacement in the memory pool (default: %u)</source>
-        <translation>Abilita la sostituzione della transazione nel pool della memoria (default: %u)</translation>
-    </message>
-    <message>
         <source>Error: A fatal internal error occurred, see debug.log for details</source>
         <translation>Errore: si è presentato un errore interno fatale, consulta il file debug.log per maggiori dettagli</translation>
     </message>
@@ -4701,8 +4630,12 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Impossibile eliminare il backup, errore: %s</translation>
     </message>
     <message>
-        <source>Failed to parse host:port string</source>
-        <translation>Impossibile analizzare l'host: port string</translation>
+        <source>Failed to load InstantSend data cache from</source>
+        <translation>Impossibile caricare la cache di dati di InstantSend da</translation>
+    </message>
+    <message>
+        <source>Failed to load sporks cache from</source>
+        <translation>Impossibile caricare la cache degli sporks da</translation>
     </message>
     <message>
         <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
@@ -4733,12 +4666,8 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>L'ultimo uso con successo di PrivateSend è troppo recente</translation>
     </message>
     <message>
-        <source>Line: %d</source>
-        <translation>Riga: %d</translation>
-    </message>
-    <message>
-        <source>Loading addresses...</source>
-        <translation>Caricamento indirizzi...</translation>
+        <source>Loading InstantSend data cache...</source>
+        <translation>Caricamento della cache di dati InstantSend ...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -4747,6 +4676,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Loading governance cache...</source>
         <translation>Caricamento della cache di governance ...</translation>
+    </message>
+    <message>
+        <source>Loading sporks cache...</source>
+        <translation>Caricamento della cache degli sporks ...</translation>
     </message>
     <message>
         <source>Loading wallet... (%3.2f %%)</source>
@@ -4763,10 +4696,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Make the wallet broadcast transactions</source>
         <translation>Configura il portafolgio per la trasmissione di transazioni</translation>
-    </message>
-    <message>
-        <source>Masternode cache is empty, skipping payments and governance cache...</source>
-        <translation>La cache del Masternode è vuota, si stanno saltando i pagamenti e la cache di governance ...</translation>
     </message>
     <message>
         <source>Masternode options:</source>
@@ -4866,6 +4795,18 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>All'avvio ripete la scansione della blockchain per individuare le transazioni che mancano dal portafoglio</translation>
     </message>
     <message>
+        <source>Submitted following entries to masternode: %u</source>
+        <translation>Inviate le seguenti voci su masternode: %u</translation>
+    </message>
+    <message>
+        <source>Submitted to masternode, waiting for more entries ( %u ) %s</source>
+        <translation>inserito in masternode, in attesa di altre voci ( %u ) %s</translation>
+    </message>
+    <message>
+        <source>Synchronizing blockchain...</source>
+        <translation>Sincronizzazione blockchain...</translation>
+    </message>
+    <message>
         <source>The wallet will avoid paying less than the minimum relay fee.</source>
         <translation>Il portafoglio eviterà di pagare meno della tariffa minima di trasmissione.</translation>
     </message>
@@ -4890,6 +4831,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>La transazione deve avere almeno un destinatario</translation>
     </message>
     <message>
+        <source>Transaction too large</source>
+        <translation>Transazione troppo grande</translation>
+    </message>
+    <message>
         <source>Trying to connect...</source>
         <translation>cercando di connettersi ...</translation>
     </message>
@@ -4910,6 +4855,10 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Opzioni di Debug/Test del portafoglio:</translation>
     </message>
     <message>
+        <source>Wallet is not initialized</source>
+        <translation>Wallet non è stato inizializzato</translation>
+    </message>
+    <message>
         <source>Wallet needed to be rewritten: restart %s to complete</source>
         <translation>Il portamonete necessita di essere riscritto: riavviare %s per completare</translation>
     </message>
@@ -4924,6 +4873,11 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Whether to operate in a blocks only mode (default: %u)</source>
         <translation>Imposta se operare in modalità solo blocchi (default: %u)</translation>
+    </message>
+    <message>
+        <source>You can not start a masternode in lite mode.</source>
+        <translation>
+Non è possibile avviare un masternode in modalità lite</translation>
     </message>
     <message>
         <source>ZeroMQ notification options:</source>
@@ -5014,10 +4968,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Imposta la tariffa di commissione più bassa (in %s/kB) per transazioni da includere nella creazione del blocco. (default:  %s)</translation>
     </message>
     <message>
-        <source>Show N confirmations for a successfully locked transaction (%u-%u, default: %u)</source>
-        <translation>Mostra N conferme per una transazione bloccata con successo (%u-%u, default: %u)</translation>
-    </message>
-    <message>
         <source>This is the transaction fee you may pay when fee estimates are not available.</source>
         <translation>Questo è il costo di transazione che potresti pagare quando le stime della fee non sono disponibili.</translation>
     </message>
@@ -5048,14 +4998,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Wallet will not create transactions that violate mempool chain limits (default: %u)</source>
         <translation>Il portafoglio non creerà transazioni che violino i limiti della mempool chain (default: %u)</translation>
-    </message>
-    <message>
-        <source>Warning: At least %d of %d masternodes are running on a newer software version. Please check latest releases, you might need to update too.</source>
-        <translation>Attenzione: almeno %d di %d masternode sono in esecuzione su una versione più recente del software. Si prega di controllare le ultime versioni, potrebbe anche essere necessario fare un aggiornamento.</translation>
-    </message>
-    <message>
-        <source>Warning: Every masternode (out of %d known ones) is running on a newer software version. Please check latest releases, it's very likely that you missed a major/critical update.</source>
-        <translation>Attenzione: ogni masternode (fuori da %d noti) è in esecuzione su una versione più recente del software. Controlla le ultime versioni, è molto probabile che tu abbia perso un aggiornamento importante/critico.</translation>
     </message>
     <message>
         <source>Warning: Wallet file corrupt, data salvaged! Original %s saved as %s in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
@@ -5142,8 +5084,20 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Test di integrità iniziale fallito. %s si arresterà.</translation>
     </message>
     <message>
+        <source>Invalid -onion address or hostname: '%s'</source>
+        <translation>Indirizzo -onion o hostname non valido: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid -proxy address or hostname: '%s'</source>
+        <translation>Indirizzo -proxy o hostname non valido: '%s'</translation>
+    </message>
+    <message>
         <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
         <translation>Importo non valido per -%s=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
+        <source>Invalid characters in -wallet filename</source>
+        <translation>Caratteri non validi in -wallet filename</translation>
     </message>
     <message>
         <source>Invalid spork address specified with -sporkaddr</source>
@@ -5152,6 +5106,10 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Keep N PUTEz anonymized (%u-%u, default: %u)</source>
         <translation>Mantieni N PUTEz anonimizzati (%u-%u, default: %u)</translation>
+    </message>
+    <message>
+        <source>Loading P2P addresses...</source>
+        <translation>Caricamento indirizzi P2P...</translation>
     </message>
     <message>
         <source>Print this help message and exit</source>
@@ -5202,10 +5160,6 @@ https://www.transifex.com/projects/p/compute/</translation>
         <translation>Imposta la dimensione massima del blocco in byte (predefinita: %d)</translation>
     </message>
     <message>
-        <source>Set the masternode private key</source>
-        <translation>Configura la chiave privata del Masternode</translation>
-    </message>
-    <message>
         <source>Show all debugging options (usage: --help -help-debug)</source>
         <translation>Mostra tutte le opzioni di debug (utilizzo: --help -help-debug)</translation>
     </message>
@@ -5240,10 +5194,6 @@ https://www.transifex.com/projects/p/compute/</translation>
     <message>
         <source>Synchronizing governance objects...</source>
         <translation>Sincronizzazione degli oggetti di governance ...</translation>
-    </message>
-    <message>
-        <source>Synchronizing masternode payments...</source>
-        <translation>Sincronizzazione dei pagamenti dei masternode ...</translation>
     </message>
     <message>
         <source>The source code is available from %s.</source>

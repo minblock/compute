@@ -1,4 +1,4 @@
-Compute Core 0.12.1
+Compute Core 0.14.0
 =====================
 
 This is the official reference wallet for Compute digital currency and comprises the backbone of the Compute peer-to-peer network. You can [download Compute Core](https://www.putez.org/downloads/) or [build it yourself](#building) using the guides below.
@@ -24,8 +24,10 @@ Drag Compute-Qt to your applications folder, and then run Compute-Qt.
 
 ### Need Help?
 
-* See the [Compute documentation](https://minblock.atlassian.net/wiki/display/DOC)
+* See the [Compute documentation](https://docs.putez.org)
 for help and more information.
+* See the [Compute Developer Documentation](https://compute-docs.github.io/) 
+for technical specifications and implementation details.
 * Ask for help on [Compute Nation Discord](http://computechat.org)
 * Ask for help on the [Compute Forum](https://putez.org/forum)
 

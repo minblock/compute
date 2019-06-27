@@ -117,9 +117,6 @@ namespace GUIUtil
     // Open compute.conf
     void openConfigfile();	
 
-    // Open masternode.conf
-    void openMNConfigfile();	
-
     // Browse backup folder
     void showBackups();
 

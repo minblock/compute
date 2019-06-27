@@ -17,7 +17,8 @@ static const std::string CHARS_ALPHA_NUM = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJ
 static const std::string SAFE_CHARS[] =
 {
     CHARS_ALPHA_NUM + " .,;-_/:?@()", // SAFE_CHARS_DEFAULT
-    CHARS_ALPHA_NUM + " .,;-_?@" // SAFE_CHARS_UA_COMMENT
+    CHARS_ALPHA_NUM + " .,;-_?@", // SAFE_CHARS_UA_COMMENT
+    CHARS_ALPHA_NUM + ".-_", // SAFE_CHARS_FILENAME
 };
 
 std::string SanitizeString(const std::string& str, int rule)
@@ -585,9 +586,9 @@ int atoi(const std::string& str)
  * 10^18-1 is the largest arbitrary decimal that will fit in a signed 64-bit integer.
  * Larger integers cannot consist of arbitrary combinations of 0-9:
  *
- *   999999999999999999  1^18-1
+ *   1133711337113371133799  1^18-1
  *  9223372036854775807  (1<<63)-1  (max int64_t)
- *  9999999999999999999  1^19-1     (would overflow)
+ *  11337113371133711337999  1^19-1     (would overflow)
  */
 static const int64_t UPPER_BOUND = 1000000000000000000LL - 1LL;
 

@@ -12,6 +12,9 @@ static const char UNUSED *compute_strings[] = {
 QT_TRANSLATE_NOOP("compute-core", "Compute Core"),
 QT_TRANSLATE_NOOP("compute-core", "The %s developers"),
 QT_TRANSLATE_NOOP("compute-core", ""
+"%s file contains all private keys from this wallet. Do not share it with "
+"anyone!"),
+QT_TRANSLATE_NOOP("compute-core", ""
 "(1 = keep tx meta data e.g. account owner and payment request information, 2 "
 "= drop tx meta data)"),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -37,9 +40,11 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Bind to given address and whitelist peers connecting to it. Use [host]:port "
 "notation for IPv6"),
 QT_TRANSLATE_NOOP("compute-core", ""
-"Bind to given address to listen for JSON-RPC connections. Use [host]:port "
-"notation for IPv6. This option can be specified multiple times (default: "
-"bind to all interfaces)"),
+"Bind to given address to listen for JSON-RPC connections. This option is "
+"ignored unless -rpcallowip is also passed. Port is optional and overrides -"
+"rpcport. Use [host]:port notation for IPv6. This option can be specified "
+"multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -"
+"rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)"),
 QT_TRANSLATE_NOOP("compute-core", ""
 "Cannot obtain a lock on data directory %s. %s is probably already running."),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -69,6 +74,12 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Enable multiple PrivateSend mixing sessions per block, experimental (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", ""
+"Enable publish raw transactions of attempted InstantSend double spend in "
+"<address>"),
+QT_TRANSLATE_NOOP("compute-core", ""
+"Enable publish transaction hashes of attempted InstantSend double spend in "
+"<address>"),
+QT_TRANSLATE_NOOP("compute-core", ""
 "Enable use of automated PrivateSend for funds stored in this wallet (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -90,6 +101,9 @@ QT_TRANSLATE_NOOP("compute-core", ""
 QT_TRANSLATE_NOOP("compute-core", ""
 "Execute command when the best block changes (%s in cmd is replaced by block "
 "hash)"),
+QT_TRANSLATE_NOOP("compute-core", ""
+"Extra transactions to keep in memory for compact block reconstructions "
+"(default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", ""
 "Failed to create backup, file already exists! This could happen if you "
 "restarted wallet in less than 60 seconds. You can continue if you are ok "
@@ -168,6 +182,9 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Override spork address. Only useful for regtest and devnet. Using this on "
 "mainnet or testnet will ban you."),
 QT_TRANSLATE_NOOP("compute-core", ""
+"Overrides minimum spork signers to change spork value. Only useful for "
+"regtest and devnet. Using this on mainnet or testnet will ban you."),
+QT_TRANSLATE_NOOP("compute-core", ""
 "Please check that your computer's date and time are correct! If your clock "
 "is wrong, %s will not work properly."),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -212,9 +229,6 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Set the number of script verification threads (%u to %d, 0 = auto, <0 = "
 "leave that many cores free, default: %d)"),
 QT_TRANSLATE_NOOP("compute-core", ""
-"Show N confirmations for a successfully locked transaction (%u-%u, default: "
-"%u)"),
-QT_TRANSLATE_NOOP("compute-core", ""
 "Specify full path to directory for automatic wallet backups (must exist)"),
 QT_TRANSLATE_NOOP("compute-core", ""
 "Support filtering of blocks and transaction with bloom filters (default: %u)"),
@@ -238,6 +252,9 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Total length of network version string (%i) exceeds maximum length (%i). "
 "Reduce the number or size of uacomments."),
 QT_TRANSLATE_NOOP("compute-core", ""
+"Transaction index can't be disabled in full mode. Either start with -"
+"litemode command line switch or enable transaction index."),
+QT_TRANSLATE_NOOP("compute-core", ""
 "Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = "
 "no limit (default: %d)"),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -254,6 +271,8 @@ QT_TRANSLATE_NOOP("compute-core", ""
 QT_TRANSLATE_NOOP("compute-core", ""
 "Use N separate masternodes for each denominated input to mix funds (%u-%u, "
 "default: %u)"),
+QT_TRANSLATE_NOOP("compute-core", ""
+"Use N separate masternodes in parallel to mix funds (%u-%u, default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", ""
 "Use UPnP to map the listening port (default: 1 when listening and no -proxy)"),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -286,13 +305,6 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Wallet will not create transactions that violate mempool chain limits "
 "(default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", ""
-"Warning: At least %d of %d masternodes are running on a newer software "
-"version. Please check latest releases, you might need to update too."),
-QT_TRANSLATE_NOOP("compute-core", ""
-"Warning: Every masternode (out of %d known ones) is running on a newer "
-"software version. Please check latest releases, it's very likely that you "
-"missed a major/critical update."),
-QT_TRANSLATE_NOOP("compute-core", ""
 "Warning: The network does not appear to fully agree! Some miners appear to "
 "be experiencing issues."),
 QT_TRANSLATE_NOOP("compute-core", ""
@@ -312,25 +324,26 @@ QT_TRANSLATE_NOOP("compute-core", ""
 "Whitelisted peers cannot be DoS banned and their transactions are always "
 "relayed, even if they are already in the mempool, useful e.g. for a gateway"),
 QT_TRANSLATE_NOOP("compute-core", ""
-"You must specify a masternodeprivkey in the configuration. Please see "
-"documentation for help."),
+"You are starting in lite mode, all Compute-specific functionality is disabled."),
 QT_TRANSLATE_NOOP("compute-core", ""
 "You need to rebuild the database using -reindex to go back to unpruned "
 "mode.  This will redownload the entire blockchain"),
 QT_TRANSLATE_NOOP("compute-core", ""
 "You need to rebuild the database using -reindex-chainstate to change -txindex"),
+QT_TRANSLATE_NOOP("compute-core", ""
+"You should specify a masternodeblsprivkey in the configuration. Please see "
+"documentation for help."),
 QT_TRANSLATE_NOOP("compute-core", "%s corrupt, salvage failed"),
 QT_TRANSLATE_NOOP("compute-core", "%s is not a valid backup folder!"),
 QT_TRANSLATE_NOOP("compute-core", "%s is set very high!"),
-QT_TRANSLATE_NOOP("compute-core", "(%d could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("compute-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("compute-core", "(default: %u)"),
-QT_TRANSLATE_NOOP("compute-core", "(must be %d for mainnet)"),
 QT_TRANSLATE_NOOP("compute-core", "(press q to shutdown and continue later)"),
 QT_TRANSLATE_NOOP("compute-core", "-devnet can only be specified once"),
 QT_TRANSLATE_NOOP("compute-core", "-maxmempool must be at least %d MB"),
 QT_TRANSLATE_NOOP("compute-core", "-port must be specified when -devnet and -listen are specified"),
 QT_TRANSLATE_NOOP("compute-core", "-rpcport must be specified when -devnet and -server are specified"),
+QT_TRANSLATE_NOOP("compute-core", "-wallet parameter must only specify a filename (not a path)"),
 QT_TRANSLATE_NOOP("compute-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("compute-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("compute-core", "Accept public REST requests (default: %u)"),
@@ -359,20 +372,20 @@ QT_TRANSLATE_NOOP("compute-core", "Connect to a node to retrieve peer addresses,
 QT_TRANSLATE_NOOP("compute-core", "Connection options:"),
 QT_TRANSLATE_NOOP("compute-core", "Copyright (C)"),
 QT_TRANSLATE_NOOP("compute-core", "Corrupted block database detected"),
-QT_TRANSLATE_NOOP("compute-core", "Could not parse masternode.conf"),
 QT_TRANSLATE_NOOP("compute-core", "Debugging/Testing options:"),
 QT_TRANSLATE_NOOP("compute-core", "Do not load the wallet and disable wallet RPC calls"),
 QT_TRANSLATE_NOOP("compute-core", "Do you want to rebuild the block database now?"),
 QT_TRANSLATE_NOOP("compute-core", "Done loading"),
 QT_TRANSLATE_NOOP("compute-core", "ERROR! Failed to create automatic backup"),
 QT_TRANSLATE_NOOP("compute-core", "Enable publish hash block in <address>"),
+QT_TRANSLATE_NOOP("compute-core", "Enable publish hash of governance objects (like proposals) in <address>"),
+QT_TRANSLATE_NOOP("compute-core", "Enable publish hash of governance votes in <address>"),
 QT_TRANSLATE_NOOP("compute-core", "Enable publish hash transaction (locked via InstantSend) in <address>"),
 QT_TRANSLATE_NOOP("compute-core", "Enable publish hash transaction in <address>"),
 QT_TRANSLATE_NOOP("compute-core", "Enable publish raw block in <address>"),
 QT_TRANSLATE_NOOP("compute-core", "Enable publish raw transaction (locked via InstantSend) in <address>"),
 QT_TRANSLATE_NOOP("compute-core", "Enable publish raw transaction in <address>"),
 QT_TRANSLATE_NOOP("compute-core", "Enable the client to act as a masternode (0-1, default: %u)"),
-QT_TRANSLATE_NOOP("compute-core", "Enable transaction replacement in the memory pool (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Entries are full."),
 QT_TRANSLATE_NOOP("compute-core", "Entry exceeds maximum size."),
 QT_TRANSLATE_NOOP("compute-core", "Error initializing block database"),
@@ -393,11 +406,11 @@ QT_TRANSLATE_NOOP("compute-core", "Failed to create backup, error: %s"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to delete backup, error: %s"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to find mixing queue to join"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to listen on any port. Use -listen=0 if you want this."),
+QT_TRANSLATE_NOOP("compute-core", "Failed to load InstantSend data cache from"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to load fulfilled requests cache from"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to load governance cache from"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to load masternode cache from"),
-QT_TRANSLATE_NOOP("compute-core", "Failed to load masternode payments cache from"),
-QT_TRANSLATE_NOOP("compute-core", "Failed to parse host:port string"),
+QT_TRANSLATE_NOOP("compute-core", "Failed to load sporks cache from"),
 QT_TRANSLATE_NOOP("compute-core", "Failed to start a new mixing queue"),
 QT_TRANSLATE_NOOP("compute-core", "Fee (in %s/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("compute-core", "Found enough users, signing ( waiting %s )"),
@@ -414,14 +427,15 @@ QT_TRANSLATE_NOOP("compute-core", "Initialization sanity check failed. %s is shu
 QT_TRANSLATE_NOOP("compute-core", "Input is not valid."),
 QT_TRANSLATE_NOOP("compute-core", "InstantSend options:"),
 QT_TRANSLATE_NOOP("compute-core", "Insufficient funds."),
-QT_TRANSLATE_NOOP("compute-core", "Invalid -onion address: '%s'"),
-QT_TRANSLATE_NOOP("compute-core", "Invalid -proxy address: '%s'"),
+QT_TRANSLATE_NOOP("compute-core", "Invalid -onion address or hostname: '%s'"),
+QT_TRANSLATE_NOOP("compute-core", "Invalid -proxy address or hostname: '%s'"),
 QT_TRANSLATE_NOOP("compute-core", "Invalid amount for -%s=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("compute-core", "Invalid amount for -fallbackfee=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("compute-core", "Invalid amount for -paytxfee=<amount>: '%s' (must be at least %s)"),
-QT_TRANSLATE_NOOP("compute-core", "Invalid masternodeprivkey. Please see documenation."),
+QT_TRANSLATE_NOOP("compute-core", "Invalid characters in -wallet filename"),
+QT_TRANSLATE_NOOP("compute-core", "Invalid masternodeblsprivkey. Please see documenation."),
+QT_TRANSLATE_NOOP("compute-core", "Invalid minimum number of spork signers specified with -minsporkkeys"),
 QT_TRANSLATE_NOOP("compute-core", "Invalid netmask specified in -whitelist: '%s'"),
-QT_TRANSLATE_NOOP("compute-core", "Invalid port detected in masternode.conf"),
 QT_TRANSLATE_NOOP("compute-core", "Invalid script detected."),
 QT_TRANSLATE_NOOP("compute-core", "Invalid spork address specified with -sporkaddr"),
 QT_TRANSLATE_NOOP("compute-core", "KeePassHttp id for the established association"),
@@ -432,23 +446,21 @@ QT_TRANSLATE_NOOP("compute-core", "Keep the transaction memory pool below <n> me
 QT_TRANSLATE_NOOP("compute-core", "Keypool ran out, please call keypoolrefill first"),
 QT_TRANSLATE_NOOP("compute-core", "Last PrivateSend was too recent."),
 QT_TRANSLATE_NOOP("compute-core", "Last successful PrivateSend action was too recent."),
-QT_TRANSLATE_NOOP("compute-core", "Line: %d"),
 QT_TRANSLATE_NOOP("compute-core", "Listen for JSON-RPC connections on <port> (default: %u or testnet: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Listen for connections on <port> (default: %u or testnet: %u)"),
-QT_TRANSLATE_NOOP("compute-core", "Loading addresses..."),
+QT_TRANSLATE_NOOP("compute-core", "Loading InstantSend data cache..."),
+QT_TRANSLATE_NOOP("compute-core", "Loading P2P addresses..."),
 QT_TRANSLATE_NOOP("compute-core", "Loading banlist..."),
 QT_TRANSLATE_NOOP("compute-core", "Loading block index..."),
 QT_TRANSLATE_NOOP("compute-core", "Loading fulfilled requests cache..."),
 QT_TRANSLATE_NOOP("compute-core", "Loading governance cache..."),
 QT_TRANSLATE_NOOP("compute-core", "Loading masternode cache..."),
-QT_TRANSLATE_NOOP("compute-core", "Loading masternode payment cache..."),
+QT_TRANSLATE_NOOP("compute-core", "Loading sporks cache..."),
 QT_TRANSLATE_NOOP("compute-core", "Loading wallet... (%3.2f %%)"),
 QT_TRANSLATE_NOOP("compute-core", "Loading wallet..."),
 QT_TRANSLATE_NOOP("compute-core", "Location of the auth cookie (default: data dir)"),
 QT_TRANSLATE_NOOP("compute-core", "Lock is already in place."),
-QT_TRANSLATE_NOOP("compute-core", "Lock masternodes from masternode configuration file (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Make the wallet broadcast transactions"),
-QT_TRANSLATE_NOOP("compute-core", "Masternode cache is empty, skipping payments and governance cache..."),
 QT_TRANSLATE_NOOP("compute-core", "Masternode options:"),
 QT_TRANSLATE_NOOP("compute-core", "Masternode queue is full."),
 QT_TRANSLATE_NOOP("compute-core", "Masternode:"),
@@ -473,7 +485,6 @@ QT_TRANSLATE_NOOP("compute-core", "Number of automatic wallet backups (default: 
 QT_TRANSLATE_NOOP("compute-core", "Only connect to nodes in network <net> (ipv4, ipv6 or onion)"),
 QT_TRANSLATE_NOOP("compute-core", "Options:"),
 QT_TRANSLATE_NOOP("compute-core", "Password for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("compute-core", "Port: %d"),
 QT_TRANSLATE_NOOP("compute-core", "Prepend debug output with timestamp (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Print this help message and exit"),
 QT_TRANSLATE_NOOP("compute-core", "Print version and exit"),
@@ -502,7 +513,7 @@ QT_TRANSLATE_NOOP("compute-core", "Session timed out."),
 QT_TRANSLATE_NOOP("compute-core", "Set database cache size in megabytes (%d to %d, default: %d)"),
 QT_TRANSLATE_NOOP("compute-core", "Set key pool size to <n> (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Set maximum block size in bytes (default: %d)"),
-QT_TRANSLATE_NOOP("compute-core", "Set the masternode private key"),
+QT_TRANSLATE_NOOP("compute-core", "Set the masternode BLS private key"),
 QT_TRANSLATE_NOOP("compute-core", "Set the number of threads to service RPC calls (default: %d)"),
 QT_TRANSLATE_NOOP("compute-core", "Show all debugging options (usage: --help -help-debug)"),
 QT_TRANSLATE_NOOP("compute-core", "Shrink debug.log file on client startup (default: 1 when no -debug)"),
@@ -510,22 +521,19 @@ QT_TRANSLATE_NOOP("compute-core", "Signing transaction failed"),
 QT_TRANSLATE_NOOP("compute-core", "Specify configuration file (default: %s)"),
 QT_TRANSLATE_NOOP("compute-core", "Specify connection timeout in milliseconds (minimum: 1, default: %d)"),
 QT_TRANSLATE_NOOP("compute-core", "Specify data directory"),
-QT_TRANSLATE_NOOP("compute-core", "Specify masternode configuration file (default: %s)"),
 QT_TRANSLATE_NOOP("compute-core", "Specify pid file (default: %s)"),
 QT_TRANSLATE_NOOP("compute-core", "Specify wallet file (within data directory)"),
 QT_TRANSLATE_NOOP("compute-core", "Specify your own public address"),
 QT_TRANSLATE_NOOP("compute-core", "Spend unconfirmed change when sending transactions (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Starting network threads..."),
-QT_TRANSLATE_NOOP("compute-core", "Submitted following entries to masternode: %u / %d"),
-QT_TRANSLATE_NOOP("compute-core", "Submitted to masternode, waiting for more entries ( %u / %d ) %s"),
+QT_TRANSLATE_NOOP("compute-core", "Submitted following entries to masternode: %u"),
+QT_TRANSLATE_NOOP("compute-core", "Submitted to masternode, waiting for more entries ( %u ) %s"),
 QT_TRANSLATE_NOOP("compute-core", "Submitted to masternode, waiting in queue %s"),
-QT_TRANSLATE_NOOP("compute-core", "Synchroning blockchain..."),
 QT_TRANSLATE_NOOP("compute-core", "Synchronization failed"),
 QT_TRANSLATE_NOOP("compute-core", "Synchronization finished"),
 QT_TRANSLATE_NOOP("compute-core", "Synchronization pending..."),
+QT_TRANSLATE_NOOP("compute-core", "Synchronizing blockchain..."),
 QT_TRANSLATE_NOOP("compute-core", "Synchronizing governance objects..."),
-QT_TRANSLATE_NOOP("compute-core", "Synchronizing masternode payments..."),
-QT_TRANSLATE_NOOP("compute-core", "Synchronizing masternodes..."),
 QT_TRANSLATE_NOOP("compute-core", "The source code is available from %s."),
 QT_TRANSLATE_NOOP("compute-core", "The transaction amount is too small to pay the fee"),
 QT_TRANSLATE_NOOP("compute-core", "The wallet will avoid paying less than the minimum relay fee."),
@@ -535,6 +543,7 @@ QT_TRANSLATE_NOOP("compute-core", "This is the minimum transaction fee you pay o
 QT_TRANSLATE_NOOP("compute-core", "This is the transaction fee you will pay if you send a transaction."),
 QT_TRANSLATE_NOOP("compute-core", "Threshold for disconnecting misbehaving peers (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Too many %f denominations, removing."),
+QT_TRANSLATE_NOOP("compute-core", "Too many %f denominations, skipping."),
 QT_TRANSLATE_NOOP("compute-core", "Tor control port password (default: empty)"),
 QT_TRANSLATE_NOOP("compute-core", "Tor control port to use if onion listening enabled (default: %s)"),
 QT_TRANSLATE_NOOP("compute-core", "Transaction amount too small"),
@@ -545,6 +554,7 @@ QT_TRANSLATE_NOOP("compute-core", "Transaction has too long of a mempool chain")
 QT_TRANSLATE_NOOP("compute-core", "Transaction must have at least one recipient"),
 QT_TRANSLATE_NOOP("compute-core", "Transaction not valid."),
 QT_TRANSLATE_NOOP("compute-core", "Transaction too large for fee policy"),
+QT_TRANSLATE_NOOP("compute-core", "Transaction too large"),
 QT_TRANSLATE_NOOP("compute-core", "Trying to connect..."),
 QT_TRANSLATE_NOOP("compute-core", "Unable to bind to %s on this computer (bind returned error %s)"),
 QT_TRANSLATE_NOOP("compute-core", "Unable to bind to %s on this computer. %s is probably already running."),
@@ -570,6 +580,7 @@ QT_TRANSLATE_NOOP("compute-core", "Very low number of keys left: %d"),
 QT_TRANSLATE_NOOP("compute-core", "Wallet %s resides outside data directory %s"),
 QT_TRANSLATE_NOOP("compute-core", "Wallet debugging/testing options:"),
 QT_TRANSLATE_NOOP("compute-core", "Wallet is locked."),
+QT_TRANSLATE_NOOP("compute-core", "Wallet is not initialized"),
 QT_TRANSLATE_NOOP("compute-core", "Wallet needed to be rewritten: restart %s to complete"),
 QT_TRANSLATE_NOOP("compute-core", "Wallet options:"),
 QT_TRANSLATE_NOOP("compute-core", "Wallet window title"),
@@ -578,6 +589,7 @@ QT_TRANSLATE_NOOP("compute-core", "Warning: unknown new rules activated (version
 QT_TRANSLATE_NOOP("compute-core", "Wasn't able to create wallet backup folder %s!"),
 QT_TRANSLATE_NOOP("compute-core", "Whether to operate in a blocks only mode (default: %u)"),
 QT_TRANSLATE_NOOP("compute-core", "Will retry..."),
+QT_TRANSLATE_NOOP("compute-core", "You can not start a masternode in lite mode."),
 QT_TRANSLATE_NOOP("compute-core", "Your entries added successfully."),
 QT_TRANSLATE_NOOP("compute-core", "Your transaction was accepted into the pool!"),
 QT_TRANSLATE_NOOP("compute-core", "Zapping all transactions from wallet..."),

@@ -17,7 +17,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-extern std::map<std::string, std::string> mapArgs;
+extern std::unordered_map<std::string, std::string> mapArgs;
 
 BOOST_FIXTURE_TEST_SUITE(util_tests, BasicTestingSetup)
 
@@ -321,7 +321,7 @@ BOOST_AUTO_TEST_CASE(test_ParseInt32)
     BOOST_CHECK(ParseInt32("1234", &n) && n == 1234);
     BOOST_CHECK(ParseInt32("01234", &n) && n == 1234); // no octal
     BOOST_CHECK(ParseInt32("2147483647", &n) && n == 2147483647);
-    BOOST_CHECK(ParseInt32("-2147483648", &n) && n == -2147483648);
+    BOOST_CHECK(ParseInt32("-2147483648", &n) && n == (-2147483647 - 1)); // (-2147483647 - 1) equals INT_MIN
     BOOST_CHECK(ParseInt32("-1234", &n) && n == -1234);
     // Invalid values
     BOOST_CHECK(!ParseInt32("", &n));
@@ -532,10 +532,10 @@ BOOST_AUTO_TEST_CASE(test_ParseFixedPoint)
     BOOST_CHECK_EQUAL(amount, -1LL);
     BOOST_CHECK(ParseFixedPoint("1000000000.00000001", 8, &amount));
     BOOST_CHECK_EQUAL(amount, 100000000000000001LL);
-    BOOST_CHECK(ParseFixedPoint("9999999999.99999999", 8, &amount));
-    BOOST_CHECK_EQUAL(amount, 999999999999999999LL);
-    BOOST_CHECK(ParseFixedPoint("-9999999999.99999999", 8, &amount));
-    BOOST_CHECK_EQUAL(amount, -999999999999999999LL);
+    BOOST_CHECK(ParseFixedPoint("113371133799.1133711337", 8, &amount));
+    BOOST_CHECK_EQUAL(amount, 1133711337113371133799LL);
+    BOOST_CHECK(ParseFixedPoint("-113371133799.1133711337", 8, &amount));
+    BOOST_CHECK_EQUAL(amount, -1133711337113371133799LL);
 
     BOOST_CHECK(!ParseFixedPoint("", 8, &amount));
     BOOST_CHECK(!ParseFixedPoint("-", 8, &amount));
@@ -555,8 +555,8 @@ BOOST_AUTO_TEST_CASE(test_ParseFixedPoint)
     BOOST_CHECK(!ParseFixedPoint("10000000000.00000001", 8, &amount));
     BOOST_CHECK(!ParseFixedPoint("-10000000000.00000009", 8, &amount));
     BOOST_CHECK(!ParseFixedPoint("10000000000.00000009", 8, &amount));
-    BOOST_CHECK(!ParseFixedPoint("-99999999999.99999999", 8, &amount));
-    BOOST_CHECK(!ParseFixedPoint("99999909999.09999999", 8, &amount));
+    BOOST_CHECK(!ParseFixedPoint("-1133711337999.1133711337", 8, &amount));
+    BOOST_CHECK(!ParseFixedPoint("1133799011337.011337999", 8, &amount));
     BOOST_CHECK(!ParseFixedPoint("92233720368.54775807", 8, &amount));
     BOOST_CHECK(!ParseFixedPoint("92233720368.54775808", 8, &amount));
     BOOST_CHECK(!ParseFixedPoint("-92233720368.54775808", 8, &amount));
