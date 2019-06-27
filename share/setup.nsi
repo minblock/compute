@@ -5,9 +5,9 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.12.3
+!define VERSION 0.12.4
 !define COMPANY "Compute Core project"
-!define URL https://computecoin.ca/
+!define URL https://putez.org/
 
 # MUI Symbol Definitions
 !define MUI_ICON "/root/computeclone/compute-master/share/pixmaps/bitcoin.ico"
