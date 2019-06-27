@@ -253,7 +253,7 @@ protected:
         if (ret != 0)
             return ret;
         else if (datKey.get_data() == NULL || datValue.get_data() == NULL)
-            return 113379;
+            return 99999;
 
         // Convert to streams
         ssKey.SetType(SER_DISK);

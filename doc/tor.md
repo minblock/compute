@@ -53,7 +53,7 @@ config file):
 
 	HiddenServiceDir /var/lib/tor/computecore-service/
 	HiddenServicePort 11337 127.0.0.1:11337
-	HiddenServicePort 111337 127.0.0.1:111337
+	HiddenServicePort 11337 127.0.0.1:11337
 
 The directory can be different of course, but (both) port numbers should be equal to
 your computed's P2P listen port (11337 by default).
