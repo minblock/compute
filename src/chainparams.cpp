@@ -457,7 +457,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-        strSporkAddress = "yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55";
+        vSporkAddress = {"yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55"};
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
@@ -583,7 +583,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-        strSporkAddress = "yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55";
+        vSporkAddress = {"yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55"};
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
