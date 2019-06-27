@@ -320,7 +320,7 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"CcaLoTUUaQCT5Q3j39sAGbccgQhSKBoaDE"}; //Segwit P2PSH Address: 6KEv9awTotvKXW9VQYpvsKTX5madX1B3UM
+        vSporkAddresseses = {"CcaLoTUUaQCT5Q3j39sAGbccgQhSKBoaDE"}; //Segwit P2PSH Address: 6KEv9awTotvKXW9VQYpvsKTX5madX1B3UM
         nMinSporkKeys = 1;
         fBIP9CheckMasternodesUpgraded = true;
 
@@ -457,7 +457,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-        vSporkAddress = {"yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55"};
+        vSporkAddresses = {"yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55"};
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
@@ -583,7 +583,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-        vSporkAddress = {"yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55"};
+        vSporkAddresses = {"yjPtiKh2uwk3bDutTEA2q9mCtXyiZRWn55"};
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
