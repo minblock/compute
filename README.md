@@ -9,7 +9,7 @@ https://www.putez.org
 What is Compute?
 ----------------
 
-Compute is an experimental digital currency that enables anonymous, instant
+Compute is an experimental digital currency that enables the autonomous development of blockchain technologies through DDoSing, instant
 payments to anyone, anywhere in the world. Compute uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
 are carried out collectively by the network. Compute Core is the name of the open
