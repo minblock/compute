@@ -266,10 +266,10 @@ public:
 
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000015331c83d139"); // 39326
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000001bf46c390904"); // 51985
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x000000000000000000000000000000000000000000000000000015331c83d139"); // 39326
+        consensus.defaultAssumeValid = uint256S("0x00000003e14fd4acca65eb47e4a95a8a5416611f7e661711bb363113a3a119e9"); // 51985
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -291,10 +291,6 @@ public:
 
 
         vSeeds.push_back(CDNSSeedData("putez.org", "seed.putez.org"));
-        vSeeds.push_back(CDNSSeedData("provgn.com", "seed.provgn.com"));
-        vSeeds.push_back(CDNSSeedData("mchub.ca", "seed.mchub.ca"));
-        vSeeds.push_back(CDNSSeedData("ogkush.org", "seed.ogkush.org"));
-        vSeeds.push_back(CDNSSeedData("picscoins.org", "seed.picscoins.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
@@ -344,11 +340,12 @@ public:
             (  21337, uint256S("0x00000009f3c7e02237d8c9e79a1499e82e99c1e655ccd02f81f2d02690b0d5ed"))
             (  26669, uint256S("0x00000005850b929e9fa03fcbf0fe12e26a336be24703c00cca8db38255844a92"))
             (  39204, uint256S("0x0000000ab8c7a06948faf01c525f410bd120d66600b1dc527917e135031b6a23"))
+            (  51985, uint256S("0x00000003e14fd4acca65eb47e4a95a8a5416611f7e661711bb363113a3a119e9"))
         };
 
         chainTxData = ChainTxData{
-            1561620069, // * UNIX timestamp of last known number of transactions
-            44231,    // * total number of transactions between genesis and that timestamp
+            1564354845, // * UNIX timestamp of last known number of transactions
+            58587,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.5         // * estimated number of transactions per second after that timestamp
         };
