@@ -214,7 +214,7 @@ public:
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f");
         consensus.BIP65Height = 0; // 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
-        consensus.DIP0001Height = 0;
+        consensus.DIP0001Height = 1337337;
         consensus.DIP0003Height = 1337337;
         consensus.DIP0003EnforcementHeight = 1337337;
         consensus.DIP0003EnforcementHash = uint256S("000000000000002da734087b4c5afc3133e4e1c3e1a89218f62bcd9bb3d17f81");
@@ -238,8 +238,8 @@ public:
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1505692800; // Sep 18th, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1537228800; // Sep 18th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1564407420; // July 29, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1596029820; // July 29, 2020
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
