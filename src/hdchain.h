@@ -1,4 +1,5 @@
-// Copyright (c) 2014-2018 The Compute Core developers
+// Copyright (c) 2019 The Compute Core developers
+// Copyright (c) 2014-2019 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
 #ifndef PUTEz_HDCHAIN_H
 #define PUTEz_HDCHAIN_H
