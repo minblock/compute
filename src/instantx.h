@@ -1,4 +1,4 @@
-// Copyright (c) 2019 The Compute Core developers
+// Copyright (c) 2018-2019 The ComputeCore developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef INSTANTX_H

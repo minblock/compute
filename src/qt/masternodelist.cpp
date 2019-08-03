@@ -1,3 +1,5 @@
+// Copyright (c) 2018-2019 The Compute Core developers
+// Copyright (c) 2014-2019 The Dash Core developers
 #include "masternodelist.h"
 #include "ui_masternodelist.h"
 
