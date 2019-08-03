@@ -214,7 +214,7 @@ public:
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f");
         consensus.BIP65Height = 0; // 0000005d5bad7d75ccd5bf864160ff2cc19b113ac601e5a702ad715521e2d30f
-        consensus.DIP0001Height = 0;
+        consensus.DIP0001Height = 1337337;
         consensus.DIP0003Height = 1337337;
         consensus.DIP0003EnforcementHeight = 1337337;
         consensus.DIP0003EnforcementHash = uint256S("000000000000002da734087b4c5afc3133e4e1c3e1a89218f62bcd9bb3d17f81");
@@ -238,8 +238,8 @@ public:
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 0; //February 23, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 999999999999ULL; // June 25th, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1564407420; // July 29, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1596029820; // July 29, 2020
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
@@ -266,10 +266,10 @@ public:
 
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000015331c83d139"); // 39326
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000001bf46c390904"); // 51985
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x000000000000000000000000000000000000000000000000000015331c83d139"); // 39326
+        consensus.defaultAssumeValid = uint256S("0x00000003e14fd4acca65eb47e4a95a8a5416611f7e661711bb363113a3a119e9"); // 51985
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -291,10 +291,6 @@ public:
 
 
         vSeeds.push_back(CDNSSeedData("putez.org", "seed.putez.org"));
-        vSeeds.push_back(CDNSSeedData("provgn.com", "seed.provgn.com"));
-        vSeeds.push_back(CDNSSeedData("mchub.ca", "seed.mchub.ca"));
-        vSeeds.push_back(CDNSSeedData("ogkush.org", "seed.ogkush.org"));
-        vSeeds.push_back(CDNSSeedData("picscoins.org", "seed.picscoins.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
@@ -344,11 +340,12 @@ public:
             (  21337, uint256S("0x00000009f3c7e02237d8c9e79a1499e82e99c1e655ccd02f81f2d02690b0d5ed"))
             (  26669, uint256S("0x00000005850b929e9fa03fcbf0fe12e26a336be24703c00cca8db38255844a92"))
             (  39204, uint256S("0x0000000ab8c7a06948faf01c525f410bd120d66600b1dc527917e135031b6a23"))
+            (  51985, uint256S("0x00000003e14fd4acca65eb47e4a95a8a5416611f7e661711bb363113a3a119e9"))
         };
 
         chainTxData = ChainTxData{
-            1561620069, // * UNIX timestamp of last known number of transactions
-            44231,    // * total number of transactions between genesis and that timestamp
+            1564354845, // * UNIX timestamp of last known number of transactions
+            58587,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.5         // * estimated number of transactions per second after that timestamp
         };
