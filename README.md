@@ -1,7 +1,9 @@
 Compute Core staging tree 0.14.0
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/minblock/compute.svg?branch=master)](https://travis-ci.org/minblock/compute) `develop:` [![Build Status](https://travis-ci.org/minblock/compute.svg?branch=develop)](https://travis-ci.org/minblock/compute/branches)
+`master:` ![Build](https://pgn.one/img/build.jpg)
+![Success](https://pgn.one/img/success.png)
+
 
 https://www.putez.org
 
