@@ -267,10 +267,10 @@ public:
 
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000001bf46c390904"); // 51985
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000bf9b509e0ed5"); //298431
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000003e14fd4acca65eb47e4a95a8a5416611f7e661711bb363113a3a119e9"); // 51985
+        consensus.defaultAssumeValid = uint256S("0x00000001465058b16b8d5174dc43bd7faba3ffeedf5ffe06954076b560664a9b"); //298431
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -330,7 +330,6 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    87, uint256S("0x0000007ca70522a795a0386c1f83e66fc76b17675bf23541b74a5e89b30d7276"))
             (  1337, uint256S("0x00000005059f5cb53dc09876df151022489dcfa85f2ff0e467f411bca9f784f6"))
             (  2337, uint256S("0x00000003fea0ba510b4fcbf69339e0bb990c3b7adb85da92fbc29c854b0ab793"))
             (  3185, uint256S("0x000000045e449c7388ee402c0144e573323a0f7195bd4161d03c01a46c4fbf6a"))
@@ -342,11 +341,12 @@ public:
             (  26669, uint256S("0x00000005850b929e9fa03fcbf0fe12e26a336be24703c00cca8db38255844a92"))
             (  39204, uint256S("0x0000000ab8c7a06948faf01c525f410bd120d66600b1dc527917e135031b6a23"))
             (  51985, uint256S("0x00000003e14fd4acca65eb47e4a95a8a5416611f7e661711bb363113a3a119e9"))
+            (  298431, uint256S("0x000000018a6547e2c30648c948ed83e7bda7fd3db6f43bd08090061de1e0f2ba"))
         };
 
         chainTxData = ChainTxData{
-            1564354845, // * UNIX timestamp of last known number of transactions
-            58587,    // * total number of transactions between genesis and that timestamp
+            1625541335, // * UNIX timestamp of last known number of transactions
+            342205,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.5         // * estimated number of transactions per second after that timestamp
         };
