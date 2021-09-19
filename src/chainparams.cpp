@@ -439,7 +439,7 @@ public:
         pchMessageStart[2] = 0xca;
         pchMessageStart[3] = 0xff;
         vAlertPubKey = ParseHex("04517d8a699cb43d3938d7b24faaff7cda448ca4ea267723ba614784de661949bf632d6304316b244646dea079735b9a6fc4af804efb4752075b9fe2245e14e412");
-        nDefaultPort = 11336;
+        nDefaultPort = 11334;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1546073052, 591101, 0x1e0ffff0, 1, 50 * COIN);
@@ -450,7 +450,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("putez.org",  "testnet-seed.putez.org"));
+        vSeeds.push_back(CDNSSeedData("192.3.3.18",  "192.3.3.18"));
 
 
         // Testnet Compute addresses start with 'y'
