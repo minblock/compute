@@ -590,7 +590,7 @@ public:
         pchMessageStart[2] = 0xff;
         pchMessageStart[3] = 0xce;
         vAlertPubKey = ParseHex("04517d8a699cb43d3938d7b24faaff7cda448ca4ea267723ba614784de661949bf632d6304316b244646dea079735b9a6fc4af804efb4752075b9fe2245e14e412");
-        nDefaultPort = 11334;
+        nDefaultPort = 11330;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1546073638, 685002, 0x1e0ffff0, 1, 50 * COIN);
@@ -603,7 +603,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("dev.putez.org",  "devnet-seed.putez.org"));
+        //vSeeds.push_back(CDNSSeedData("192.3.3.18",  "192.3.3.18"));
 
         // Testnet Compute addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
@@ -725,7 +725,7 @@ public:
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        nDefaultPort = 11333;
+        nDefaultPort = 11332;
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1546075179, 5171364, 0x1e0ffff0, 1, 50 * COIN);
