@@ -1,4 +1,4 @@
-Compute Core staging tree 0.14.0
+Compute Core staging tree 0.15.0
 ===============================
 
 `master:` ![Build](https://pgn.one/img/build.jpg)
